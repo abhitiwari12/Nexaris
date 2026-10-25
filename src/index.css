@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", sans-serif;
+  --font-sans: "Inter", sans-serif;
+
+  --color-navy: #0B1730;
+  --color-navy-dark: #070F20;
+  --color-navy-light: #162444;
+  --color-navy-muted: #1E335C;
+  --color-gold: #C7A45B;
+  --color-gold-hover: #B89347;
+  --color-gold-light: #F7F3EA;
+  --color-steel: #64748B;
+  --color-steel-light: #94A3B8;
+  --color-surface: #F5F7FA;
+  --color-surface-card: #FFFFFF;
+  --color-body: #334155;
+  --color-body-muted: #64748B;
+  --color-border-subtle: #E2E8F0;
+  --color-border-hover: #CBD5E1;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #334155;
+  background-color: #F5F7FA;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Tabular numerals for data and quantities */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Accessible focus ring indicators for keyboard navigation */
+:focus-visible {
+  outline: 2px solid #C7A45B;
+  outline-offset: 2px;
+}
+
+/* Accessibility: Respect user prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utility to hide scrollbars while preserving touch & horizontal scroll capability */
+.scrollbar-none::-webkit-scrollbar,
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none,
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Touch scroll snap helpers */
+.snap-inline-start {
+  scroll-snap-align: start;
+}
+

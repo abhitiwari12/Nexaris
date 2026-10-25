@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+  <rect width="200" height="80" rx="8" fill="#FFFFFF" />
+  <g transform="translate(14, 14)">
+    <rect x="2" y="4" width="44" height="44" rx="6" fill="#1D4ED8" />
+    <text x="24" y="28" font-family="Arial, sans-serif" font-weight="900" font-size="12" fill="#FFFFFF" text-anchor="middle">MSME</text>
+    <text x="24" y="40" font-family="Arial, sans-serif" font-weight="800" font-size="9" fill="#FDE047" text-anchor="middle">UDYAM</text>
+    <text x="56" y="24" font-family="Arial, sans-serif" font-weight="900" font-size="15" fill="#1E40AF">MINISTRY OF MSME</text>
+    <text x="56" y="38" font-family="Arial, sans-serif" font-weight="700" font-size="9" fill="#1D4ED8">UDYAM REGISTERED</text>
+    <text x="56" y="49" font-family="Arial, sans-serif" font-weight="600" font-size="8" fill="#475569">GOVT. OF INDIA</text>
+  </g>
+</svg>

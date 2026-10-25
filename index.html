@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/assets/aistudio/04_favicon_app_icon_variations_8024b755.png" />
+    <link rel="apple-touch-icon" href="/assets/aistudio/04_favicon_app_icon_variations_8024b755.png" />
+    <script>
+      // Gracefully ignore Vite dev server WebSocket disconnects as per runtime constraints
+      window.addEventListener('unhandledrejection', function(event) {
+        var reason = event && event.reason;
+        var msg = (reason && (reason.message || String(reason))) || '';
+        var stack = (reason && reason.stack) || '';
+        if (
+          msg.includes('WebSocket') ||
+          msg.includes('vite') ||
+          stack.includes('@vite/client') ||
+          stack.includes('createWebSocketModuleRunnerTransport')
+        ) {
+          event.preventDefault();
+        }
+      });
+      window.addEventListener('error', function(event) {
+        var msg = (event && event.message) || '';
+        var filename = (event && event.filename) || '';
+        if (msg.includes('WebSocket') || filename.includes('@vite/client')) {
+          event.preventDefault();
+        }
+      });
+    </script>
+    <title>NEXARIS | B2B Commodity Trading — Spices, Oilseeds & Aluminium Scrap</title>
+    <meta name="description" content="NEXARIS is an Indian B2B commodity trading house connecting commercial buyers with wholesale spices, oilseeds, and industrial aluminium scrap." />
+    <link rel="canonical" href="https://nexaris.co.in" />
+    <meta name="keywords" content="Indian spice supplier, bulk spices and oilseeds, chilli powder, cumin seeds, aluminium scrap supplier, aluminium extrusion scrap, aluminium 6061 scrap, aluminium 6063 scrap, commodity trading India" />
+    <meta property="og:title" content="NEXARIS | One Partner. Many Possibilities. — Spices, Oilseeds & Aluminium Scrap" />
+    <meta property="og:description" content="NEXARIS connects businesses with commodity trading opportunities across spices, oilseeds and aluminium scrap. One Partner. Many Possibilities." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nexaris.co.in" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NEXARIS | One Partner. Many Possibilities." />
+    <meta name="twitter:description" content="One Partner. Many Possibilities. Connecting commodities to opportunity across wholesale spices, oilseeds, and aluminium scrap." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "NEXARIS",
+        "url": "https://nexaris.co.in",
+        "telephone": "+91 98246 18484",
+        "email": "contact@nexaris.co.in",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Gandhinagar",
+          "addressRegion": "Gujarat",
+          "addressCountry": "IN"
+        },
+        "slogan": "One Partner. Many Possibilities.",
+        "description": "NEXARIS is a commodity trading and sourcing business based in Gandhinagar, Gujarat, India, working across spices, oilseeds and aluminium scrap.",
+        "sameAs": [
+          "https://www.linkedin.com/company/nexaris1/"
+        ],
+        "knowsAbout": [
+          "Spices wholesale trade",
+          "Oilseeds procurement",
+          "Aluminium scrap recycling",
+          "Industrial metals trading"
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-[#F1F4F7] text-[#344256] antialiased selection:bg-[#10243D] selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

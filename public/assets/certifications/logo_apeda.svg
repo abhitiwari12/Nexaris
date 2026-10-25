@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+  <rect width="200" height="80" rx="8" fill="#FFFFFF" />
+  <g transform="translate(12, 14)">
+    <circle cx="26" cy="26" r="22" fill="#854D0E" />
+    <circle cx="26" cy="26" r="18" fill="#CA8A04" />
+    <text x="26" y="31" font-family="Arial, sans-serif" font-weight="900" font-size="11" fill="#FFFFFF" text-anchor="middle">APEDA</text>
+    <text x="56" y="24" font-family="Arial, sans-serif" font-weight="900" font-size="16" fill="#854D0E">APEDA</text>
+    <text x="56" y="38" font-family="Arial, sans-serif" font-weight="700" font-size="8" fill="#A16207">AGRICULTURAL EXPORT</text>
+    <text x="56" y="49" font-family="Arial, sans-serif" font-weight="600" font-size="8" fill="#475569">MINISTRY OF COMMERCE</text>
+  </g>
+</svg>

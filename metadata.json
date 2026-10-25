@@ -1,0 +1,8 @@
+{
+  "name": "NEXARIS",
+  "description": "NEXARIS is an Indian B2B commodity trading house connecting commercial buyers with wholesale spices, oilseeds, and industrial aluminium scrap.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

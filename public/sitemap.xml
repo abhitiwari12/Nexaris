@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://nexaris.co.in/</loc>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://nexaris.co.in/spices-oilseeds</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://nexaris.co.in/aluminium-scrap</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://nexaris.co.in/about</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://nexaris.co.in/contact</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <!-- Spices Division Products (13) -->
+  <url><loc>https://nexaris.co.in/spices-oilseeds/red-chilli-powder</loc><priority>0.8</priority></url>
+  <url><loc>https://nexaris.co.in/spices-oilseeds/kashmir-red-chilli</loc><priority>0.8</priority></url>
+  <url><loc>https://nexaris.co.in/spices-oilseeds/premium-red-chilli</loc><priority>0.8</priority></url>
+  <url><loc>https://nexaris.co.in/spices-oilseeds/chilli-flakes</loc><priority>0.8</priority></url>
+  <url><loc>https://nexaris.co.in/spices-oilseeds/cumin-powder</loc><priority>0.8</priority></url>
+  <url><loc>https://nexaris.co.in/spices-oilseeds/cumin-seeds</loc><priority>0.8</priority></url>
+  <url><loc>https://nexaris.co.in/spices-oilseeds/turmeric-powder</loc><priority>0.8</priority></url>
+  <url><loc>https://nexaris.co.in/spices-oilseeds/premium-turmeric-powder</loc><priority>0.8</priority></url>
+  <url><loc>https://nexaris.co.in/spices-oilseeds/black-pepper-flakes</loc><priority>0.8</priority></url>
+  <url><loc>https://nexaris.co.in/spices-oilseeds/clove</loc><priority>0.8</priority></url>
+  <url><loc>https://nexaris.co.in/spices-oilseeds/cinnamon</loc><priority>0.8</priority></url>
+  <url><loc>https://nexaris.co.in/spices-oilseeds/indian-bay-leaves</loc><priority>0.8</priority></url>
+  <url><loc>https://nexaris.co.in/spices-oilseeds/oregano</loc><priority>0.8</priority></url>
+  <!-- Oilseeds Division Products (4) -->
+  <url><loc>https://nexaris.co.in/spices-oilseeds/sesame-seeds</loc><priority>0.8</priority></url>
+  <url><loc>https://nexaris.co.in/spices-oilseeds/mustard-seeds</loc><priority>0.8</priority></url>
+  <url><loc>https://nexaris.co.in/spices-oilseeds/black-mustard-seeds</loc><priority>0.8</priority></url>
+  <url><loc>https://nexaris.co.in/spices-oilseeds/groundnut</loc><priority>0.8</priority></url>
+  <!-- Aluminium Scrap Division Products (6) -->
+  <url><loc>https://nexaris.co.in/aluminium-scrap/aluminium-wire-scrap</loc><priority>0.8</priority></url>
+  <url><loc>https://nexaris.co.in/aluminium-scrap/aluminium-taint-tabor</loc><priority>0.8</priority></url>
+  <url><loc>https://nexaris.co.in/aluminium-scrap/aluminium-rod-scrap</loc><priority>0.8</priority></url>
+  <url><loc>https://nexaris.co.in/aluminium-scrap/aluminium-extrusion-scrap</loc><priority>0.8</priority></url>
+  <url><loc>https://nexaris.co.in/aluminium-scrap/aluminium-6061-scrap</loc><priority>0.8</priority></url>
+  <url><loc>https://nexaris.co.in/aluminium-scrap/aluminium-6063-scrap</loc><priority>0.8</priority></url>
+</urlset>

@@ -1,0 +1,573 @@
+import { Product } from '../types';
+
+export const ALL_PRODUCTS: Product[] = [
+  // ==========================================
+  // SPICES DIVISION (User Specifications & Sub-Categories)
+  // ==========================================
+  {
+    id: 'spice-01',
+    slug: 'red-chilli-powder',
+    name: 'Red Chilli Powder',
+    division: 'spices-oilseeds',
+    category: 'spices',
+    shortDescription: 'High ASTA red color and pungency choices: Kashmiri, Guntur Sannam S4, and Teja S17.',
+    subCategories: ['Kashmiri', 'Guntur Sannam S4', 'Teja S17'],
+    forms: ['Fine Powder (40-60 mesh)', 'Coarse Powder', 'Crushed Flakes'],
+    overview:
+      'Finely pulverized from select dried red chillies. Offered with dedicated buyer options: Kashmiri (high ASTA red color, mild heat), Guntur Sannam S4 (balanced heat and color), and Teja S17 (intense pungency & high SHU). Ideal for food manufacturing, oleoresin extraction, and retail packaging.',
+    commercialApplications: [
+      'Industrial food manufacturing & seasoning blends',
+      'Oleoresin & capsaicin extraction',
+      'QSR sauce & curry paste formulation',
+      'Custom buyer retail packing & bulk export',
+    ],
+    standardPackaging: [
+      '500g to 5kg custom printed pouches (Private Label OEM)',
+      '25 kg & 50 kg HDPE / laminated woven PP sacks',
+      '1,000 kg Jumbo FIBC bulk bags with moisture liner',
+    ],
+    specifications: [
+      { label: 'Sub-Categories / Varieties', value: 'Kashmiri, Guntur Sannam S4, Teja S17' },
+      { label: 'Pungency / Heat Range', value: '12,000 SHU to 75,000+ SHU' },
+      { label: 'Color Value', value: '40 ASTA to 140+ ASTA' },
+      { label: 'Mesh Size', value: '40–60 mesh fine ground powder' },
+      { label: 'Packaging', value: 'Custom retail & 25kg/50kg bulk packaging' },
+    ],
+    image: '/images/commodities/red_chilli_bulk_1792832370436.jpg',
+    featured: true,
+  },
+  {
+    id: 'spice-02',
+    slug: 'turmeric',
+    name: 'Turmeric',
+    division: 'spices-oilseeds',
+    category: 'spices',
+    shortDescription: 'Lakadong (Curcumin 6-7.5%), Erode, Salem (Curcumin 2-4%), and Standard (Curcumin 2-3%).',
+    subCategories: [
+      'Lakadong Turmeric (Curcumin 6 - 7.5%)',
+      'Erode Turmeric',
+      'Salem Turmeric (Curcumin 2 - 4%)',
+      'Standard Turmeric (Curcumin 2 - 3%)',
+    ],
+    forms: ['Whole Cured Fingers', 'Turmeric Bulbs', 'Fine Powder'],
+    overview:
+      'Premium Indian turmeric available in whole cured fingers, bulbs, and pulverized fine powders. Featuring high-curcumin Lakadong turmeric (6.0%–7.5% curcumin) for pharmaceuticals and extractors, Erode and Salem turmeric (2%–4% curcumin), and Standard commercial turmeric (2%–3% curcumin) for culinary blending.',
+    commercialApplications: [
+      'Pharmaceutical & nutraceutical curcumin extraction',
+      'Food colouring & seasoning mix manufacturing',
+      'Dairy, beverage, and confectionery formulations',
+      'Custom private label packaging',
+    ],
+    standardPackaging: [
+      'Custom branded retail pouches (OEM branding)',
+      '25 kg multi-wall craft paper sacks with inner PE liner',
+      '50 kg PP woven bags / 1 MT Jumbo FIBC bulk bags',
+    ],
+    specifications: [
+      { label: 'Lakadong Variety', value: 'Curcumin 6.0% – 7.5%' },
+      { label: 'Salem Variety', value: 'Curcumin 2.0% – 4.0%' },
+      { label: 'Standard Variety', value: 'Curcumin 2.0% – 3.0%' },
+      { label: 'Available Options', value: 'Lakadong, Erode, Salem, Standard' },
+      { label: 'Processing Form', value: 'Whole fingers, bulbs & fine powder' },
+      { label: 'Packaging', value: 'Custom retail pouches & bulk bags' },
+    ],
+    image: '/images/commodities/turmeric_roots_powder.png',
+    featured: true,
+  },
+  {
+    id: 'spice-03',
+    slug: 'cumin',
+    name: 'Cumin',
+    division: 'spices-oilseeds',
+    category: 'spices',
+    shortDescription: 'Standard (99% clean) and Premium Sortex (99.5% purity) in whole seed and powder.',
+    subCategories: ['Standard Cumin', 'Premium Sortex Cumin'],
+    forms: ['Whole Cumin Seeds', 'Fine Cumin Powder'],
+    overview:
+      'Machine-cleaned and Sortex 99.5% pure cumin seeds (Cuminum cyminum) sourced from the Gujarat and Rajasthan agricultural belts. Offered in Standard and Premium grades as whole natural seeds or finely pulverized powder rich in natural volatile oils.',
+    commercialApplications: [
+      'Garam masala & curry powder manufacturing',
+      'Essential oil & oleoresin distillation',
+      'Commercial milling & wholesale repackaging',
+      'Custom buyer private labeling',
+    ],
+    standardPackaging: [
+      '10 kg / 25 kg / 50 kg PP & Jute export bags',
+      'Vacuum-sealed nitrogen flushed packs',
+      'Custom OEM private label boxes and pouches',
+    ],
+    specifications: [
+      { label: 'Sub-Categories / Grades', value: 'Standard & Premium (Sortex 99.5%)' },
+      { label: 'Forms Available', value: 'Whole Seeds & Fine Powder' },
+      { label: 'Origin', value: 'Gujarat / Rajasthan, India' },
+      { label: 'Volatile Oil', value: '2.5% to 3.5% min' },
+      { label: 'Packaging', value: 'Custom retail & bulk container loads' },
+    ],
+    image: '/images/commodities/cumin_seeds_bulk_1792832370398.jpg',
+    featured: true,
+  },
+  {
+    id: 'spice-04',
+    slug: 'oregano',
+    name: 'Oregano',
+    division: 'spices-oilseeds',
+    category: 'spices',
+    shortDescription: 'Organic, crushed rubbed leaves, and fine powder with aromatic essential oils.',
+    subCategories: ['Organic Oregano', 'Crushed Oregano', 'Oregano Powder'],
+    forms: ['Crushed Rubbed Leaves (1-3mm)', 'Fine Powder'],
+    overview:
+      'Steam-sterilized dried oregano leaves harvested and processed to preserve intense thymol aroma and natural herbal flavor. Available in certified Organic, Crushed rub, and Milled powder grades for QSR, bakery, and pizza seasoning blends.',
+    commercialApplications: [
+      'QSR & pizza sachet manufacturing',
+      'Italian & Mediterranean seasoning formulations',
+      'Industrial snack seasonings & bakery toppings',
+      'Custom packaging for food service',
+    ],
+    standardPackaging: [
+      '10 kg poly-lined corrugated master cartons',
+      '20 kg / 25 kg PP bags with moisture barrier',
+      'Custom retail sachets & plastic jars',
+    ],
+    specifications: [
+      { label: 'Sub-Categories', value: 'Organic, Crushed Leaves, Powder' },
+      { label: 'Purity', value: '99% clean, steam sterilized' },
+      { label: 'Cut Size', value: 'Crushed 1–3 mm / Fine Powder' },
+      { label: 'Packaging', value: 'Custom retail & bulk master cartons' },
+    ],
+    image: '/images/commodities/oregano_dried_leaves_1792918939845.jpg',
+  },
+  {
+    id: 'spice-05',
+    slug: 'chilli-flakes',
+    name: 'Chilli Flakes',
+    division: 'spices-oilseeds',
+    category: 'spices',
+    shortDescription: 'Standard, high-heat Teja chilli flakes, and custom cut sizes.',
+    subCategories: ['Standard Chilli Flakes', 'Teja Chilli Flakes', 'Custom Cut Flakes'],
+    forms: ['Coarse Cut (2–4mm) with Seeds', 'Filtered Low-Seed Flakes'],
+    overview:
+      'Coarsely crushed dried red chillies engineered with balanced pericarp flake to seed ratios. Offered in Standard Grade, Teja Chilli Flakes (high heat), and Custom Cut Flakes (tailored 2mm to 4mm flake dimensions) for pizza sachets and commercial food processing.',
+    commercialApplications: [
+      'Pizza & pasta QSR seasoning sachets',
+      'Snack food seasonings & marinade rubs',
+      'Tabletop dispensers & catering packs',
+      'Custom packaging solutions',
+    ],
+    standardPackaging: [
+      '5 kg / 10 kg poly pouches in corrugated master cartons',
+      '25 kg PP woven sacks',
+      'Custom branded retail sachets',
+    ],
+    specifications: [
+      { label: 'Sub-Categories', value: 'Standard, Teja Chilli Flakes, Custom Cut' },
+      { label: 'Flake Dimensions', value: 'Custom cut 2 mm – 4 mm' },
+      { label: 'Visual Ratio', value: 'Balanced red flake with natural seeds' },
+      { label: 'Packaging', value: 'Bulk cartons & custom sachets' },
+    ],
+    image: '/images/commodities/spices_sampling_showcase_1792832351883.jpg',
+  },
+  {
+    id: 'spice-06',
+    slug: 'black-pepper',
+    name: 'Black Pepper',
+    division: 'spices-oilseeds',
+    category: 'spices',
+    shortDescription: 'Malabar and Tellicherry black pepper in whole peppercorns and flakes.',
+    subCategories: ['Malabar Black Pepper', 'Tellicherry Black Pepper'],
+    forms: ['Whole Peppercorns', 'Pepper Flakes / Coarse Crushed', 'Fine Ground Powder'],
+    overview:
+      'Sun-dried whole black peppercorns (Piper nigrum) sourced from the Malabar coast and Tellicherry belts. Featuring bold Garbled Tellicherry (TGEB / TGSEB) and Malabar grades. Available in whole peppercorns, crushed flakes, and coarse/fine ground powder.',
+    commercialApplications: [
+      'Meat curing, sausage & charcuterie manufacturing',
+      'Gourmet spice grinders & retail packaging',
+      'Essential oil & piperine extraction',
+      'Custom bulk & retail packaging',
+    ],
+    standardPackaging: [
+      '25 kg / 50 kg Jute & PP bags with PE liner',
+      'Vacuum nitrogen flushed bags for aroma retention',
+      'Custom private label shaker jars & pouches',
+    ],
+    specifications: [
+      { label: 'Origins / Sub-Categories', value: 'Malabar, Tellicherry (TGEB / TGSEB)' },
+      { label: 'Formats Available', value: 'Whole Peppercorns, Flakes, Powder' },
+      { label: 'Bulk Density', value: '500 g/l to 580 g/l GL' },
+      { label: 'Packaging', value: 'Custom retail & 25kg/50kg bulk sacks' },
+    ],
+    image: '/images/commodities/black_pepper.png',
+    featured: true,
+  },
+  {
+    id: 'spice-07',
+    slug: 'cloves',
+    name: 'Cloves',
+    division: 'spices-oilseeds',
+    category: 'spices',
+    shortDescription: 'Indian origin & premium handpicked whole cloves and fine clove powder.',
+    subCategories: ['Indian Origin Cloves', 'Premium Handpicked Cloves'],
+    forms: ['Whole Flower Buds', 'Clove Powder'],
+    overview:
+      'Hand-picked whole dried flower buds of Syzygium aromaticum. Rich in natural eugenol essential oil with a dark reddish-brown hue and full intact heads. Offered in Indian Origin and Premium sorted grades as whole cloves or ground powder.',
+    commercialApplications: [
+      'Confectionery, baking & beverage mulled mixes',
+      'Pharmaceutical, dental & essential oil extraction',
+      'Garam masala & pickle seasoning manufacturing',
+      'Custom private labeling',
+    ],
+    standardPackaging: [
+      '10 kg / 25 kg poly-lined cartons or PP sacks',
+      'Vacuum-sealed bulk bags',
+      'Custom OEM retail pouches',
+    ],
+    specifications: [
+      { label: 'Sub-Categories', value: 'Indian Origin, Premium Handpicked' },
+      { label: 'Formats', value: 'Whole Buds, Powder' },
+      { label: 'Eugenol Content', value: 'High essential oil (15%–18% min)' },
+      { label: 'Packaging', value: 'Custom retail & bulk master cartons' },
+    ],
+    image: '/images/commodities/clove_whole_spices_1792918939729.jpg',
+  },
+  {
+    id: 'spice-08',
+    slug: 'star-anise',
+    name: 'Star Anise',
+    division: 'spices-oilseeds',
+    category: 'spices',
+    shortDescription: 'Standard, unbroken Premium star anise, and Industrial broken grades.',
+    subCategories: ['Standard Star Anise', 'Premium Star Anise (Whole)', 'Industrial Star Anise (Broken)'],
+    forms: ['Whole 8-Point Stars', 'Broken Stars / Milling Grade'],
+    overview:
+      'Sun-dried star-shaped pericarp fruit (Illicium verum) packed with aromatic anethole oil. Available in Premium unbroken whole stars (8-pointed stars for retail/gourmet trade), Standard grade, and Industrial broken/milled grade for spice blending and oil extraction.',
+    commercialApplications: [
+      'Chinese 5-spice & biryani seasoning blends',
+      'Beverage, liquor & syrup flavouring',
+      'Anethole oil extraction & pharmaceuticals',
+      'Custom bulk packaging',
+    ],
+    standardPackaging: [
+      '10 kg / 20 kg corrugated cartons with moisture barrier',
+      '25 kg PP bags for industrial grade',
+      'Custom retail pouch packaging',
+    ],
+    specifications: [
+      { label: 'Sub-Categories', value: 'Standard, Premium (Whole), Industrial (Broken)' },
+      { label: 'Characteristics', value: 'Intact 8-pointed star with seeds / Broken' },
+      { label: 'Moisture', value: '12% max' },
+      { label: 'Packaging', value: 'Custom retail & bulk cartons' },
+    ],
+    image: '/images/commodities/spices_division_banner_1792832350716.jpg',
+  },
+  {
+    id: 'spice-09',
+    slug: 'bay-leaf',
+    name: 'Bay Leaf (Tej Patta)',
+    division: 'spices-oilseeds',
+    category: 'spices',
+    shortDescription: 'Premium sorted whole leaves and broken leaves for commercial milling.',
+    subCategories: ['Premium Sorted Leaves', 'Broken Bay Leaves'],
+    forms: ['Whole Sorted Leaves', 'Broken Leaves for Milling'],
+    overview:
+      'Sun-dried intact bay leaves (Cinnamomum tamala / Tej Patta) offering sweet herbal-clove fragrance. Carefully graded into Premium Sorted Whole Leaves for retail/culinary packing and Broken Leaves for commercial spice milling and extract preparation.',
+    commercialApplications: [
+      'Soup, stew & curry seasoning packs',
+      'Commercial garam masala blending',
+      'Essential oil extraction',
+      'Custom private label packaging',
+    ],
+    standardPackaging: [
+      '5 kg / 10 kg compressed bales in master cartons',
+      '15 kg / 20 kg woven bags',
+      'Custom retail pouch packing',
+    ],
+    specifications: [
+      { label: 'Sub-Categories', value: 'Premium Sorted Whole Leaves, Broken Leaves' },
+      { label: 'Origin', value: 'India' },
+      { label: 'Condition', value: 'Whole green-olive dried leaves' },
+      { label: 'Packaging', value: 'Custom retail & bulk master bales' },
+    ],
+    image: '/images/commodities/bay_leaves_tej_patta_1792918940259.jpg',
+  },
+  {
+    id: 'spice-10',
+    slug: 'cinnamon',
+    name: 'Cinnamon',
+    division: 'spices-oilseeds',
+    category: 'spices',
+    shortDescription: 'Cassia cinnamon and Ceylon true cinnamon quills and fine powder.',
+    subCategories: ['Cassia Cinnamon', 'Ceylon Cinnamon'],
+    forms: ['Whole Quills / Sticks', 'Cut Bark Chips', 'Fine Powder'],
+    overview:
+      'Dried inner bark of Cinnamomum trees. Available in Cassia Cinnamon (intense warm sweet-spicy aroma, ideal for industrial baking) and Ceylon Cinnamon (true delicate quills with low coumarin). Offered as whole quills/sticks, cut chips, and fine powder.',
+    commercialApplications: [
+      'Bakery, confectionery & dessert formulations',
+      'Hot beverage, tea & spiced coffee mixes',
+      'Nutraceuticals & essential oil extraction',
+      'Custom OEM retail packaging',
+    ],
+    standardPackaging: [
+      '10 kg / 25 kg corrugated master cartons',
+      '25 kg PP bags for powder grade',
+      'Custom retail pouches & glass/plastic bottles',
+    ],
+    specifications: [
+      { label: 'Sub-Categories', value: 'Cassia Cinnamon, Ceylon Cinnamon' },
+      { label: 'Formats', value: 'Whole Quills / Sticks, Cut Bark, Powder' },
+      { label: 'Moisture', value: '12% max' },
+      { label: 'Packaging', value: 'Custom retail & bulk master cartons' },
+    ],
+    image: '/images/commodities/cinnamon_sticks_quills_1792918940173.jpg',
+  },
+
+  // ==========================================
+  // OILSEEDS & GRAINS DIVISION (User Specifications & Sub-Categories)
+  // ==========================================
+  {
+    id: 'oilseed-01',
+    slug: 'groundnut',
+    name: 'Groundnut (Peanuts)',
+    division: 'spices-oilseeds',
+    category: 'oilseeds',
+    shortDescription: 'Peanut splits, groundnut in shell, and blanched peanuts sourced from Gujarat.',
+    subCategories: ['Peanut Splits', 'Groundnut In Shell', 'Blanched Peanuts'],
+    forms: ['Raw Kernels (38/42, 40/50, 50/60, 60/70, 70/80)', 'Pods In Shell', 'Skinless Blanched'],
+    overview:
+      'High-grade peanuts (Arachis hypogaea) sourced directly from the Gujarat farming belt (Saurashtra / Rajkot / Gondal). Available in Peanut Splits, Groundnut in Shell (raw pod), and Blanched Peanuts (skinless red/bold kernels) for oil pressing, roasting, and confectionery.',
+    commercialApplications: [
+      'Peanut butter & confectionery manufacturing',
+      'Edible oil pressing & meal extraction',
+      'Roasting, salting & snack packaging',
+      'Custom bulk export packing',
+    ],
+    standardPackaging: [
+      '25 kg / 50 kg Jute & PP bags',
+      'Vacuum-sealed bulk big bags (FIBC 1 MT)',
+      'Custom buyer labeled cartons',
+    ],
+    specifications: [
+      { label: 'Origin', value: 'Gujarat, India (Rajkot / Saurashtra belt)' },
+      { label: 'Sub-Categories', value: 'Peanut Splits, Groundnut In Shell, Blanched Peanuts' },
+      { label: 'Counts Available', value: '38/42, 40/50, 50/60, 60/70, 70/80' },
+      { label: 'Moisture', value: '7%–8% max' },
+      { label: 'Aflatoxin', value: 'As per buyer specification (Aflatoxin negative)' },
+      { label: 'Packaging', value: 'Custom retail & 25kg/50kg/1MT FIBC bulk bags' },
+    ],
+    image: '/images/commodities/soybeans_groundnut.png',
+    featured: true,
+  },
+  {
+    id: 'oilseed-02',
+    slug: 'sesame-seeds',
+    name: 'Sesame Seeds',
+    division: 'spices-oilseeds',
+    category: 'spices',
+    shortDescription: 'White 99/1, Hulled 99.95%, Black natural, and Roasted sesame seeds.',
+    subCategories: ['White Sesame 99/1', 'White Hulled 99.95%', 'Black Sesame', 'Roasted Sesame'],
+    forms: ['Natural Whole Seeds', 'Mechanically Hulled Seeds', 'Roasted Seeds'],
+    overview:
+      'Sortex-cleaned sesame seeds (Sesamum indicum) processed under strict hygiene standards. Available in White Natural Sesame 99/1, Mechanically Hulled White Sesame 99.95% (bakery grade), Natural Black Sesame Seeds, and Aromatic Roasted Sesame Seeds for bakery and tahini production.',
+    commercialApplications: [
+      'Bakery buns, bread & confectionery topping',
+      'Tahini paste & halva manufacturing',
+      'Cold-pressed sesame oil extraction',
+      'Custom private label retail packing',
+    ],
+    standardPackaging: [
+      '25 kg / 50 kg multi-wall paper sacks or PP bags',
+      '1,000 kg Jumbo FIBC bulk bags',
+      'Custom retail nitrogen flushed pouches',
+    ],
+    specifications: [
+      { label: 'Sub-Categories', value: 'White 99/1, White Hulled 99.95%, Black, Roasted' },
+      { label: 'Purity', value: '99.95% Hulled / 99% Natural' },
+      { label: 'Oil Content', value: '48%–50% min' },
+      { label: 'Admixture', value: '0.05% max' },
+      { label: 'Packaging', value: 'Custom retail & 25kg/50kg/1MT FIBC bulk sacks' },
+    ],
+    image: '/images/commodities/sesame_seeds.png',
+    featured: true,
+  },
+  {
+    id: 'oilseed-03',
+    slug: 'mustard-seeds',
+    name: 'Mustard Seeds',
+    division: 'spices-oilseeds',
+    category: 'oilseeds',
+    shortDescription: 'Yellow mustard and Brown Indian mustard seeds (Rai / Sarson).',
+    subCategories: ['Yellow Mustard Seeds', 'Brown Indian Mustard (Rai / Sarson)'],
+    forms: ['Whole Sortex Cleaned Seeds', 'Coarse Ground Mustard'],
+    overview:
+      'Recleaned whole mustard seeds sourced from Northern and Western Indian farming zones. Available in Yellow Mustard Seeds (Sinapis alba) for condiment sauces and pickling, and Brown Indian Mustard Seeds (Brassica juncea - Rai / Sarson) for oil pressing and curry tempering.',
+    commercialApplications: [
+      'Prepared mustard sauce & mayonnaise manufacturing',
+      'Kachi Ghani cold-pressed mustard oil pressing',
+      'Pickling, seasoning & spice blending',
+      'Custom buyer retail packaging',
+    ],
+    standardPackaging: [
+      '25 kg / 50 kg PP woven bags',
+      'Multi-layer moisture barrier paper bags',
+      'Custom buyer labeled sacks',
+    ],
+    specifications: [
+      { label: 'Sub-Categories', value: 'Yellow Mustard, Brown Indian Mustard' },
+      { label: 'Purity', value: 'Sortex 99% to 99.5% clean' },
+      { label: 'Oil Content', value: '38%–40% min (Brown)' },
+      { label: 'Packaging', value: 'Custom retail & bulk container loads' },
+    ],
+    image: '/images/commodities/mustard_wheat_grains.png',
+  },
+
+  // ==========================================
+  // ALUMINIUM SCRAP DIVISION (6 Products & Sub-Categories)
+  // ==========================================
+  {
+    id: 'metal-01',
+    slug: 'aluminium-wire-scrap-barley',
+    name: 'Aluminium Wire Scrap (ISRI Barley)',
+    division: 'aluminium-scrap',
+    category: 'aluminium-scrap',
+    shortDescription: 'Bare, unalloyed clean aluminium wire scrap for secondary smelting.',
+    subCategories: ['ISRI Barley (EC Wire 99%+)', 'ACSR Stranded Wire Scrap'],
+    overview:
+      'High-purity bare clean aluminium wire scrap (ISRI Barley grade) free from insulation, hair wire, iron, oil, and foreign attachments. Sourced from power utility cable stripping and industrial electrical dismantling, ideal for direct furnace charging.',
+    commercialApplications: [
+      'Secondary aluminium ingot casting (ADC12, A356)',
+      'Deox cone & star manufacturing for steelworks',
+      'Foundry alloying & billet extrusion feed',
+    ],
+    standardPackaging: ['Baled lots (100–300 kg bales)', 'Loose in 20ft / 40ft FCL', 'Custom palletized bundles'],
+    specifications: [
+      { label: 'ISRI Grade', value: 'Barley (Clean ACSR / EC wire)' },
+      { label: 'Aluminium Content', value: '99% min EC grade' },
+      { label: 'Impurity Level', value: '< 0.5% max' },
+    ],
+    image: '/images/commodities/aluminium_wire_scrap_1792832372158.jpg',
+    featured: true,
+  },
+  {
+    id: 'metal-02',
+    slug: 'taint-tabor-scrap',
+    name: 'Taint Tabor Aluminium Scrap',
+    division: 'aluminium-scrap',
+    category: 'aluminium-scrap',
+    shortDescription: 'Clean mixed old alloy sheet aluminium for remelting.',
+    subCategories: ['Taint Tabor Mixed Sheet', 'Unpainted Utensil/Panel Stock'],
+    overview:
+      'Clean old alloy aluminium sheet scrap (ISRI Taint Tabor) comprising mixed unpainted and painted sheet stock, utensils, and structural panels. Free from foil, venetian blinds, iron, and excessive dirt.',
+    commercialApplications: [
+      'Secondary smelter alloy production',
+      'Foundry ingot production',
+      'Industrial casting facilities',
+    ],
+    standardPackaging: ['High-density compressed bales', '20ft FCL container loads'],
+    specifications: [
+      { label: 'ISRI Specification', value: 'Taint Tabor' },
+      { label: 'Metallic Yield', value: '90%–92% recovery' },
+      { label: 'Format', value: 'Compressed bales' },
+    ],
+    image: '/images/commodities/metal_scrap_pile.png',
+    featured: true,
+  },
+  {
+    id: 'metal-03',
+    slug: '6063-extrusions-taint',
+    name: 'Aluminium 6063 Extrusions',
+    division: 'aluminium-scrap',
+    category: 'aluminium-scrap',
+    shortDescription: 'Clean 6063 architectural window & door profile scrap.',
+    subCategories: ['6063 Architectural Profiles (Tense)', 'Window & Door Frame Offcuts'],
+    overview:
+      'Clean unpainted architectural aluminium 6063 extrusion cutoffs and window/door frame scrap. Low iron content and high magnesium-silicon purity, ideal for remelting into 6000-series extrusion billets.',
+    commercialApplications: [
+      'Extrusion billet casting',
+      'Architectural alloy remelting',
+      'Automotive aluminium casting',
+    ],
+    standardPackaging: ['Baled or bundled profile cuts', 'Bulk 20ft container loads'],
+    specifications: [
+      { label: 'Alloy Grade', value: '6063 (Mg 0.45–0.9%, Si 0.2–0.6%)' },
+      { label: 'ISRI Code', value: 'Tense / Tata' },
+      { label: 'Condition', value: 'Clean cutoffs without thermal breaks' },
+    ],
+    image: '/images/commodities/aluminium_extrusions.png',
+    featured: true,
+  },
+  {
+    id: 'metal-04',
+    slug: '6061-aluminium-scrap',
+    name: 'Aluminium 6061 Structural Scrap',
+    division: 'aluminium-scrap',
+    category: 'aluminium-scrap',
+    shortDescription: 'Heavy structural 6061 alloy plate, pipe, and bar offcuts.',
+    subCategories: ['6061 Marine Plate Offcuts', '6061 Heavy Bar & Pipe Scrap'],
+    overview:
+      'Clean heavy structural 6061 aluminium scrap derived from marine, aerospace, and transport fabrication offcuts. Known for excellent mechanical strength and high magnesium-copper alloy recovery.',
+    commercialApplications: [
+      'High-strength ingot formulation',
+      'Structural alloy remelting',
+      'Foundry charging',
+    ],
+    standardPackaging: ['Loose cut lengths', 'Heavy baled bundles'],
+    specifications: [
+      { label: 'Alloy Grade', value: '6061 (Mg 0.8–1.2%, Si 0.4–0.8%, Cu 0.15–0.4%)' },
+      { label: 'Thickness', value: '3 mm and above' },
+      { label: 'Condition', value: 'Clean industrial offcuts' },
+    ],
+    image: '/images/commodities/aluminium_profiles_showcase_1792832351836.jpg',
+  },
+  {
+    id: 'metal-05',
+    slug: 'aluminium-utensils-scrap',
+    name: 'Aluminium Utensils Scrap',
+    division: 'aluminium-scrap',
+    category: 'aluminium-scrap',
+    shortDescription: 'Clean kitchenware and wrought utensil scrap for secondary alloys.',
+    subCategories: ['Clean Wrought Utensils', 'Unenameled Pressware'],
+    overview:
+      'Clean wrought aluminium utensil scrap free from stainless steel handles, iron rivets, and heavy enameling. High purity wrought alloy scrap suitable for commercial alloy ingots and cookware manufacturing.',
+    commercialApplications: [
+      'Secondary cookware alloy casting',
+      'Deox cone manufacturing',
+      'Foundry ingot production',
+    ],
+    standardPackaging: ['Compressed bales', 'Bulk container stuffing'],
+    specifications: [
+      { label: 'Condition', value: 'Clean un-enameled utensil stock' },
+      { label: 'Metallic Content', value: '98%+ purity' },
+      { label: 'Format', value: 'High-density bales' },
+    ],
+    image: '/images/commodities/aluminium_ingots.png',
+  },
+  {
+    id: 'metal-06',
+    slug: 'copper-wire-scrap-millberry',
+    name: 'Copper Wire Scrap (Millberry)',
+    division: 'aluminium-scrap',
+    category: 'aluminium-scrap',
+    shortDescription: 'Bare, clean unalloyed copper wire scrap for secondary melting.',
+    subCategories: ['ISRI Millberry (Bare Bright 99.9%)', 'Heavy Uncoated Copper Busbar'],
+    overview:
+      'High-purity bare bright copper wire scrap (ISRI Millberry grade), stripped and free from tin, enamel, solder, insulation, and oxidation. Preferred feedstock for wire rod and copper cathode manufacturing.',
+    commercialApplications: [
+      'Continuous cast copper rod production',
+      'High-conductivity electrical alloys',
+      'Foundry brass and bronze ingots',
+    ],
+    standardPackaging: ['Compressed copper briquettes', 'Baled lots', 'Palletized 20ft FCL'],
+    specifications: [
+      { label: 'ISRI Grade', value: 'Millberry (Copper 99.9% min)' },
+      { label: 'Condition', value: 'Clean, uncoated, unalloyed wire' },
+      { label: 'Recovery', value: 'High yield secondary remelt' },
+    ],
+    image: '/images/commodities/copper_wire_scrap.png',
+    featured: true,
+  },
+];
+
+export const SPICES_PRODUCTS = ALL_PRODUCTS.filter((p) => p.category === 'spices');
+export const OILSEEDS_PRODUCTS = ALL_PRODUCTS.filter((p) => p.category === 'oilseeds');
+export const SPICES_AND_OILSEEDS_PRODUCTS = ALL_PRODUCTS.filter(
+  (p) => p.division === 'spices-oilseeds'
+);
+export const ALUMINIUM_PRODUCTS = ALL_PRODUCTS.filter((p) => p.division === 'aluminium-scrap');
+export const FEATURED_PRODUCTS = ALL_PRODUCTS.filter((p) => p.featured);
