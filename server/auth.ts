@@ -50,9 +50,10 @@ export function ensureOwnerAccount(): void {
   const stmt = db.prepare('SELECT COUNT(*) as count FROM crm_users');
   const res = stmt.get() as { count: number };
   
+  const defaultEmail = process.env.CRM_OWNER_EMAIL || 'tiwariabhi1211@gmail.com';
+  const initialPassword = process.env.CRM_INITIAL_PASSWORD || '@bhiNT1211';
+
   if (res.count === 0) {
-    const defaultEmail = process.env.CRM_OWNER_EMAIL || 'contact@nexaris.co.in';
-    const initialPassword = process.env.CRM_INITIAL_PASSWORD || 'NexarisTrade#2026';
     const { hash, salt } = hashPassword(initialPassword);
     const userId = 'usr_' + crypto.randomUUID().slice(0, 12);
     const now = new Date().toISOString();
@@ -63,7 +64,18 @@ export function ensureOwnerAccount(): void {
     `).run(userId, defaultEmail, hash, salt, 'NEXARIS Trade Owner', now);
 
     console.log(`[CRM] Initial Owner account established for: ${defaultEmail}`);
-    console.log(`[CRM] Initial credentials created. Change password immediately in CRM Settings.`);
+  } else {
+    // Optional: If the old default user exists, update it to the new one
+    const oldDefaultEmail = 'contact@nexaris.co.in';
+    const checkOld = db.prepare('SELECT id FROM crm_users WHERE email = ?');
+    const oldUser = checkOld.get(oldDefaultEmail) as { id: string } | undefined;
+
+    if (oldUser) {
+      const { hash, salt } = hashPassword(initialPassword);
+      db.prepare('UPDATE crm_users SET email = ?, password_hash = ?, salt = ? WHERE id = ?')
+        .run(defaultEmail, hash, salt, oldUser.id);
+      console.log(`[CRM] Default Owner account updated to: ${defaultEmail}`);
+    }
   }
 }
 

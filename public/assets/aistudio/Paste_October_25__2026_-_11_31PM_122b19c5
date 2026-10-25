@@ -1,0 +1,1035 @@
+# NEXARIS — Enterprise Website Transformation & B2B Trade Platform
+
+**Project:** NEXARIS Official Website  
+**Website:** https://nexaris.co.in/  
+**Brand tagline:** One Partner. Many Possibilities.  
+**Primary objective:** Transform the existing website into a premium, mobile-first international commodity trading and sourcing platform.
+
+## ROLE AND EXPECTATIONS
+
+Act as a senior software architect, full-stack engineer, product designer, mobile UX specialist, security engineer, database architect, and QA engineer.
+
+You are responsible for auditing, redesigning, implementing, and testing the existing NEXARIS website.
+
+This project has two equally important goals:
+
+1. A major, visually distinctive, premium UI/UX transformation.
+2. Production-ready functionality for buyer enquiries, supplier submissions, lead management, international trade forms, and knowledge publishing.
+
+**Do not deliver only a plan, a static prototype, a design concept, or a homepage redesign. Implement the complete feasible solution directly in the existing project.**
+
+---
+
+# PART 1 — NON-NEGOTIABLE PROJECT RULES
+
+## 1. Inspect before modifying
+
+Before writing code, inspect the complete existing project and identify:
+
+- Framework and application architecture.
+- Existing pages, routes, layouts and reusable components.
+- Current design system, styles and assets.
+- Official NEXARIS logo files.
+- Commodity catalogue and product data.
+- Existing backend APIs and API contracts.
+- Database schemas, data models and migrations.
+- Authentication and authorization.
+- Existing contact forms, quote forms and WhatsApp integrations.
+- Email notifications and third-party integrations.
+- Environment variables and deployment configuration.
+- Existing tests, lint rules and build scripts.
+
+Build an internal implementation map before making major changes.
+
+Do not assume a technology stack, API endpoint, database schema or deployment platform that has not been confirmed by inspecting the project.
+
+## 2. Preserve the existing application
+
+- Retain the current framework and architecture wherever practical.
+- Preserve working business logic, routes, product data, API contracts and integrations.
+- Reuse existing dependencies when appropriate.
+- Do not replace the application with a starter template.
+- Do not overwrite real data with sample data.
+- Do not remove existing features merely to simplify implementation.
+- Do not invent endpoints or pretend unavailable services exist.
+- Do not expose API keys, credentials, tokens or private configuration.
+- Avoid destructive database changes.
+- Back up significant changes or use version control where available.
+
+If a requested feature requires new backend capabilities, implement them using the existing architecture and document the necessary migration, configuration or external dependency.
+
+## 3. Separate verified facts from assumptions
+
+NEXARIS operates in B2B commodity trading and sourcing, with existing website content covering categories such as spices, oilseeds and aluminium scrap.
+
+Use the actual project data to determine what is currently offered.
+
+Never invent:
+
+- Certifications or registration status.
+- Supplier or buyer relationships.
+- Export history, shipment volumes or countries served.
+- Commodity specifications, stock or prices.
+- Customer testimonials or partner logos.
+- Guaranteed delivery dates or quality claims.
+- Legal identifiers or business credentials.
+
+Flag information requiring business-owner verification. Never silently replace uncertain values with invented ones.
+
+---
+
+# PART 2 — NEW VISUAL IDENTITY AND MAJOR UI REDESIGN
+
+## 4. Design direction
+
+Create a premium editorial-style international trade website with a distinctive corporate identity.
+
+The visual direction should combine:
+
+- Deep midnight navy.
+- Warm ivory and off-white backgrounds.
+- Restrained gold accents.
+- Refined neutral gray and charcoal.
+- Strong editorial typography.
+- Large, authentic commodity photography.
+- Asymmetric content layouts.
+- Generous but controlled whitespace.
+- Fine divider lines and structured grids.
+- Subtle, purposeful transitions.
+
+The website must feel like a credible international trading business, not a generic SaaS template, ecommerce theme or AI-generated landing page.
+
+Avoid repetitive card grids, excessive rounded containers, purple-blue gradients, excessive glassmorphism, decorative icons without purpose, unnecessary animations and fake trust indicators.
+
+## 5. Preserve the official brand
+
+- Use the existing official NEXARIS logo asset.
+- Preserve its original design and proportions.
+- Retain the tagline “One Partner. Many Possibilities.”
+- Maintain the existing navy-and-gold identity.
+- Do not generate a replacement logo or distort the existing asset.
+
+### Make the header logo shorter
+
+Redesign the header to be more compact and balanced.
+
+Suggested starting dimensions:
+
+- Desktop logo height: 34–40 px.
+- Mobile logo height: 28–34 px.
+- Desktop header height: 64–76 px.
+- Mobile header height: 56–64 px.
+
+Adjust these dimensions based on the real asset and layout.
+
+Use proportional sizing, avoid unnecessary whitespace and ensure the logo stays legible on mobile.
+
+### Desktop navigation
+
+Create a polished, uncluttered navigation structure based on the actual routes:
+
+- Home.
+- Commodities.
+- For Buyers.
+- For Suppliers.
+- Knowledge Centre.
+- About.
+- Contact.
+
+Include a clear primary “Request a Quote” CTA.
+
+Use dropdowns only when they improve navigation.
+
+### Mobile navigation
+
+Build a dedicated mobile navigation experience with:
+
+- Compact logo.
+- Accessible menu toggle.
+- Clear menu hierarchy.
+- Touch-friendly navigation.
+- Easy access to the quote CTA.
+- Correct menu closing behavior.
+- No horizontal overflow or overlapping elements.
+
+Do not compress the desktop navigation into a narrow viewport.
+
+## 6. Redesign the homepage completely
+
+Create a high-impact editorial hero with a strong headline, concise business description, authentic imagery and clear conversion actions.
+
+Possible headline direction:
+
+“Connecting Global Demand with Trusted Indian Supply.”
+
+Use only wording consistent with the actual NEXARIS business model.
+
+The hero should include:
+
+- Primary CTA: “Explore Commodities”.
+- Secondary CTA: “Request a Trade Quote”.
+- Relevant commodity or international trade photography.
+- A clear explanation of NEXARIS's actual sourcing or trading role.
+
+Redesign the remaining homepage sections rather than merely adjusting their spacing.
+
+Create distinctive sections for:
+
+1. Commodity discovery.
+2. What NEXARIS does.
+3. How the trade process works.
+4. Buyer and supplier pathways.
+5. Verified trust and compliance information.
+6. Featured knowledge resources.
+7. A strong final enquiry CTA.
+8. A professional footer.
+
+Use varied layouts and editorial composition so the page does not feel like the same card pattern repeated repeatedly.
+
+## 7. Mobile-first design is mandatory
+
+Design for mobile first, then enhance the tablet and desktop layouts.
+
+Test at viewport widths around:
+
+320, 360, 375, 390, 414, 768, 1024 and 1440 px.
+
+Ensure:
+
+- No horizontal overflow.
+- Responsive typography and spacing.
+- Proper image cropping.
+- Readable specification tables.
+- Touch-friendly controls.
+- Forms that work with the mobile keyboard.
+- Modals that fit the screen.
+- No hover-only interactions.
+- Sticky actions that never obscure important content.
+- Good loading performance.
+- Accessible navigation and focus states.
+
+Use fluid layouts and responsive CSS rather than fixed desktop dimensions.
+
+Do not hide important content simply to make the page fit on mobile.
+
+---
+
+# PART 3 — COMMODITY CATALOGUE AND PRODUCT EXPERIENCE
+
+## 8. Improve commodity discovery
+
+Create a premium catalogue experience for the commodities actually present in the project.
+
+Where supported, organize products into relevant groups such as:
+
+- Spices.
+- Oilseeds.
+- Aluminium scrap.
+- Other existing agricultural or industrial materials.
+
+Implement or improve:
+
+- Product search.
+- Category filters.
+- Specification filters where data exists.
+- Sorting where appropriate.
+- Reset filters.
+- Responsive product grids.
+- Clear product detail navigation.
+- Loading, empty and error states.
+
+Keep catalogue cards visually distinctive and consistent.
+
+Each card should present the actual product name, relevant verified details, appropriate imagery and a clear “View Commodity” action.
+
+## 9. Improve commodity detail pages
+
+Every product page should provide a consistent, professional experience:
+
+- Breadcrumbs.
+- Product image or gallery.
+- Commodity name and category.
+- Concise product description.
+- Relevant specifications.
+- Variety, grade or processing options where supported.
+- Packaging information when verified.
+- “Request a Trade Quote” action.
+- Secondary WhatsApp enquiry action.
+- Relevant related commodities where available.
+
+Make product selectors, SKUs, specifications and enquiry details consistent.
+
+Do not display invented prices, inventory, MOQs, origin information or delivery dates.
+
+---
+
+# PART 4 — SMART REQUEST FOR QUOTATION SYSTEM
+
+## 10. Build a functional RFQ system
+
+Implement a structured Request for Quotation (RFQ) flow that allows buyers to submit real trade requirements.
+
+This must be a working feature, not a static form.
+
+### Entry points
+
+Allow buyers to start an RFQ from:
+
+- The global header.
+- The homepage.
+- Individual product pages.
+- The commodity catalogue.
+- The multi-product enquiry basket.
+- The buyer landing page.
+
+### RFQ form fields
+
+Use fields appropriate to the selected commodity and actual business workflow.
+
+Potential fields include:
+
+**Buyer information**
+- Company or organization name.
+- Contact person's name.
+- Business email.
+- Phone number with country calling code.
+- Country.
+- Preferred contact method.
+
+**Trade requirements**
+- Commodity.
+- Product or SKU, when applicable.
+- Grade, variety or processing type when supported.
+- Required quantity.
+- Quantity unit.
+- Destination country or delivery location.
+- Preferred packaging.
+- Target delivery period.
+- Required specifications.
+- Additional requirements.
+
+Do not make every field mandatory. Use sensible validation and keep the form concise.
+
+### Dynamic behavior
+
+- Prefill product details when the RFQ begins from a product page.
+- Support multiple commodities when started from the enquiry basket.
+- Show relevant fields based on the selected product.
+- Validate email, phone, quantity and required fields.
+- Clearly mark optional fields.
+- Preserve entered values when validation fails.
+- Display understandable inline errors.
+- Prevent accidental double submission.
+- Provide loading, success and error states.
+- Ensure the buyer can review the enquiry before submission.
+
+### Submission workflow
+
+When submitted:
+
+1. Validate the request on the server.
+2. Persist the enquiry using the actual application backend and data layer.
+3. Generate a unique enquiry reference using an appropriate existing pattern or a secure new implementation.
+4. Record a timestamp.
+5. Set an initial status such as `new`.
+6. Trigger existing email or notification integrations where configured.
+7. Show success only after the required persistence operation succeeds.
+8. Display the enquiry reference to the buyer.
+9. Provide appropriate next-step instructions.
+
+If email delivery fails after the enquiry has been saved, preserve the enquiry and report the notification issue through the appropriate internal logging or retry mechanism. Do not create duplicate enquiries.
+
+Never simulate successful submission if persistence fails.
+
+### Security
+
+- Validate inputs on both client and server.
+- Use safe database queries or the framework's appropriate data access layer.
+- Apply rate limiting and spam protection using compatible infrastructure.
+- Do not expose internal IDs or private records unnecessarily.
+- Do not send sensitive enquiry information to analytics.
+- Protect against injection, cross-site scripting and unauthorized access.
+- Use secure handling of any uploaded documents if uploads are supported.
+
+---
+
+# PART 5 — MULTI-PRODUCT ENQUIRY BASKET
+
+## 11. Implement a trade enquiry basket
+
+Allow buyers to add multiple commodities to one RFQ instead of submitting a separate enquiry for every product.
+
+This is a business enquiry basket, not a shopping cart. Do not introduce checkout, payments or public product prices.
+
+### Required functionality
+
+- Add a commodity from catalogue cards.
+- Add a commodity from its detail page.
+- Display the current selected products.
+- Remove individual products.
+- Change the requested quantity and unit where supported.
+- Select available grade, variety or processing options.
+- Edit product-specific requirements.
+- Display an appropriate empty state.
+- Continue browsing without losing the basket.
+- Open the RFQ form with all selected products.
+- Review the complete request before submission.
+- Submit all selected products as one enquiry.
+
+### User experience
+
+- Show a compact basket indicator in the header when appropriate.
+- On mobile, keep the basket easy to access without overcrowding the header.
+- Provide clear visual feedback when an item is added.
+- Prevent duplicate entries for the same product and compatible options.
+- Allow genuinely different product variants to remain separate.
+- Make removing or editing an item straightforward.
+
+### State persistence
+
+Inspect the existing application and choose an appropriate persistence mechanism.
+
+For anonymous visitors, local browser storage may be used for non-sensitive basket selections if consistent with the application and applicable privacy requirements.
+
+Do not store passwords, credentials or sensitive personal information in browser storage.
+
+For authenticated users, server-side persistence may be appropriate if the existing architecture supports it.
+
+The basket must survive normal navigation and refreshes according to the chosen implementation.
+
+### Data consistency
+
+- Use actual product IDs or stable identifiers.
+- Revalidate product availability and supported options on the server when submitting an RFQ.
+- Never trust client-provided product prices or specifications.
+- Do not fabricate unavailable product data.
+
+---
+
+# PART 6 — PRIVATE ENQUIRY MANAGEMENT DASHBOARD
+
+## 12. Build a secure internal dashboard
+
+Create a private dashboard for authorized NEXARIS personnel to manage incoming buyer and supplier enquiries.
+
+This dashboard must not be publicly accessible.
+
+Before implementation, inspect the existing authentication and authorization architecture.
+
+If authentication already exists, integrate with it. If it does not, implement an appropriate secure solution consistent with the existing stack and deployment environment.
+
+Do not create a hardcoded public admin password or expose credentials in the frontend.
+
+### Dashboard overview
+
+Provide useful operational summaries based on actual stored records, such as:
+
+- New enquiries.
+- Enquiries awaiting follow-up.
+- RFQs under review.
+- Supplier submissions awaiting review.
+- Recently updated enquiries.
+
+Show accurate counts only. Do not populate the dashboard with fake business metrics.
+
+### Enquiry management
+
+Authorized users should be able to:
+
+- View enquiries.
+- Search by reference, company, contact or commodity.
+- Filter by status, date and enquiry type.
+- Sort by relevant fields.
+- Open a detailed enquiry record.
+- Update status.
+- Assign an internal owner if supported.
+- Add private internal notes.
+- Record a follow-up date.
+- Review the requested commodities and specifications.
+- See creation and update timestamps.
+- View relevant notification status where available.
+
+Potential statuses:
+
+- New.
+- Under Review.
+- Supplier Coordination.
+- Quotation Preparation.
+- Quotation Sent.
+- Follow-up Required.
+- Won.
+- Lost.
+- Closed.
+
+Use these statuses only if they fit the actual workflow. Document the permitted transitions.
+
+### Enquiry detail page
+
+Provide a readable record containing:
+
+- Unique reference.
+- Buyer or supplier contact information.
+- Commodity requirements.
+- Quantity and unit.
+- Destination.
+- Additional specifications.
+- Current status.
+- Internal notes.
+- Assigned owner where supported.
+- Follow-up date.
+- Relevant activity history.
+
+### Private notes and activity
+
+Keep internal notes strictly separate from customer-visible information.
+
+If an activity log is implemented, record meaningful actions such as status changes, assignment changes and follow-up updates.
+
+Do not log passwords, authentication tokens or unnecessary sensitive information.
+
+### Security requirements
+
+- Require authentication.
+- Enforce server-side authorization on every protected operation.
+- Use role-based permissions if the application supports multiple roles.
+- Prevent unauthorized users from reading, editing or deleting records.
+- Protect internal notes and customer contact information.
+- Use secure sessions or the existing authentication mechanism.
+- Validate all updates on the server.
+- Apply appropriate request protection and rate limiting.
+- Avoid destructive deletion by default; use a safe archival approach where appropriate.
+- Log administrative actions without exposing unnecessary personal data.
+
+A hidden route is not sufficient security. Access must be enforced by the backend.
+
+### Dashboard UI
+
+Use a premium, restrained internal interface consistent with NEXARIS branding.
+
+The dashboard may be more information-dense than the public website, but it must remain readable and mobile-friendly.
+
+---
+
+# PART 7 — BUYER AND SUPPLIER LANDING PAGES
+
+## 13. Build a dedicated “For Buyers” page
+
+Create a conversion-focused landing page for procurement teams and businesses seeking commodities.
+
+Include:
+
+- Clear explanation of NEXARIS's actual role.
+- Supported commodity categories.
+- A simple explanation of the sourcing and enquiry process.
+- The information buyers should prepare before requesting a quote.
+- Relevant verified specification and documentation information.
+- A prominent RFQ CTA.
+- An option to add multiple commodities to one enquiry.
+- Useful FAQs.
+- Clear contact options.
+
+Avoid unsupported guarantees about quality, stock, lead times, delivery or supplier verification.
+
+## 14. Build a dedicated “For Suppliers” page
+
+Create a professional page for suppliers, processors, aggregators and commodity businesses interested in working with NEXARIS.
+
+Include:
+
+- An accurate explanation of the supplier engagement process.
+- The commodity categories of interest based on actual business needs.
+- A clear supplier enquiry CTA.
+- A concise supplier submission form.
+- Instructions about useful product specifications and available documentation.
+- A clear statement that submitting a profile does not guarantee a partnership or order.
+
+### Supplier enquiry form
+
+Potential fields:
+
+- Business name.
+- Contact person's name.
+- Business email.
+- Phone with country code.
+- Country and operating location.
+- Commodity offered.
+- Product form, grade or specifications.
+- Indicative available capacity.
+- Quantity unit.
+- Packaging details.
+- Additional information.
+
+Make fields optional where appropriate.
+
+Only request documents necessary for the initial enquiry. If uploads are implemented, use authenticated or otherwise appropriately protected storage, validate file types and sizes, and prevent public exposure.
+
+### Supplier workflow
+
+- Persist submissions using the existing backend or a correctly integrated new data model.
+- Generate a unique supplier enquiry reference.
+- Assign an appropriate initial review status.
+- Make submissions available in the private dashboard.
+- Send notifications only through configured and verified integrations.
+- Do not publicly display supplier names, contact details, prices or capacity.
+
+---
+
+# PART 8 — TRADE KNOWLEDGE CENTRE
+
+## 15. Build a useful knowledge publishing experience
+
+Create a Knowledge Centre that supports discoverability, buyer education and organic search.
+
+Do not build a static grid of fake blog posts.
+
+### Initial content categories
+
+Use categories relevant to NEXARIS's real business, such as:
+
+- Commodity Specifications.
+- Agricultural Commodity Trade.
+- Metals and Scrap.
+- Export Documentation.
+- Quality and Inspection.
+- Sourcing and Procurement.
+- International Trade Processes.
+
+Only publish topics relevant to the actual business and the expertise available.
+
+### Knowledge Centre homepage
+
+Include:
+
+- A distinctive editorial header.
+- Featured article.
+- Topic categories.
+- Article search.
+- Useful article cards.
+- Publication or revision dates.
+- Clear reading hierarchy.
+- Related articles.
+- Relevant commodity links.
+- A subtle enquiry CTA where appropriate.
+
+### Article detail pages
+
+Support:
+
+- Unique URLs.
+- Title and description.
+- Author or reviewer where genuinely known.
+- Publication and revision dates.
+- Readable body content.
+- Table of contents for longer articles.
+- Headings, lists, tables and relevant images.
+- Related articles.
+- References and sources where appropriate.
+- A clear CTA related to the article's subject.
+
+### Content management
+
+Inspect the current architecture before deciding how content is stored.
+
+Use an existing CMS or content model if available. Otherwise, choose a maintainable implementation consistent with the stack.
+
+If an admin publishing interface is introduced, protect it with the same secure authentication and authorization principles as the enquiry dashboard.
+
+Do not create an unauthenticated endpoint that allows the public to publish or edit content.
+
+### Accuracy
+
+- Do not fabricate articles, authors, quotations or sources.
+- Do not publish invented trade statistics.
+- Do not present legal or regulatory guidance as universally applicable.
+- Clearly distinguish general information from requirements that depend on commodity, country, transaction or shipment.
+- Require review of regulatory and compliance content before publication.
+- Include relevant authoritative sources for technical and regulatory articles.
+
+The knowledge centre should be useful and trustworthy, not merely an SEO keyword collection.
+
+---
+
+# PART 9 — INTERNATIONAL-READY FORMS
+
+## 16. Design forms for domestic and international buyers
+
+Build international-ready forms for RFQs, buyer enquiries and supplier submissions.
+
+### Country and phone inputs
+
+- Use an appropriate searchable country selector where beneficial.
+- Support international calling codes.
+- Store country and calling code separately where the data model supports it.
+- Validate numbers appropriately without assuming every country follows one format.
+- Do not silently change a user's selected country.
+- Use clear error messages.
+
+### Quantity and measurement units
+
+Support appropriate units for each commodity based on the actual product model.
+
+Possible examples include:
+
+- Kilograms.
+- Metric tonnes.
+- Units or pieces, where applicable.
+- Other commodity-appropriate units.
+
+Do not assume every unit is valid for every product.
+
+Normalize quantities on the server only when the conversion is well-defined and the unit is known.
+
+Preserve the original entered quantity and unit where useful for commercial review.
+
+### Destinations and dates
+
+- Support country and destination fields.
+- Allow additional delivery-location details where necessary.
+- Handle dates consistently.
+- Use unambiguous date formats.
+- Avoid assuming that all users share the same time zone.
+- Store timestamps consistently using the existing architecture, preferably with timezone awareness.
+
+### Currency
+
+If the existing system does not support prices or currencies, do not add invented price fields or display fake indicative pricing.
+
+If a future workflow genuinely requires currency, store the currency code separately from monetary amounts and avoid silently converting currencies.
+
+### Accessibility and usability
+
+- Use explicit field labels.
+- Clearly mark required fields.
+- Preserve valid user input after errors.
+- Support keyboard navigation.
+- Ensure the mobile keyboard does not obscure important controls.
+- Use appropriate autocomplete attributes where useful.
+- Keep forms as short as the workflow allows.
+
+---
+
+# PART 10 — VISUAL INTERACTIONS AND MOTION
+
+## 17. Add refined interactions
+
+Add motion and interactive feedback that improve clarity and perceived quality.
+
+Examples:
+
+- Subtle image reveal transitions.
+- Refined navigation transitions.
+- Responsive menu animations.
+- Clear basket-add feedback.
+- Smooth product selector state changes.
+- Carefully controlled accordion transitions.
+- Gentle hover feedback on desktop.
+- Accessible form validation states.
+- Small progress indicators for multistep RFQs.
+- Subtle section transitions.
+
+Requirements:
+
+- Respect reduced-motion preferences.
+- Avoid long entrance animations.
+- Avoid unnecessary parallax.
+- Avoid animations that delay user actions.
+- Do not animate every element independently.
+- Ensure keyboard and touch interactions work equally well.
+- Avoid layout shifts during animation.
+- Use the existing animation library where appropriate rather than adding unnecessary dependencies.
+
+Visual effects must never compromise performance, accessibility or conversion.
+
+---
+
+# PART 11 — TRUST, COMPLIANCE AND CONTACT INFORMATION
+
+## 18. Audit public business claims
+
+Review all existing certification logos, registration references, company credentials and product claims.
+
+Examples may include IEC, FSSAI, Spices Board, IOPEPC, FDA, ISO 22000 and Halal references.
+
+Do not assume NEXARIS holds any specific registration, certification or membership.
+
+- Preserve only substantiated claims.
+- Distinguish registration, certification, membership and general compliance requirements.
+- Remove unsupported claims from public display.
+- Never fabricate certificate numbers or verification URLs.
+- Flag unresolved claims for business-owner review.
+
+Check contact details against the existing approved business configuration.
+
+Do not invent or alter legal identifiers, addresses or company registration information.
+
+---
+
+# PART 12 — TECHNICAL ARCHITECTURE AND DATA INTEGRITY
+
+## 19. Design the data model carefully
+
+Inspect the current schema before implementing new entities.
+
+The new features may require entities or equivalent structures for:
+
+- Buyer enquiries.
+- RFQ line items.
+- Supplier submissions.
+- Enquiry status history.
+- Private internal notes.
+- Follow-up assignments.
+- Knowledge articles.
+- Knowledge categories.
+- User roles or permissions, if not already implemented.
+
+These are conceptual requirements, not instructions to blindly create duplicate tables.
+
+Reuse existing models where they already provide the necessary functionality.
+
+### Data integrity requirements
+
+- Use stable identifiers.
+- Apply appropriate foreign keys and indexes where supported.
+- Validate relationships on the server.
+- Use transactions for operations that must succeed together.
+- Prevent duplicate RFQs caused by repeated submission.
+- Preserve enquiry history where operationally necessary.
+- Handle failed notifications without losing saved enquiries.
+- Implement safe and documented migrations.
+- Avoid destructive data transformations.
+
+Do not introduce a second database or parallel backend without a clear technical justification.
+
+## 20. API and integration rules
+
+Before adding or changing APIs:
+
+1. Inspect existing endpoint contracts.
+2. Identify the source of truth for each feature.
+3. Reuse existing endpoints where appropriate.
+4. Document any new endpoints and schemas.
+5. Preserve compatibility with current clients where possible.
+6. Validate request and response data.
+7. Add appropriate error handling.
+8. Protect sensitive operations with authorization.
+9. Document configuration requirements.
+
+Do not claim that an email service, database, notification service or analytics integration is operational unless it is actually configured and tested.
+
+---
+
+# PART 13 — PERFORMANCE, SEO AND ACCESSIBILITY
+
+## 21. Performance
+
+- Optimize image sizes and formats.
+- Use responsive image sources where appropriate.
+- Lazy-load appropriate below-the-fold images.
+- Avoid delaying the hero image unnecessarily.
+- Reduce unnecessary JavaScript.
+- Avoid unnecessary dependencies.
+- Prevent layout shifts.
+- Optimize fonts and critical rendering.
+- Avoid making every interactive element dependent on a large client-side bundle.
+
+## 22. SEO
+
+- Preserve valid existing URLs where possible.
+- Add appropriate unique titles and descriptions.
+- Use a logical heading hierarchy.
+- Implement canonical URLs correctly.
+- Check the apex and www domain behavior.
+- Verify sitemap and robots directives.
+- Add appropriate structured data only when supported by real content.
+- Create unique commodity and knowledge article URLs.
+- Avoid duplicate pages created by filters and query parameters.
+- Do not create fake reviews, ratings, offers or product availability in structured data.
+
+## 23. Accessibility
+
+- Use semantic HTML.
+- Provide meaningful image alt text.
+- Support keyboard navigation.
+- Ensure visible focus states.
+- Provide accessible form labels and errors.
+- Maintain sufficient color contrast.
+- Ensure menus, modals and accordions work with assistive technology.
+- Respect reduced-motion preferences.
+- Ensure screen-reader announcements for important form submission states.
+
+---
+
+# PART 14 — TESTING AND ACCEPTANCE
+
+## 24. Required testing
+
+After implementation, test the actual application.
+
+### Existing functionality
+
+- Existing routes.
+- Existing product pages.
+- Product selectors.
+- Search and filters.
+- Contact links.
+- WhatsApp links.
+- Existing APIs and integrations.
+
+### RFQ
+
+- Valid submission.
+- Invalid submission.
+- Missing required fields.
+- International phone formats.
+- Multiple product line items.
+- Duplicate submission attempts.
+- Backend failure.
+- Notification failure.
+- Correct success confirmation.
+
+### Enquiry basket
+
+- Add product.
+- Remove product.
+- Edit quantity.
+- Change supported options.
+- Navigate between pages.
+- Refresh and verify intended persistence.
+- Submit multiple products in one RFQ.
+- Handle unavailable or invalid products.
+
+### Private dashboard
+
+- Unauthenticated access is denied.
+- Authorized access works.
+- Unauthorized API operations are denied.
+- Search and filters work.
+- Status updates persist.
+- Private notes remain private.
+- Follow-up dates save correctly.
+- Records cannot be accessed across unauthorized scopes.
+
+### Supplier pages
+
+- Form validation.
+- Submission persistence.
+- Dashboard visibility.
+- Notification behavior.
+- Document upload security, if applicable.
+
+### Knowledge centre
+
+- Article navigation.
+- Search and category filters.
+- Correct article URLs.
+- Responsive reading layout.
+- Content authorization.
+- Accurate metadata and links.
+
+### Responsive testing
+
+Test approximately:
+
+320, 360, 375, 390, 414, 768, 1024 and 1440 px.
+
+Check for:
+
+- Horizontal overflow.
+- Broken layouts.
+- Overlapping elements.
+- Unusable tables.
+- Incorrect menu behavior.
+- Forms obscured by the mobile keyboard.
+- Modals exceeding the viewport.
+- Distorted logos and images.
+
+### Automated quality checks
+
+Run the available:
+
+- Unit tests.
+- Integration tests.
+- End-to-end tests where configured.
+- Linting.
+- Type checking.
+- Production build.
+
+Fix implementation-related failures.
+
+Do not report a test as passed unless it was actually executed.
+
+---
+
+# PART 15 — IMPLEMENTATION PHASES
+
+## Phase 1: Audit and baseline
+
+Inspect the project, map existing functionality, identify risks and establish the implementation plan.
+
+## Phase 2: Major visual redesign
+
+Implement the new design system, compact logo, header, navigation, homepage, commodity catalogue, product pages and footer.
+
+## Phase 3: Buyer experience
+
+Implement the buyer landing page, smart RFQ flow, international-ready forms and multi-product enquiry basket.
+
+## Phase 4: Supplier experience
+
+Implement the supplier landing page, supplier submission flow and secure storage of submissions.
+
+## Phase 5: Internal operations
+
+Implement the private enquiry dashboard, authorization, status management, private notes and follow-up workflow.
+
+## Phase 6: Knowledge centre
+
+Implement the knowledge centre, article pages, search, categories and secure content management if required.
+
+## Phase 7: Motion and refinement
+
+Add restrained visual interactions, responsive refinements, accessible states and performance optimizations.
+
+## Phase 8: Verification
+
+Run the full available test suite, build, responsive checks, integration checks and security checks.
+
+Complete all feasible phases. Do not stop after creating a plan or only redesigning the homepage.
+
+If a feature is blocked by missing credentials, infrastructure or business decisions, finish the independent work, document the blocker and identify the precise action needed.
+
+---
+
+# PART 16 — FINAL DELIVERABLES
+
+At completion, provide a concise report containing:
+
+1. Summary of the visual redesign.
+2. Files and components changed.
+3. New routes and features implemented.
+4. RFQ and basket behavior.
+5. Dashboard authentication and authorization model.
+6. New database models or migrations, if any.
+7. Integrations reused or added.
+8. Environment configuration required, without revealing secrets.
+9. Build, lint, type-check and test results.
+10. Responsive viewports actually tested.
+11. Security considerations and remaining risks.
+12. Business claims requiring owner verification.
+13. Any features blocked by external dependencies.
+14. Deployment and rollback instructions.
+
+Include an explicit distinction between:
+
+- Implemented and tested.
+- Implemented but not fully tested.
+- Blocked or awaiting configuration.
+- Awaiting business-owner verification.
+
+# FINAL DIRECTIVE
+
+Transform NEXARIS from a conventional company website into a premium, mobile-first B2B trade platform with a distinctive visual identity and a clear commercial purpose.
+
+The website should help buyers discover commodities, prepare structured RFQs, combine multiple products into one enquiry and communicate their requirements internationally. It should help suppliers submit offers and give authorized NEXARIS personnel a secure way to manage incoming opportunities. The Knowledge Centre should support useful, accurate trade education.
+
+**Preserve the existing codebase, verified data, working business logic and integrations. Build real functionality rather than mockups. Never fabricate commercial or compliance information. Prioritize mobile usability, security, data integrity and actual end-to-end testing.**

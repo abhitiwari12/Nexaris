@@ -13,6 +13,11 @@ import { SpicesOilseedsPage } from './pages/SpicesOilseedsPage';
 import { AluminiumScrapPage } from './pages/AluminiumScrapPage';
 import { ProductDetailPage } from './pages/ProductDetailPage';
 import { ContactPage } from './pages/ContactPage';
+import { ForBuyersPage } from './pages/ForBuyersPage';
+import { ForSuppliersPage } from './pages/ForSuppliersPage';
+import { KnowledgeCentrePage } from './pages/KnowledgeCentrePage';
+import { AboutPage } from './pages/AboutPage';
+import { OwnerCrmPage } from './pages/crm/OwnerCrmPage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsOfServicePage } from './pages/TermsOfServicePage';
 import { RefundPolicyPage } from './pages/RefundPolicyPage';
@@ -35,8 +40,18 @@ function RouteRenderer() {
       document.title = 'Spices & Oilseeds Wholesale Catalogue | NEXARIS';
     } else if (cleanPath === '/aluminium-scrap') {
       document.title = 'Aluminium Scrap Industrial Catalogue | NEXARIS';
+    } else if (cleanPath === '/buyers') {
+      document.title = 'For International Buyers | NEXARIS B2B Sourcing';
+    } else if (cleanPath === '/suppliers') {
+      document.title = 'For Suppliers & Aggregators | NEXARIS Procurement';
+    } else if (cleanPath === '/knowledge' || cleanPath.startsWith('/knowledge/')) {
+      document.title = 'Trade Knowledge Centre & Specifications | NEXARIS';
+    } else if (cleanPath === '/about') {
+      document.title = 'About NEXARIS | Corporate Profile & Leadership';
     } else if (cleanPath === '/contact') {
       document.title = 'Contact & Trade Quotations | NEXARIS';
+    } else if (cleanPath === '/crm' || cleanPath === '/admin') {
+      document.title = 'Owner CRM Console | NEXARIS Trade Desk';
     } else if (cleanPath === '/privacy-policy') {
       document.title = 'Privacy Policy | NEXARIS';
     } else if (cleanPath === '/terms-of-service') {
@@ -93,9 +108,34 @@ function RouteRenderer() {
     }
   }
 
-  // Route 6: Contact & Quotations
+  // Route 6: For Buyers Landing
+  if (cleanPath === '/buyers') {
+    return <ForBuyersPage />;
+  }
+
+  // Route 7: For Suppliers Landing
+  if (cleanPath === '/suppliers') {
+    return <ForSuppliersPage />;
+  }
+
+  // Route 8: Knowledge Centre & Article Detail
+  if (cleanPath === '/knowledge' || cleanPath.startsWith('/knowledge/')) {
+    return <KnowledgeCentrePage />;
+  }
+
+  // Route 9: About NEXARIS
+  if (cleanPath === '/about') {
+    return <AboutPage />;
+  }
+
+  // Route 10: Contact & Quotations
   if (cleanPath === '/contact') {
     return <ContactPage />;
+  }
+
+  // Route 11: Owner CRM Console
+  if (cleanPath === '/crm' || cleanPath === '/admin') {
+    return <OwnerCrmPage />;
   }
 
   // Compliance & Legal Routes
@@ -138,7 +178,7 @@ function RouteRenderer() {
             href="/spices-oilseeds"
             className="px-4 py-2.5 text-xs font-semibold text-[#10243D] bg-[#F1F4F7] hover:bg-[#DCE2E8] rounded transition-colors border border-[#DCE2E8]"
           >
-            Spices & Oilseeds
+            Spices &amp; Oilseeds
           </Link>
           <Link
             href="/aluminium-scrap"
@@ -153,6 +193,14 @@ function RouteRenderer() {
 }
 
 function MainLayout() {
+  const { path } = useRouter();
+  const cleanPath = (path.split('?')[0].split('#')[0] || '/').replace(/\/+$/, '') || '/';
+  const isCrmRoute = cleanPath === '/crm' || cleanPath === '/admin';
+
+  if (isCrmRoute) {
+    return <RouteRenderer />;
+  }
+
   // Public corporate website layout
   return (
     <div className="min-h-screen flex flex-col bg-[#F1F4F7] text-[#344256]">
@@ -188,4 +236,3 @@ export default function App() {
     </RouterProvider>
   );
 }
-
