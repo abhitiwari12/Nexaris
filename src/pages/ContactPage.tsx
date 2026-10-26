@@ -62,7 +62,7 @@ export function ContactPage() {
           businessEmail,
           phoneOrWhatsApp,
           buyerLocation,
-          productName: selectedProductObj ? selectedProductObj.name : `${division === 'aluminium-scrap' ? 'Aluminium Scrap' : 'Spices & Oilseeds'} Trade`,
+          productName: selectedProductObj ? selectedProductObj.name : `${division === 'jaggery' ? 'Natural Jaggery Sweeteners' : 'Spices & Oilseeds'} Trade`,
           division,
           requiredQuantity,
           quantityUnit,
@@ -252,16 +252,16 @@ export function ContactPage() {
                     <button
                       type="button"
                       onClick={() => {
-                        setDivision('aluminium-scrap');
+                        setDivision('jaggery');
                         setProductSlug('');
                       }}
                       className={`px-3 py-2 text-xs font-semibold rounded border transition-colors ${
-                        division === 'aluminium-scrap'
+                        division === 'jaggery'
                           ? 'bg-[#10243D] text-white border-[#10243D]'
                           : 'bg-white text-[#344256] border-[#DCE2E8] hover:bg-[#F1F4F7]'
                       }`}
                     >
-                      Aluminium Scrap
+                      Jaggery (Natural Sweeteners)
                     </button>
                   </div>
                 </div>
@@ -352,7 +352,7 @@ export function ContactPage() {
                       type="text"
                       value={phoneOrWhatsApp}
                       onChange={(e) => setPhoneOrWhatsApp(e.target.value)}
-                      placeholder="+91 98246 18484"
+                      placeholder="+91 85119 12115"
                       className="w-full px-3 py-2 text-xs border border-[#DCE2E8] rounded-md focus:outline-none focus:ring-1 focus:ring-[#10243D]"
                     />
                   </div>
@@ -597,7 +597,7 @@ export function ContactPage() {
                 Trade Enquiry Review Protocol
               </h4>
               <p className="leading-relaxed">
-                All submitted commercial requests are routed directly to the designated commodity desk (Spices & Oilseeds or Aluminium Scrap) based in Gandhinagar, Gujarat. Formal proforma quotations include:
+                All submitted commercial requests are routed directly to the designated commodity desk (Spices & Oilseeds or Jaggery Sweeteners) based in Gandhinagar, Gujarat. Formal proforma quotations include:
               </p>
               <ul className="space-y-1 text-[#5E6D82] list-disc pl-4">
                 <li>Detailed commodity grading specifications</li>

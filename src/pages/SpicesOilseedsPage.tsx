@@ -232,16 +232,16 @@ export function SpicesOilseedsPage() {
 
             <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col gap-2.5">
               <a
-                href="https://wa.me/919824618484?text=Hello%20NEXARIS%2C%20I%20am%20enquiring%20about%20Spices%20%26%20Oilseeds%20wholesale%20lots."
+                href="https://wa.me/918511912115?text=Hello%20NEXARIS%2C%20I%20am%20enquiring%20about%20Spices%20%26%20Oilseeds%20wholesale%20lots."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold text-white bg-emerald-600 hover:bg-emerald-700 rounded-md transition-colors"
               >
-                <span>WhatsApp: +91 98246 18484</span>
+                <span>WhatsApp: +91 85119 12115</span>
               </a>
               <div className="flex items-center gap-2">
                 <a
-                  href="tel:+919824618484"
+                  href="tel:+918511912115"
                   className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-semibold text-[#10243D] bg-[#F1F4F7] hover:bg-[#DCE2E8] rounded border border-[#DCE2E8] transition-colors"
                 >
                   <span>Call Desk</span>

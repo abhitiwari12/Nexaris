@@ -19,8 +19,8 @@ const SERVICES: ServiceCard[] = [
   {
     icon: Boxes,
     title: 'Origin Sourcing',
-    description: 'Direct procurement from Gujarat farming belts, Sortex mills in Unjha, and metal scrap aggregators for transparent pricing.',
-    points: ['Direct mandi procurement', 'Sortex 99%+ cleaned seeds', 'ISRI scrap specification sorting'],
+    description: 'Direct procurement from Gujarat farming belts, Sortex mills in Unjha, and verified sugarcane tracts for transparent pricing.',
+    points: ['Direct farmgate procurement', 'Sortex 99%+ cleaned seeds', 'Organic sugarcane clarification'],
   },
   {
     icon: PackageCheck,
@@ -32,7 +32,7 @@ const SERVICES: ServiceCard[] = [
     icon: ShieldCheck,
     title: 'Quality & Lab Inspection',
     description: 'Pre-shipment verification with accredited testing agencies (SGS, Geo-Chem) and certified Certificate of Analysis (COA).',
-    points: ['Moisture & purity checks', 'Pesticide & aflatoxin testing', 'Alloy spectrometry analysis'],
+    points: ['Moisture & purity checks', 'Pesticide & aflatoxin testing', 'Sucrose & Brix refractometry analysis'],
   },
   {
     icon: FileCheck2,

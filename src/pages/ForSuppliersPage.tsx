@@ -69,10 +69,10 @@ export function ForSuppliersPage() {
               SUPPLIER &amp; AGGREGATOR PARTNERSHIPS
             </div>
             <h1 className="text-3xl sm:text-5xl font-extrabold font-display tracking-tight leading-tight">
-              Supply Agricultural Commodities &amp; Non-Ferrous Metals to NEXARIS.
+              Supply Agricultural Commodities &amp; Natural Sweeteners to NEXARIS.
             </h1>
             <p className="text-sm sm:text-base text-[#94A3B8] leading-relaxed">
-              We partner with quality-conscious Indian farmers, APMC traders, Sortex processors, and metal scrap yards. Connect your commodity supply directly into our global export pipeline.
+              We partner with quality-conscious Indian farmers, APMC traders, Sortex millers, and certified sugarcane jaggery processors. Connect your commodity supply directly into our global export pipeline.
             </p>
           </div>
         </div>
@@ -103,7 +103,7 @@ export function ForSuppliersPage() {
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#C7A45B] shrink-0" />
-                  <span><strong>Aluminium &amp; Non-Ferrous Scrap:</strong> Wire Scrap (ISRI Barley), Taint Tabor, 6063 Extrusions, Utensil Scrap, Millberry Copper Wire.</span>
+                  <span><strong>Natural Jaggery Sweeteners:</strong> Organic Jaggery Powder (17011420), Premium Uniform Cubes (17011410), Traditional Solid Blocks, and Liquid Cane Syrup (17029090).</span>
                 </li>
               </ul>
             </div>
@@ -115,7 +115,7 @@ export function ForSuppliersPage() {
                 <span>Supplier Inspection Policy</span>
               </div>
               <p className="leading-relaxed text-[11px] text-amber-800">
-                Submitting a supplier profile or lot availability does not constitute a guaranteed purchase order. All incoming commodity lots undergo 100% lab quality verification, moisture check, and ISRI/APEDA compliance before container dispatch.
+                Submitting a supplier profile or lot availability does not constitute a guaranteed purchase order. All incoming commodity lots undergo 100% lab quality verification, moisture check, and APEDA/FSSAI compliance before container dispatch.
               </p>
             </div>
           </div>
@@ -238,9 +238,9 @@ export function ForSuppliersPage() {
                       <option value="Groundnut / Peanuts">Groundnut / Peanuts</option>
                       <option value="Sesame Seeds (Hulled/White/Black)">Sesame Seeds (Hulled/White/Black)</option>
                       <option value="Mustard Seeds">Mustard Seeds</option>
-                      <option value="Aluminium Wire Scrap (Barley)">Aluminium Wire Scrap (Barley)</option>
-                      <option value="Aluminium Taint Tabor / Extrusions">Aluminium Taint Tabor / Extrusions</option>
-                      <option value="Copper Wire Scrap (Millberry)">Copper Wire Scrap (Millberry)</option>
+                      <option value="Organic Jaggery Powder">Organic Jaggery Powder (HS 17011420)</option>
+                      <option value="Jaggery Cubes / Blocks">Jaggery Cubes &amp; Blocks (HS 17011410)</option>
+                      <option value="Liquid Jaggery Syrup">Liquid Jaggery Syrup (HS 17029090)</option>
                       <option value="Other Commodity">Other Commodity</option>
                     </select>
                   </div>

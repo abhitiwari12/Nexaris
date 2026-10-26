@@ -57,23 +57,23 @@ export const KNOWLEDGE_ARTICLES: Article[] = [
     ],
   },
   {
-    slug: 'isri-aluminium-scrap-specifications-barley-taint-tabor',
-    title: 'ISRI Aluminium Scrap Specifications: Barley, Taint Tabor, 6063 Profiles & Millberry Copper',
-    category: 'Metals & Industrial Scrap',
-    readTime: '7 min read',
+    slug: 'jaggery-export-standards-hs-code-17-organic-sweeteners',
+    title: 'Indian Jaggery Export Standards: HS Code Chapter 17, Moisture Thresholds & Zero-Chemical Processing',
+    category: 'Jaggery & Natural Sweeteners',
+    readTime: '6 min read',
     date: 'October 2026',
-    author: 'NEXARIS Metals Division',
-    excerpt: 'Technical guide to Institute of Scrap Recycling Industries (ISRI) scrap codes for secondary aluminium smelters and foundry charge preparation.',
+    author: 'NEXARIS Agro Division',
+    excerpt: 'Comprehensive B2B guide to export specifications for organic jaggery powder, portioned cubes, traditional blocks, and liquid syrup under HS Code Chapter 17.',
     tableOfContents: [
-      'Introduction to ISRI Non-Ferrous Scrap Classification',
-      'ISRI Barley: Bare Clean EC Aluminium Wire Scrap',
-      'ISRI Taint Tabor & 6063 Extrusion Alloys',
-      'Copper Millberry: Wire Rod & Secondary Melting Feed',
+      'Understanding HS Codes: 17011410, 17011420 & 17029090',
+      'Moisture Control (≤ 2.0% for Powder) & Microbial Stability',
+      'Zero-Chemical Clarification vs. Sodium Hydrosulphite Bleaching',
+      'Packaging Standards for Ocean Container Shipments',
     ],
     content: [
-      'Precision grading in non-ferrous metal scrap dictates furnace recovery yield and chemical composition in secondary smelting. ISRI Barley specification mandates clean, unalloyed aluminium wire scrap with minimum 99% EC aluminium content free from insulation or hair wire.',
-      'Taint Tabor covers clean old alloy aluminium sheet stock with 90-92% metallic yield. 6063 architectural extrusion scrap (ISRI Tense) provides clean magnesium-silicon profile cuts ideal for secondary billet production.',
-      'Millberry copper wire scrap represents bare bright unalloyed copper wire (99.9% Cu min) free from tin, enamel, or solder, preferred for copper cathode and wire rod casting.',
+      'Exporting Indian jaggery (cane gur) demands strict adherence to moisture thresholds to ensure shelf stability during long ocean voyages. For Organic Jaggery Powder (HS Code 17011420), a moisture level at or below 2.0% prevents clumping and micro-biological degradation, making it suitable for international retail shelves and industrial bakery formulations.',
+      'Unlike conventional domestic jaggery bleached using sodium hydrosulphite (hydrose), export-grade jaggery from NEXARIS is 100% sulphur-free, relying exclusively on organic clarification agents such as okra stalk extract to achieve a natural golden hue without toxic residues.',
+      'For portioned Jaggery Cubes (HS Code 17011410) and Traditional Blocks, moisture is maintained below 5.0% and 7.0% respectively, with Brix values exceeding 85°. In liquid jaggery syrup (Kakvi, HS Code 17029090), high concentration (Brix 75°–80°) ensures natural osmotic preservation without synthetic preservatives.',
     ],
   },
 ];
@@ -88,7 +88,7 @@ export function KnowledgeCentrePage() {
   const articleSlug = cleanPath.startsWith('/knowledge/') ? cleanPath.replace('/knowledge/', '') : null;
   const currentArticle = articleSlug ? KNOWLEDGE_ARTICLES.find((a) => a.slug === articleSlug) : null;
 
-  const categories = ['All', 'Spices & Quality Specifications', 'International Trade Processes', 'Metals & Industrial Scrap'];
+  const categories = ['All', 'Spices & Quality Specifications', 'International Trade Processes', 'Jaggery & Natural Sweeteners'];
 
   const filteredArticles = KNOWLEDGE_ARTICLES.filter((art) => {
     const matchesCategory = selectedCategory === 'All' || art.category === selectedCategory;
@@ -187,7 +187,7 @@ export function KnowledgeCentrePage() {
             NEXARIS Trade Knowledge Centre
           </h1>
           <p className="text-sm sm:text-base text-[#94A3B8] max-w-2xl leading-relaxed">
-            Technical guides, quality specifications, ISRI scrap codes, and export shipping protocols for international B2B buyers and suppliers.
+            Technical guides, quality specifications, FSSAI/APEDA standards, and export shipping protocols for international B2B buyers and suppliers.
           </p>
         </div>
       </section>

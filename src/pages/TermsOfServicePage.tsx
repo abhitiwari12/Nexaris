@@ -39,7 +39,7 @@ export function TermsOfServicePage() {
               operated by <strong>NEXARIS</strong>, based in Gandhinagar, Gujarat, India.
             </p>
             <p>
-              This website serves as an informational B2B catalogue, commercial showcase, and quotation enquiry channel across our two core commodity sectors: (1) Spices & Oilseeds, and (2) Aluminium Scrap. It does <strong>not</strong> operate as a consumer retail marketplace, nor does it process automatic point-of-sale consumer checkouts.
+              This website serves as an informational B2B catalogue, commercial showcase, and quotation enquiry channel across our core commodity sectors: (1) Spices &amp; Oilseeds, and (2) Natural Jaggery Sweeteners (HS Code Chapter 17). It does <strong>not</strong> operate as a consumer retail marketplace, nor does it process automatic point-of-sale consumer checkouts.
             </p>
           </section>
 
@@ -57,7 +57,7 @@ export function TermsOfServicePage() {
                 <strong>Indicative Information:</strong> Commodity descriptions, grade specifications, and indicative price guidelines displayed on this website or in preliminary communications are provided for guidance only.
               </li>
               <li>
-                <strong>Market Volatility:</strong> Agricultural commodities and non-ferrous metals are subject to daily price fluctuations driven by physical commodity spot mandis, international exchange benchmarks (including LME for aluminium scrap), exchange rates, freight tariffs, and seasonal crop yields.
+                <strong>Market Volatility:</strong> Agricultural commodities (including spices, oilseeds, and natural sugarcane sweeteners) are subject to daily price fluctuations driven by physical commodity spot mandis, international trade benchmarks, exchange rates, ocean freight tariffs, and seasonal crop yields.
               </li>
               <li>
                 <strong>Firm Commitments:</strong> A binding commercial commitment arises solely upon the execution of a written Sales Purchase Contract (SPC) or Proforma Invoice signed by an authorized partner of NEXARIS, accompanied by mutually agreed payment securities (such as Irrevocable Letters of Credit or agreed Advance Telegraphic Transfer).

@@ -1,6 +1,6 @@
 {
   "name": "NEXARIS",
-  "description": "NEXARIS is an Indian B2B commodity trading house connecting commercial buyers with wholesale spices, oilseeds, and industrial aluminium scrap.",
+  "description": "NEXARIS is an Indian B2B commodity trading house connecting commercial buyers with wholesale spices, oilseeds, and natural jaggery sweeteners (HS Code Chapter 17).",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

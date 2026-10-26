@@ -193,8 +193,10 @@ export function CrmEnquiriesTab({
                         {enq.status}
                       </span>
                       <span className="text-[10px] font-semibold px-2 py-0.5 rounded uppercase bg-[#F1F4F7] text-[#64748B]">
-                        {enq.division === 'aluminium-scrap' || enq.division === 'aluminium_scrap'
-                          ? 'Aluminium Scrap'
+                        {enq.division === 'jaggery'
+                          ? 'Jaggery Sweeteners'
+                          : enq.division === 'aluminium-scrap' || enq.division === 'aluminium_scrap'
+                          ? 'Jaggery Sweeteners'
                           : 'Spices & Oilseeds'}
                       </span>
                     </div>

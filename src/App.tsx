@@ -10,7 +10,7 @@ import { CookieConsentBanner } from './components/CookieConsentBanner';
 
 import { HomePage } from './pages/HomePage';
 import { SpicesOilseedsPage } from './pages/SpicesOilseedsPage';
-import { AluminiumScrapPage } from './pages/AluminiumScrapPage';
+import { JaggeryPage } from './pages/JaggeryPage';
 import { ProductDetailPage } from './pages/ProductDetailPage';
 import { ContactPage } from './pages/ContactPage';
 import { ForBuyersPage } from './pages/ForBuyersPage';
@@ -35,11 +35,11 @@ function RouteRenderer() {
   // Dynamic document title updater
   useEffect(() => {
     if (cleanPath === '/') {
-      document.title = 'NEXARIS | One Partner. Many Possibilities. — Spices, Oilseeds & Aluminium Scrap';
+      document.title = 'NEXARIS | One Partner. Many Possibilities. — Spices, Oilseeds & Natural Jaggery Sweeteners';
     } else if (cleanPath === '/spices-oilseeds') {
       document.title = 'Spices & Oilseeds Wholesale Catalogue | NEXARIS';
-    } else if (cleanPath === '/aluminium-scrap') {
-      document.title = 'Aluminium Scrap Industrial Catalogue | NEXARIS';
+    } else if (cleanPath === '/jaggery' || cleanPath === '/aluminium-scrap') {
+      document.title = 'Premium Jaggery & Natural Sweeteners Export Catalogue | NEXARIS';
     } else if (cleanPath === '/buyers') {
       document.title = 'For International Buyers | NEXARIS B2B Sourcing';
     } else if (cleanPath === '/suppliers') {
@@ -66,11 +66,17 @@ function RouteRenderer() {
       if (product) {
         document.title = `${product.name} | Spices & Oilseeds | NEXARIS`;
       }
+    } else if (cleanPath.startsWith('/jaggery/')) {
+      const slug = cleanPath.replace('/jaggery/', '');
+      const product = ALL_PRODUCTS.find((p) => p.slug === slug && p.division === 'jaggery');
+      if (product) {
+        document.title = `${product.name} | Natural Sweeteners | NEXARIS`;
+      }
     } else if (cleanPath.startsWith('/aluminium-scrap/')) {
       const slug = cleanPath.replace('/aluminium-scrap/', '');
-      const product = ALL_PRODUCTS.find((p) => p.slug === slug && p.division === 'aluminium-scrap');
+      const product = ALL_PRODUCTS.find((p) => p.slug === slug);
       if (product) {
-        document.title = `${product.name} | Aluminium Scrap | NEXARIS`;
+        document.title = `${product.name} | Natural Sweeteners | NEXARIS`;
       }
     }
   }, [cleanPath]);
@@ -94,15 +100,24 @@ function RouteRenderer() {
     }
   }
 
-  // Route 4: Aluminium Scrap Division
-  if (cleanPath === '/aluminium-scrap') {
-    return <AluminiumScrapPage />;
+  // Route 4: Jaggery Natural Sweeteners Division (/jaggery with alias for /aluminium-scrap)
+  if (cleanPath === '/jaggery' || cleanPath === '/aluminium-scrap') {
+    return <JaggeryPage />;
   }
 
-  // Route 5: Aluminium Scrap Product Detail (/aluminium-scrap/:slug)
+  // Route 5: Jaggery Product Detail (/jaggery/:slug)
+  if (cleanPath.startsWith('/jaggery/')) {
+    const slug = cleanPath.replace('/jaggery/', '');
+    const product = ALL_PRODUCTS.find((p) => p.slug === slug && p.division === 'jaggery');
+    if (product) {
+      return <ProductDetailPage product={product} />;
+    }
+  }
+
+  // Route 5b: Legacy alias redirect (/aluminium-scrap/:slug)
   if (cleanPath.startsWith('/aluminium-scrap/')) {
     const slug = cleanPath.replace('/aluminium-scrap/', '');
-    const product = ALL_PRODUCTS.find((p) => p.slug === slug && p.division === 'aluminium-scrap');
+    const product = ALL_PRODUCTS.find((p) => p.slug === slug || p.division === 'jaggery');
     if (product) {
       return <ProductDetailPage product={product} />;
     }
@@ -181,10 +196,10 @@ function RouteRenderer() {
             Spices &amp; Oilseeds
           </Link>
           <Link
-            href="/aluminium-scrap"
+            href="/jaggery"
             className="px-4 py-2.5 text-xs font-semibold text-[#10243D] bg-[#F1F4F7] hover:bg-[#DCE2E8] rounded transition-colors border border-[#DCE2E8]"
           >
-            Aluminium Scrap
+            Jaggery (Natural Sweeteners)
           </Link>
         </div>
       </div>

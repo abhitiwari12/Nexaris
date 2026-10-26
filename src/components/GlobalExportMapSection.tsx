@@ -23,7 +23,7 @@ export function GlobalExportMapSection() {
           </h2>
 
           <p className="text-sm sm:text-base text-[#94A3B8] leading-relaxed">
-            Connecting credible Indian processors and metal scrap aggregators to importers, food brands, and industrial smelters across key trade corridors.
+            Connecting credible Indian agricultural producers, Sortex millers, and certified sugarcane jaggery processors to importers, food brands, and wholesale distributors across key global corridors.
           </p>
         </div>
 

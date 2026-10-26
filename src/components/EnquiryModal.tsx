@@ -283,7 +283,7 @@ export function EnquiryModal() {
               {/* Actions */}
               <div className="flex flex-col sm:flex-row gap-2.5 pt-2">
                 <a
-                  href={`https://wa.me/919824618484?text=${encodeURIComponent(
+                  href={`https://wa.me/918511912115?text=${encodeURIComponent(
                     `Hello NEXARIS, I have submitted an enquiry (Ref: ${submissionSuccess.referenceNumber}) for ${submissionSuccess.productName} (${submissionSuccess.requiredQuantity}) to ${submissionSuccess.buyerLocation}. Please review and share available quotation details.`
                   )}`}
                   target="_blank"
@@ -291,7 +291,7 @@ export function EnquiryModal() {
                   className="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold text-white bg-emerald-600 hover:bg-emerald-700 rounded-md transition-colors"
                 >
                   <MessageCircle className="w-4 h-4" />
-                  <span>Send via WhatsApp (+91 98246 18484)</span>
+                  <span>Send via WhatsApp (+91 85119 12115)</span>
                 </a>
                 <button
                   type="button"
@@ -376,18 +376,18 @@ export function EnquiryModal() {
                   onClick={() =>
                     setFormData((prev) => ({
                       ...prev,
-                      division: 'aluminium-scrap',
+                      division: 'jaggery',
                       productSlug: '',
                       productName: '',
                     }))
                   }
                   className={`px-3 py-2 text-xs font-semibold rounded border transition-colors ${
-                    formData.division === 'aluminium-scrap'
+                    formData.division === 'jaggery'
                       ? 'bg-[#10243D] text-white border-[#10243D]'
                       : 'bg-white text-[#344256] border-[#DCE2E8] hover:bg-[#F1F4F7]'
                   }`}
                 >
-                  Aluminium Scrap
+                  Jaggery (Natural Sweeteners)
                 </button>
               </div>
 
@@ -415,7 +415,7 @@ export function EnquiryModal() {
                   <option value="">-- Choose Commodity or General Lot --</option>
                   {filteredProducts.map((p) => (
                     <option key={p.slug} value={p.slug}>
-                      {p.name} ({p.category === 'spices' ? 'Spice' : p.category === 'oilseeds' ? 'Oilseed' : 'Aluminium'})
+                      {p.name} ({p.category === 'spices' ? 'Spice' : p.category === 'oilseeds' ? 'Oilseed' : 'Jaggery'})
                     </option>
                   ))}
                 </select>
@@ -493,7 +493,7 @@ export function EnquiryModal() {
                     type="text"
                     value={formData.companyName}
                     onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-                    placeholder="e.g. Global Foods Ltd / Apex Smelters"
+                    placeholder="e.g. Global Foods Ltd / Organic Ingredients LLC"
                     className="w-full px-3 py-2 text-xs border border-[#DCE2E8] rounded-md focus:outline-none focus:ring-1 focus:ring-[#10243D]"
                   />
                 </div>
@@ -529,7 +529,7 @@ export function EnquiryModal() {
                     type="text"
                     value={formData.phoneOrWhatsApp}
                     onChange={(e) => setFormData({ ...formData, phoneOrWhatsApp: e.target.value })}
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 85119 12115"
                     className="w-full px-3 py-2 text-xs border border-[#DCE2E8] rounded-md focus:outline-none focus:ring-1 focus:ring-[#10243D]"
                   />
                 </div>
@@ -627,11 +627,14 @@ export function EnquiryModal() {
                     className="w-full px-3 py-2 text-xs border border-[#DCE2E8] rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-[#10243D]"
                   >
                     <option value="Standard 25kg / 50kg PP Sacks">Standard 25kg / 50kg PP Sacks</option>
+                    <option value="25kg Inner-Lined Moisture-Barrier PP Bags">25kg Inner-Lined Moisture-Barrier PP Bags</option>
+                    <option value="500g / 1kg Stand-Up Zip Pouches (Retail OEM)">500g / 1kg Stand-Up Zip Pouches (Retail OEM)</option>
+                    <option value="500g / 1kg Food Jars / Master Cartons">500g / 1kg Food Jars / Master Cartons (Cubes)</option>
+                    <option value="Individual Shrink Wrap + Master Cartons">Individual Shrink Wrap + Master Cartons (Blocks)</option>
+                    <option value="20kg HDPE Pails / 250kg Steel Drums">20kg HDPE Pails / 250kg Steel Drums (Liquid Syrup)</option>
                     <option value="Jute Bags for Export">Jute Bags for Export (Agro/Spices)</option>
                     <option value="Vacuum Sealed Bags">Vacuum Sealed Packs (Aroma Retention)</option>
-                    <option value="Retail Pouch & Private Label">Retail Pouch / Private Labeling (OEM)</option>
                     <option value="1000kg FIBC Jumbo Bags">1,000kg FIBC Jumbo Bags</option>
-                    <option value="Baled / Compressed Lots">Baled / Compressed Lots (Metals/Scrap)</option>
                   </select>
                 </div>
               </div>

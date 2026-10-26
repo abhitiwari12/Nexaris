@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowUpRight, MessageCircle, MessageSquare, Package, Check, Layers, ChevronRight } from 'lucide-react';
 import { Product } from '../types';
-import { ALL_PRODUCTS, SPICES_AND_OILSEEDS_PRODUCTS, ALUMINIUM_PRODUCTS } from '../data/products';
+import { ALL_PRODUCTS, SPICES_AND_OILSEEDS_PRODUCTS, JAGGERY_PRODUCTS } from '../data/products';
 import { Link, useRouter } from '../context/RouterContext';
 import { useEnquiry } from '../context/EnquiryContext';
 import { SITE_CONFIG, getWhatsAppUrl } from '../config/site';
@@ -25,16 +25,16 @@ export function ProductDetailPage({ product }: ProductDetailPageProps) {
   );
 
   const divisionPath =
-    product.division === 'spices-oilseeds' ? '/spices-oilseeds' : '/aluminium-scrap';
+    product.division === 'spices-oilseeds' ? '/spices-oilseeds' : '/jaggery';
   const divisionName =
-    product.division === 'spices-oilseeds' ? 'Spices & Oilseeds' : 'Aluminium Scrap';
+    product.division === 'spices-oilseeds' ? 'Spices & Oilseeds' : 'Jaggery & Natural Sweeteners';
 
   const categoryLabel =
     product.category === 'spices'
       ? 'Spices'
       : product.category === 'oilseeds'
       ? 'Oilseeds'
-      : 'Aluminium Scrap';
+      : 'Natural Sweetener';
 
   // WhatsApp click handler
   const handleWhatsAppClick = (e: React.MouseEvent) => {
@@ -50,7 +50,7 @@ export function ProductDetailPage({ product }: ProductDetailPageProps) {
 
   // Related products from same division (excluding current)
   const relatedProducts = (
-    product.division === 'spices-oilseeds' ? SPICES_AND_OILSEEDS_PRODUCTS : ALUMINIUM_PRODUCTS
+    product.division === 'spices-oilseeds' ? SPICES_AND_OILSEEDS_PRODUCTS : JAGGERY_PRODUCTS
   )
     .filter((p) => p.id !== product.id)
     .slice(0, 4);

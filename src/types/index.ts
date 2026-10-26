@@ -1,6 +1,6 @@
-export type Division = 'spices-oilseeds' | 'aluminium-scrap';
+export type Division = 'spices-oilseeds' | 'jaggery';
 
-export type CommodityCategory = 'spices' | 'oilseeds' | 'aluminium-scrap';
+export type CommodityCategory = 'spices' | 'oilseeds' | 'jaggery';
 
 export interface CommoditySpecification {
   label: string;
@@ -11,6 +11,8 @@ export interface Product {
   id: string;
   slug: string;
   name: string;
+  tagline?: string;
+  hsCode?: string;
   division: Division;
   category: CommodityCategory;
   shortDescription: string;

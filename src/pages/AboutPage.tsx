@@ -19,7 +19,7 @@ export function AboutPage() {
             NEXARIS — One Partner. Many Possibilities.
           </h1>
           <p className="text-sm sm:text-base text-[#94A3B8] max-w-3xl leading-relaxed">
-            NEXARIS facilitates international B2B trade in premium Indian spices, graded oilseeds, and non-ferrous aluminium scrap. Operating out of Gandhinagar, Gujarat, with ocean dispatch through Mundra Port &amp; Hazira Port.
+            NEXARIS facilitates international B2B trade in premium Indian spices, graded oilseeds, and natural jaggery sweeteners (HS Code Chapter 17). Operating out of Gandhinagar, Gujarat, with ocean dispatch through Mundra Port &amp; Hazira Port.
           </p>
         </div>
       </section>
@@ -30,7 +30,7 @@ export function AboutPage() {
           <div className="p-6 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] space-y-2">
             <h3 className="text-lg font-bold font-display text-[#0B1730]">Direct Sourcing Belts</h3>
             <p className="text-xs text-[#64748B] leading-relaxed">
-              Procuring directly from Western Indian agricultural centers (Gujarat &amp; Rajasthan) and regional metal aggregators for farmgate purity.
+              Procuring directly from Western Indian agricultural centers (Gujarat &amp; Rajasthan farming belts) and verified sugarcane tracts for farmgate purity.
             </p>
           </div>
 
@@ -44,7 +44,7 @@ export function AboutPage() {
           <div className="p-6 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] space-y-2">
             <h3 className="text-lg font-bold font-display text-[#0B1730]">100% Quality Protocol</h3>
             <p className="text-xs text-[#64748B] leading-relaxed">
-              Every shipment undergoes pre-loading lab testing, Sortex cleaning, and compliance verification with APEDA, Spices Board CRES, or ISRI scrap guidelines.
+              Every shipment undergoes pre-loading lab testing, Sortex cleaning, and compliance verification with APEDA, Spices Board CRES, and FSSAI food export standards.
             </p>
           </div>
         </div>

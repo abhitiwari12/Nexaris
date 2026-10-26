@@ -43,7 +43,7 @@ const DESTINATION_PORTS: ShippingPortRoute[] = [
     lat: 1.35,
     lng: 103.82,
     fclTransit: '7 - 10 Days',
-    primaryCargo: 'Groundnut, Spices & Aluminium Extrusions',
+    primaryCargo: 'Groundnut, Spices & Organic Jaggery Powder',
     color: '#38BDF8',
   },
   {
@@ -63,7 +63,7 @@ const DESTINATION_PORTS: ShippingPortRoute[] = [
     lat: -29.85,
     lng: 31.02,
     fclTransit: '14 - 18 Days',
-    primaryCargo: 'Red Chilli Powder, Turmeric & Metal Scrap',
+    primaryCargo: 'Red Chilli Powder, Turmeric & Traditional Jaggery Blocks',
     color: '#10B981',
   },
   {
@@ -73,7 +73,7 @@ const DESTINATION_PORTS: ShippingPortRoute[] = [
     lat: 31.23,
     lng: 121.47,
     fclTransit: '12 - 16 Days',
-    primaryCargo: 'Aluminium Wire Scrap & Castings',
+    primaryCargo: 'Premium Jaggery Cubes & Cane Syrup',
     color: '#A855F7',
   },
   {

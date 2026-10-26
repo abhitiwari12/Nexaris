@@ -40,7 +40,7 @@ export function PrivacyPolicyPage() {
               .
             </p>
             <p>
-              NEXARIS is a B2B commodity trading house operating across Spices & Oilseeds and Aluminium Scrap. Our services are directed strictly towards corporate entities, wholesale distributors, processors, recyclers, and adult commercial representatives. We practice strict data minimization.
+              NEXARIS is a B2B commodity trading house operating across Spices, Oilseeds, and Natural Jaggery Sweeteners. Our services are directed strictly towards corporate entities, wholesale distributors, food processors, and adult commercial representatives. We practice strict data minimization.
             </p>
           </section>
 
@@ -58,7 +58,7 @@ export function PrivacyPolicyPage() {
                 <strong>Contact Coordinates:</strong> Full name, business email address, company or trading firm name, and telephone / WhatsApp number.
               </li>
               <li>
-                <strong>Commercial Trade Specifications:</strong> Target commodity division (Spices, Oilseeds, or Aluminium Scrap), required quantities, packaging specifications, delivery terms (e.g. FOB / CIF), and destination port or city.
+                <strong>Commercial Trade Specifications:</strong> Target commodity division (Spices, Oilseeds, or Natural Jaggery Sweeteners), required quantities, packaging specifications, delivery terms (e.g. FOB / CIF), and destination port or city.
               </li>
               <li>
                 <strong>Technical & Navigation Metadata:</strong> Basic HTTP header information, anonymized IP addresses, and essential session identifiers required for clean page routing and security monitoring.

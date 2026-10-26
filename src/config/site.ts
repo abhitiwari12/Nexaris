@@ -20,7 +20,7 @@ export const SITE_CONFIG = {
   heroEyebrow: 'COMMODITY TRADING & SOURCING',
   heroHeadline: 'One Partner. Many Possibilities.',
   heroSubheadline:
-    'NEXARIS connects commercial opportunities across spices, oilseeds and aluminium scrap, working with buyers and suppliers to explore sourcing and trading requirements.',
+    'NEXARIS connects commercial opportunities across spices, oilseeds and organic jaggery products (natural sugarcane sweeteners), working with buyers and suppliers to explore sourcing and trading requirements.',
 
   // Business Divisions
   divisions: {
@@ -32,13 +32,13 @@ export const SITE_CONFIG = {
       description:
         'Explore our range of spices and oilseeds for wholesale trade, food processing and commodity sourcing.',
     },
-    aluminiumScrap: {
-      name: 'Aluminium Scrap',
-      slug: 'aluminium-scrap',
-      path: '/aluminium-scrap',
-      headline: 'Aluminium Scrap for Industrial Trade',
+    jaggery: {
+      name: 'Jaggery (Natural Sweeteners)',
+      slug: 'jaggery',
+      path: '/jaggery',
+      headline: 'Jaggery & Natural Sugarcane Sweeteners for Export',
       description:
-        'Explore aluminium scrap categories for remelting, recycling and industrial material sourcing.',
+        'Explore our export-grade organic jaggery powder, uniform sweetener cubes, traditional blocks, and liquid syrup under HS Code Chapter 17.',
     },
   },
 
@@ -57,7 +57,7 @@ export const SITE_CONFIG = {
     {
       title: 'Multiple Commodity Categories',
       description:
-        'Our current business scope includes spices, oilseeds and aluminium scrap.',
+        'Our current business scope includes spices, oilseeds and natural jaggery sweeteners.',
     },
     {
       title: 'Business-Oriented Approach',
@@ -69,10 +69,10 @@ export const SITE_CONFIG = {
   // Verified Business Contact Details
   contact: {
     businessName: 'NEXARIS',
-    phone: '+91 98246 18484',
-    phoneTel: '+919824618484',
-    whatsappNumber: '+919824618484',
-    whatsappClean: '919824618484',
+    phone: '+91 85119 12115',
+    phoneTel: '+918511912115',
+    whatsappNumber: '+918511912115',
+    whatsappClean: '918511912115',
     email: 'contact@nexaris.co.in',
     location: 'Gandhinagar, Gujarat, India',
     website: 'https://nexaris.co.in',

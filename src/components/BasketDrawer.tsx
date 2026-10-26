@@ -63,7 +63,7 @@ export function BasketDrawer() {
               <Package className="w-12 h-12 mx-auto text-[#CBD5E1]" />
               <h3 className="text-sm font-bold text-[#0B1730]">Your RFQ Basket is Empty</h3>
               <p className="text-xs text-[#94A3B8] max-w-xs mx-auto">
-                Browse our Spices, Oilseeds, or Aluminium Scrap catalogues and click "Add to RFQ Basket" to request bulk lot quotes for multiple commodities at once.
+                Browse our Spices, Oilseeds, or Natural Jaggery catalogues and click "Add to RFQ Basket" to request bulk lot quotes for multiple commodities at once.
               </p>
             </div>
           ) : (

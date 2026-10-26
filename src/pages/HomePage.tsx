@@ -39,53 +39,60 @@ export function HomePage() {
             <div className="lg:col-span-10 lg:col-start-2 space-y-6 text-center lg:py-10">
               
               {/* Eyebrow & Origin Badge */}
-              <div className="flex flex-wrap items-center justify-center gap-2 text-xs font-bold tracking-widest uppercase text-[#C7A45B]">
-                <span>GLOBAL B2B MERCHANT EXPORTER</span>
-                <span aria-hidden="true" className="text-[#64748B]">·</span>
-                <span className="text-[#94A3B8] font-normal">Gandhinagar, Gujarat, India</span>
+              <div className="flex flex-wrap items-center justify-center gap-2.5 text-[11px] font-black tracking-[0.2em] uppercase text-[#C7A45B]">
+                <span>GLOBAL MERCHANDISE EXPORT</span>
+                <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-[#162444]" />
+                <span className="text-[#94A3B8]">Gujarat, India</span>
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.12] font-display">
-                Connecting Global Demand with Trusted Indian Sourcing.<br />
-                <span className="text-[#C7A45B]">One Partner. Many Possibilities.</span>
+              <h1 className="text-4xl sm:text-6xl lg:text-[5.5rem] font-black tracking-tighter text-white leading-[1.05] font-display">
+                Connecting Global Demand with Strategic Indian Sourcing.<br />
+                <span className="text-[#C7A45B]">Precision Quality. Seamless Logistics.</span>
               </h1>
 
               {/* Supporting Value Proposition */}
               <div className="flex justify-center">
-                <p className="text-sm sm:text-base lg:text-lg text-[#94A3B8] leading-relaxed max-w-3xl font-normal">
-                  NEXARIS facilitates B2B trade across premium Indian spices, graded oilseeds, and non-ferrous aluminium scrap. Sourced directly from Western Indian agricultural belts and industrial aggregators, dispatched through Mundra Port &amp; Hazira Port.
+                <p className="text-base sm:text-lg lg:text-xl font-medium text-[#94A3B8] leading-relaxed max-w-4xl opacity-90">
+                  NEXARIS facilitates high-volume B2B trade across premium Indian spices, graded oilseeds, and certified organic jaggery products (natural sugarcane sweeteners under HS Code Chapter 17). Leveraging Western India's primary production belts and strategic maritime gateways to ensure unmatched purity and operational reliability.
                 </p>
               </div>
 
               {/* Primary & Secondary Action CTAs */}
-              <div className="pt-2 flex flex-wrap items-center justify-center gap-3.5">
+              <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
                 <Link
                   href="/spices-oilseeds"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-[#070F20] bg-[#C7A45B] hover:bg-[#B89347] rounded-md transition-colors cursor-pointer shadow-md min-h-[44px]"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-xs font-black uppercase tracking-widest text-[#070F20] bg-[#C7A45B] hover:bg-[#B89347] rounded-sm transition-all cursor-pointer shadow-xl hover:-translate-y-0.5 active:translate-y-0"
                 >
-                  <span>Explore Commodities</span>
+                  <span>Spices &amp; Oilseeds</span>
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+                <Link
+                  href="/jaggery"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-xs font-black uppercase tracking-widest text-white bg-white/10 hover:bg-white/20 border border-white/20 rounded-sm transition-all cursor-pointer shadow-xl hover:-translate-y-0.5 active:translate-y-0"
+                >
+                  <span>Jaggery Sweeteners</span>
+                  <ArrowRight className="w-4 h-4 text-[#C7A45B]" aria-hidden="true" />
                 </Link>
               </div>
 
               {/* B2B Scope & Protocol Indicators */}
-              <div className="pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs text-[#94A3B8] max-w-4xl mx-auto">
-                <div className="p-3.5 rounded-md bg-white/5 border border-white/10">
-                  <div className="font-bold text-white text-lg font-display tabular-nums">19+</div>
-                  <div className="text-[11px] text-[#94A3B8] mt-0.5">Commodity Grades</div>
+              <div className="pt-12 border-t border-white/5 grid grid-cols-2 sm:grid-cols-4 gap-6 text-xs text-[#94A3B8] max-w-5xl mx-auto">
+                <div className="space-y-1">
+                  <div className="font-black text-white text-2xl font-display tabular-nums tracking-tighter">19+</div>
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-[#64748B]">Commodity Grades</div>
                 </div>
-                <div className="p-3.5 rounded-md bg-white/5 border border-white/10">
-                  <div className="font-bold text-white text-lg font-display tabular-nums">100%</div>
-                  <div className="text-[11px] text-[#94A3B8] mt-0.5">Lot Inspection</div>
+                <div className="space-y-1">
+                  <div className="font-black text-white text-2xl font-display tracking-tighter">100%</div>
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-[#64748B]">Lot Inspection</div>
                 </div>
-                <div className="p-3.5 rounded-md bg-white/5 border border-white/10">
-                  <div className="font-bold text-white text-lg font-display shrink-0">Mundra</div>
-                  <div className="text-[11px] text-[#94A3B8] mt-0.5">Primary Gateway Port</div>
+                <div className="space-y-1">
+                  <div className="font-black text-white text-2xl font-display tracking-tighter">Mundra & Hazira</div>
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-[#64748B]">Strategic Gateways</div>
                 </div>
-                <div className="p-3.5 rounded-md bg-white/5 border border-white/10">
-                  <div className="font-bold text-[#C7A45B] text-lg font-display shrink-0">FOB / CIF</div>
-                  <div className="text-[11px] text-[#94A3B8] mt-0.5">Global Shipping Terms</div>
+                <div className="space-y-1">
+                  <div className="font-black text-[#C7A45B] text-2xl font-display tracking-tighter">FOB / CIF / CFR</div>
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-[#64748B]">Incoterms 2020</div>
                 </div>
               </div>
 

@@ -32,7 +32,7 @@ export function RefundPolicyPage() {
               <span>Important Commercial Trading Notice</span>
             </div>
             <p className="text-xs text-[#475569] leading-relaxed">
-              NEXARIS is an institutional B2B commodity trading house dealing in bulk agricultural commodities (Spices & Oilseeds) and industrial secondary metals (Aluminium Scrap). We do <strong>not</strong> sell retail consumer goods or operate an automated consumer shopping cart. Consequently, consumer return rights (such as retail "change of mind" returns) do not apply. Commercial trades are governed by bilateral Sales Purchase Contracts (SPCs) and the Indian Sale of Goods Act, 1930.
+              NEXARIS is an institutional B2B commodity trading house dealing in bulk agricultural commodities (Spices &amp; Oilseeds) and natural sugarcane sweeteners (Jaggery). We do <strong>not</strong> sell retail consumer goods or operate an automated consumer shopping cart. Consequently, consumer return rights (such as retail "change of mind" returns) do not apply. Commercial trades are governed by bilateral Sales Purchase Contracts (SPCs) and the Indian Sale of Goods Act, 1930.
             </p>
           </div>
 

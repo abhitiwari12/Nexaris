@@ -11,15 +11,15 @@ export function ForBuyersPage() {
   const buyerFaqs = [
     {
       q: 'How does NEXARIS ensure quality and specifications match buyer requirements?',
-      a: 'Every export lot undergoes 100% pre-shipment quality inspection. Agricultural commodities (spices & oilseeds) are Sortex-cleaned, moisture-tested, and certified for ASTA color, pungency (SHU), or curcumin percentage. Metals scrap lots are inspected for ISRI grade compliance and metallic yield recovery.',
+      a: 'Every export lot undergoes 100% pre-shipment quality inspection. Agricultural commodities (spices & oilseeds) are Sortex-cleaned, moisture-tested, and certified for ASTA color, pungency (SHU), or curcumin percentage. Natural jaggery products are tested for strict moisture limits (≤ 2.0% for powder), sucrose levels, and Brix refractometry, with certified 100% sulphur-free processing.',
     },
     {
       q: 'What shipping terms and ocean gateways do you support?',
       a: 'We primary export out of Mundra Port & Hazira Port in Gujarat, India. We offer standard international shipping terms including FOB Mundra/Hazira and CIF to destination ports worldwide.',
     },
     {
-      q: 'Can I combine multiple spice varieties or oilseeds into a single container load (FCL)?',
-      a: 'Yes! We support multi-commodity container loading and customized OEM private labeling, allowing buyers to consolidate different spice grades (e.g., Red Chilli Powder, Turmeric, Cumin) into a single 20ft or 40ft container.',
+      q: 'Can I combine multiple spices, oilseeds, or jaggery products into a single container load (FCL)?',
+      a: 'Yes! We support multi-commodity container loading and customized OEM private labeling, allowing buyers to consolidate different commodities (e.g., Red Chilli Powder, Turmeric, Cumin, and Jaggery Pouches) into a single 20ft or 40ft container.',
     },
     {
       q: 'What quality and regulatory export documentation is provided?',
@@ -92,7 +92,7 @@ export function ForBuyersPage() {
               </div>
               <h3 className="text-base font-bold font-display">Receive FOB / CIF Quote</h3>
               <p className="text-xs text-[#64748B] leading-relaxed">
-                Our trade desk evaluates farmgate/smelter availability and provides a competitive commercial quotation within 24 hours.
+                Our trade desk evaluates farmgate and processor lot availability and provides a competitive commercial quotation within 24 hours.
               </p>
             </div>
 

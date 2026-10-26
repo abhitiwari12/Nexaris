@@ -19,7 +19,7 @@ const FAQ_ITEMS: FaqItem[] = [
     category: 'Trade & Quotations',
     question: 'What is your Minimum Order Quantity (MOQ)?',
     answer:
-      'For agricultural commodities, spices, and oilseeds, standard commercial orders are 1x20ft FCL (Full Container Load, approx. 14–19 MT depending on commodity density) or 1x40ft FCL. For high-value whole spices (like Cardamom and Cloves) or trial shipments, LCL palletized consignments are evaluated on a case-by-case basis. For aluminium and metal scrap, our standard lot size is 1x20ft or 1x40ft FCL (approx. 20–25 MT).',
+      'For agricultural commodities, spices, and oilseeds, standard commercial orders are 1x20ft FCL (Full Container Load, approx. 14–19 MT depending on commodity density) or 1x40ft FCL. For organic jaggery powder, cubes, blocks, and syrup, standard lots start at 1x20ft FCL (approx. 18–22 MT) or palletized LCL consignments for trial orders. For high-value whole spices (like Cardamom and Cloves), trial LCL consignments are evaluated on a case-by-case basis.',
   },
   {
     category: 'Quality & Testing',

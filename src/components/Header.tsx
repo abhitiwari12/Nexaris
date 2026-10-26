@@ -114,11 +114,11 @@ export function Header() {
                             <span className="text-[11px] text-[#64748B] font-normal">Groundnut, Sesame, Mustard</span>
                           </Link>
                           <Link
-                            href="/aluminium-scrap"
+                            href="/jaggery"
                             className="block px-3 py-2 rounded text-xs font-semibold text-[#0B1730] hover:bg-[#F5F7FA] transition-colors"
                           >
-                            <span className="block font-bold">Aluminium Scrap</span>
-                            <span className="text-[11px] text-[#64748B] font-normal">ISRI Barley Wire, Taint Tabor, Extrusions</span>
+                            <span className="block font-bold">Natural Jaggery Sweeteners</span>
+                            <span className="text-[11px] text-[#64748B] font-normal">Organic Powder, Cubes, Blocks, Liquid Syrup</span>
                           </Link>
                         </div>
                       </div>
@@ -202,11 +202,11 @@ export function Header() {
                 Spices &amp; Oilseeds
               </Link>
               <Link
-                href="/aluminium-scrap"
+                href="/jaggery"
                 onClick={() => setMobileMenuOpen(false)}
                 className="block px-3 py-2.5 font-bold text-[#0B1730] hover:bg-[#F5F7FA] rounded-md"
               >
-                Aluminium Scrap
+                Natural Jaggery Sweeteners
               </Link>
 
               <div className="pt-2 border-t border-[#F1F5F9]" />

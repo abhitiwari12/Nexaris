@@ -21,7 +21,8 @@ interface MetricsData {
     open: number;
     closedWon: number;
     spicesAndOilseeds: number;
-    aluminiumScrap: number;
+    jaggery?: number;
+    aluminiumScrap?: number;
     estimatedPipelineValue: number;
   };
   activities: {
@@ -183,7 +184,7 @@ export function CrmDashboardTab({
           <div className="mt-3 pt-3 border-t border-[#F1F4F7] flex items-center justify-between text-xs text-[#64748B]">
             <span>{opportunities.spicesAndOilseeds} Spices</span>
             <span>·</span>
-            <span>{opportunities.aluminiumScrap} Aluminium</span>
+            <span>{opportunities.jaggery ?? opportunities.aluminiumScrap ?? 0} Jaggery</span>
             <ArrowUpRight className="w-3.5 h-3.5 text-[#C7A45B] ml-auto group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </div>
         </div>

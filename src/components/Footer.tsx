@@ -35,7 +35,7 @@ export function Footer() {
               {SITE_CONFIG.tagline}
             </p>
             <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed max-w-sm">
-              NEXARIS is a B2B commodity trading and sourcing business based in Gandhinagar, Gujarat, India, connecting opportunities across spices, oilseeds and aluminium scrap.
+              NEXARIS is a B2B commodity trading and sourcing business based in Gandhinagar, Gujarat, India, connecting opportunities across spices, oilseeds and natural jaggery sweeteners.
             </p>
             
             {/* Company LinkedIn Official Badge */}
@@ -70,10 +70,10 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/aluminium-scrap"
+                  href="/jaggery"
                   className="hover:text-white transition-colors block"
                 >
-                  Aluminium Scrap
+                  Jaggery Sweeteners
                 </Link>
               </li>
               <li>
@@ -94,10 +94,10 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/aluminium-scrap"
+                  href="/jaggery"
                   className="text-xs text-[#94A3B8]/80 hover:text-white transition-colors block pl-2 border-l border-white/20"
                 >
-                  Industrial Scrap (6)
+                  Export Jaggery (4)
                 </Link>
               </li>
             </ul>

@@ -535,7 +535,7 @@ export function CrmContactsTab({
                     type="text"
                     value={formData.commodityInterest}
                     onChange={(e) => setFormData({ ...formData, commodityInterest: e.target.value })}
-                    placeholder="e.g. Cumin Seeds, Aluminium Tense, Sesame"
+                    placeholder="e.g. Cumin Seeds, Jaggery Powder, Sesame"
                     className="w-full px-3 py-2 border border-[#DCE2E8] rounded-md focus:ring-1 focus:ring-[#0B1730] focus:outline-none"
                   />
                 </div>

@@ -32,13 +32,13 @@ const DIVISIONS_GALLERY: DivisionItem[] = [
     badge: '4 Categories',
   },
   {
-    id: 'div-aluminium',
-    title: 'Aluminium Scrap',
-    category: 'Industrial Non-Ferrous',
-    description: 'Secondary smelting feedstock including Taint Tabor, Wire scrap, 6061 and 6063 extrusions, and rod offcuts for industrial remelting.',
-    image: '/images/commodities/aluminium_division_banner_1792832351480.jpg',
-    link: '/aluminium-scrap',
-    badge: '6 Grades',
+    id: 'div-jaggery',
+    title: 'Natural Jaggery Sweeteners',
+    category: 'Jaggery & Cane Sugars (HS Ch. 17)',
+    description: 'Export-grade organic jaggery powder, portioned sweetener cubes, traditional solid cane blocks, and nutrient-rich liquid jaggery syrup.',
+    image: '/src/assets/images/jaggery_division_banner_1793009935414.jpg',
+    link: '/jaggery',
+    badge: '4 Export Grades',
   },
 ];
 
@@ -51,16 +51,16 @@ interface DivisionImageGalleryProps {
 export function DivisionImageGallery({
   className = '',
   title = 'Commodity Categories & Sourcing Catalogues',
-  subtitle = 'Explore our primary wholesale commodity categories with verified specifications, direct farmgate and scrap yard procurement, and Sortex cleaning.',
+  subtitle = 'Explore our primary wholesale commodity categories with verified specifications, direct farmgate procurement, and Sortex cleaning.',
 }: DivisionImageGalleryProps) {
-  const [activeTab, setActiveTab] = useState<'all' | 'spices' | 'oilseeds' | 'aluminium'>('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'spices' | 'oilseeds' | 'jaggery'>('all');
   const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
 
   const filteredItems = DIVISIONS_GALLERY.filter((item) => {
     if (activeTab === 'all') return true;
     if (activeTab === 'spices' && item.id === 'div-spices') return true;
     if (activeTab === 'oilseeds' && item.id === 'div-oilseeds') return true;
-    if (activeTab === 'aluminium' && item.id === 'div-aluminium') return true;
+    if (activeTab === 'jaggery' && item.id === 'div-jaggery') return true;
     return false;
   });
 
@@ -119,14 +119,14 @@ export function DivisionImageGallery({
             </button>
             <button
               type="button"
-              onClick={() => setActiveTab('aluminium')}
+              onClick={() => setActiveTab('jaggery')}
               className={`px-3.5 py-2 text-xs font-semibold rounded transition-colors cursor-pointer whitespace-nowrap min-h-[38px] ${
-                activeTab === 'aluminium'
+                activeTab === 'jaggery'
                   ? 'bg-[#0B1730] text-white'
                   : 'text-[#64748B] hover:text-[#0B1730]'
               }`}
             >
-              Aluminium Scrap
+              Jaggery Sweeteners
             </button>
           </div>
         </div>

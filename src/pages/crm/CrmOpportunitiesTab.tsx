@@ -264,7 +264,7 @@ export function CrmOpportunitiesTab({
             <option value="all">All Divisions</option>
             <option value="spices">Spices Division</option>
             <option value="oilseeds">Oilseeds Division</option>
-            <option value="aluminium_scrap">Aluminium Scrap Division</option>
+            <option value="jaggery">Jaggery Division</option>
             <option value="other">Other Commodities</option>
           </select>
         </div>
@@ -324,7 +324,7 @@ export function CrmOpportunitiesTab({
                             {opp.title}
                           </span>
                           <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded uppercase bg-[#F1F4F7] text-[#64748B] shrink-0">
-                            {opp.commodity_division === 'aluminium_scrap' ? 'Aluminium' : 'Agri'}
+                            {opp.commodity_division === 'jaggery' ? 'Jaggery' : opp.commodity_division === 'aluminium_scrap' ? 'Jaggery' : 'Agri'}
                           </span>
                         </div>
 
@@ -557,7 +557,7 @@ export function CrmOpportunitiesTab({
                   >
                     <option value="spices">Spices Division</option>
                     <option value="oilseeds">Oilseeds Division</option>
-                    <option value="aluminium_scrap">Aluminium Scrap Division</option>
+                    <option value="jaggery">Jaggery (Natural Sweeteners)</option>
                     <option value="other">Other Commodities</option>
                   </select>
                 </div>
