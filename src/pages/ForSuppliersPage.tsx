@@ -1,298 +1,340 @@
 import React, { useState } from 'react';
-import { ArrowRight, CheckCircle2, ShieldCheck, Building2, Send, AlertCircle } from 'lucide-react';
-import { useEnquiry } from '../context/EnquiryContext';
+import { CheckCircle2, ShieldCheck, Send, AlertCircle, MessageSquare, Mail, MapPin, Scale, FileCheck } from 'lucide-react';
+import { SITE_CONFIG } from '../config/site';
 
 export function ForSuppliersPage() {
-  const { openEnquiryModal } = useEnquiry();
   const [formData, setFormData] = useState({
-    businessName: '',
-    contactName: '',
-    email: '',
-    phone: '',
-    country: 'India',
-    location: '',
-    commodityOffered: 'Red Chilli / Spices',
-    productSpecs: '',
-    capacity: '',
-    unit: 'Metric Tonnes / Month',
-    packagingDetails: '',
-    notes: '',
+    supplierName: '',
+    locationDistrictState: '',
+    commodityOffered: 'Cumin Seeds (Jeera)',
+    availableLotSizeMt: '',
+    moistureLabReportAvailable: 'Yes — Lab COA Available',
+    contactNumber: '',
+    additionalNotes: '',
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [submitSuccess, setSubmitSuccess] = useState<any | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setErrorMessage('');
+
+    const refId = `SUP-${Date.now().toString(36).toUpperCase()}-${Math.floor(100 + Math.random() * 900)}`;
+    const submissionData = {
+      referenceNumber: refId,
+      timestamp: new Date().toISOString(),
+      ...formData,
+    };
 
     try {
-      const res = await fetch('/api/crm/enquiries', {
+      await fetch('/api/crm/enquiries', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           type: 'supplier',
-          company: formData.businessName,
-          name: formData.contactName,
-          email: formData.email,
-          phone: formData.phone,
-          country: formData.country,
+          company: formData.supplierName,
+          name: formData.supplierName,
+          phone: formData.contactNumber,
           commodity: formData.commodityOffered,
-          quantity: formData.capacity,
-          unit: formData.unit,
-          specifications: formData.productSpecs,
-          notes: `Location: ${formData.location} | Packaging: ${formData.packagingDetails} | ${formData.notes}`,
+          quantity: formData.availableLotSizeMt,
+          unit: 'MT',
+          notes: `District/State: ${formData.locationDistrictState} | Lab Report: ${formData.moistureLabReportAvailable} | Notes: ${formData.additionalNotes}`,
         }),
-      });
-
-      if (res.ok) {
-        setSubmitSuccess(true);
-      } else {
-        setSubmitSuccess(true); // Fallback success notice
-      }
+      }).catch(() => null);
     } catch {
-      setSubmitSuccess(true); // Fallback success notice
+      // offline dev fallback
     } finally {
       setIsSubmitting(false);
+      setSubmitSuccess(submissionData);
     }
   };
 
+  const supplierWhatsAppMessage = submitSuccess
+    ? `Hello NEXARIS Procurement Desk, I am registering as a supplier/FPO:\n- Name/FPO: ${submitSuccess.supplierName}\n- Location: ${submitSuccess.locationDistrictState}\n- Commodity: ${submitSuccess.commodityOffered}\n- Available Lot Size: ${submitSuccess.availableLotSizeMt} MT\n- Lab/Moisture Report: ${submitSuccess.moistureLabReportAvailable}\n- Contact: ${submitSuccess.contactNumber}\n- Ref: ${submitSuccess.referenceNumber}`
+    : '';
+
+  const whatsappDirectUrl = `https://wa.me/${SITE_CONFIG.contact.whatsappClean}?text=${encodeURIComponent(supplierWhatsAppMessage)}`;
+  const mailtoDirectUrl = `mailto:${SITE_CONFIG.contact.email}?subject=${encodeURIComponent(
+    `Supplier Lot Registration: ${submitSuccess?.commodityOffered || 'Agricultural Commodity'} [${submitSuccess?.referenceNumber || ''}]`
+  )}&body=${encodeURIComponent(supplierWhatsAppMessage)}`;
+
   return (
-    <div className="bg-[#F8FAFC] text-[#0B1730]">
+    <div className="bg-[#FAF8F5] text-stone-900 min-h-screen">
       {/* Hero Header */}
-      <section className="bg-[#070F20] text-white py-16 lg:py-20 border-b border-[#162444] relative overflow-hidden">
+      <section className="bg-[#0A192F] text-white py-14 sm:py-20 border-b border-white/10 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-4">
-            <div className="text-xs font-bold uppercase tracking-widest text-[#C7A45B]">
-              SUPPLIER &amp; AGGREGATOR PARTNERSHIPS
+          <div className="max-w-3xl space-y-3">
+            <div className="text-xs font-bold uppercase tracking-wider text-[#C5A059] flex items-center gap-1.5">
+              <ShieldCheck className="w-4 h-4 text-[#C5A059]" />
+              FARMER &amp; FPO PROCUREMENT DESK · GANDHINAGAR
             </div>
-            <h1 className="text-3xl sm:text-5xl font-extrabold font-display tracking-tight leading-tight">
-              Supply Agricultural Commodities &amp; Natural Sweeteners to NEXARIS.
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold tracking-tight text-white">
+              Sell to NEXARIS
             </h1>
-            <p className="text-sm sm:text-base text-[#94A3B8] leading-relaxed">
-              We partner with quality-conscious Indian farmers, APMC traders, Sortex millers, and certified sugarcane jaggery processors. Connect your commodity supply directly into our global export pipeline.
+            <p className="text-sm sm:text-base text-stone-300 leading-relaxed max-w-2xl">
+              Connect your verified harvest lots directly into institutional export pipelines. We purchase directly from farmers, Farmer Producer Organizations (FPOs), and certified APMC processors across Gujarat and Western India.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Supplier Engagement Terms & Form Section */}
-      <section className="py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      {/* Main Grid */}
+      <section className="py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
-          {/* Left Column: Requirements & Disclaimers */}
+          {/* Left Column: Requirements & Protocol */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="bg-white p-6 rounded-lg border border-[#E2E8F0] space-y-4 shadow-xs">
-              <div className="text-xs font-bold uppercase tracking-widest text-[#C7A45B]">
-                SUPPLY CATEGORIES OF INTEREST
+            <div className="bg-white p-6 rounded-xl border border-stone-200 space-y-4 shadow-xs">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#C5A059]">
+                PROCUREMENT CRITERIA
               </div>
-              <h2 className="text-xl font-bold font-display text-[#0B1730]">
-                Commodities We Actively Procurement
+              <h2 className="text-xl font-serif font-bold text-[#0A192F]">
+                Active Commodity Sourcing Requirements
               </h2>
 
-              <ul className="space-y-2 text-xs text-[#64748B]">
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#C7A45B] shrink-0" />
-                  <span><strong>Spices:</strong> Chilli (Teja, Sannam, Kashmiri), Turmeric (Lakadong, Erode, Salem), Cumin, Black Pepper, Cloves, Oregano, Star Anise, Bay Leaf, Cinnamon.</span>
+              <ul className="space-y-3 text-xs text-stone-600">
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-stone-900 block">Wholesale Spices:</strong>
+                    <span>Turmeric Whole/Powder, Cumin Seeds (Sortex 99.5%), Coriander, Red Chilli, Fennel Seeds, Fenugreek, and Whole Cloves/Cardamom.</span>
+                  </div>
                 </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#C7A45B] shrink-0" />
-                  <span><strong>Oilseeds:</strong> Groundnut (Splits, In Shell, Blanched), Sesame Seeds (White 99/1, Hulled 99.95%, Black), Mustard Seeds.</span>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-stone-900 block">Graded Oilseeds:</strong>
+                    <span>Groundnut (Bold &amp; Java counts), Sesame Seeds (Natural White 99/1 &amp; Hulled 99.95%), Mustard Seeds, and Castor Seeds.</span>
+                  </div>
                 </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#C7A45B] shrink-0" />
-                  <span><strong>Natural Jaggery Sweeteners:</strong> Organic Jaggery Powder (17011420), Premium Uniform Cubes (17011410), Traditional Solid Blocks, and Liquid Cane Syrup (17029090).</span>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-stone-900 block">Natural Jaggery Sweeteners:</strong>
+                    <span>100% Sulphur-free organic jaggery powder, uniform cubes (15mm/20mm), traditional blocks, and pure sugarcane syrup (Kakvi).</span>
+                  </div>
                 </li>
               </ul>
             </div>
 
-            {/* Disclaimer Box */}
-            <div className="p-5 rounded-lg bg-amber-50/80 border border-amber-200 text-amber-900 space-y-2 text-xs">
+            {/* Quality & Sampling Notice */}
+            <div className="p-5 rounded-xl bg-amber-50/80 border border-amber-200 text-amber-950 space-y-2 text-xs">
               <div className="flex items-center gap-2 font-bold text-amber-950">
-                <AlertCircle className="w-4 h-4 text-amber-600 shrink-0" />
-                <span>Supplier Inspection Policy</span>
+                <AlertCircle className="w-4 h-4 text-amber-700 shrink-0" />
+                <span>Verification &amp; Payment Settlement</span>
               </div>
-              <p className="leading-relaxed text-[11px] text-amber-800">
-                Submitting a supplier profile or lot availability does not constitute a guaranteed purchase order. All incoming commodity lots undergo 100% lab quality verification, moisture check, and APEDA/FSSAI compliance before container dispatch.
+              <p className="leading-relaxed text-[11px] text-amber-900">
+                All lots are subject to physical sampling and laboratory moisture testing prior to warehouse receipt at Gandhinagar or Mundra consolidation points. Prompt commercial settlement upon laboratory sign-off.
               </p>
             </div>
           </div>
 
-          {/* Right Column: Supplier Submission Form */}
-          <div className="lg:col-span-7 bg-white p-6 sm:p-8 rounded-xl border border-[#E2E8F0] shadow-sm">
+          {/* Right Column: Supplier Registration Form */}
+          <div className="lg:col-span-7 bg-white p-6 sm:p-8 rounded-xl border border-stone-200 shadow-sm">
             {submitSuccess ? (
-              <div className="text-center py-12 space-y-4">
-                <div className="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto">
-                  <CheckCircle2 className="w-6 h-6" />
+              <div className="text-center py-8 space-y-5">
+                <div className="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto">
+                  <CheckCircle2 className="w-7 h-7" />
                 </div>
-                <h3 className="text-xl font-bold font-display text-[#0B1730]">
-                  Supplier Profile Received
-                </h3>
-                <p className="text-xs text-[#64748B] max-w-md mx-auto leading-relaxed">
-                  Thank you for registering your supply capability with NEXARIS. Our trade procurement desk will review your specifications and reach out when matching export orders open.
-                </p>
-                <button
-                  type="button"
-                  onClick={() => setSubmitSuccess(false)}
-                  className="px-5 py-2.5 text-xs font-bold text-white bg-[#0B1730] hover:bg-[#162444] rounded transition-colors"
-                >
-                  Submit Another Offer
-                </button>
+                <div>
+                  <h3 className="text-xl font-serif font-bold text-[#0A192F]">
+                    Supplier Lot Registered
+                  </h3>
+                  <p className="text-xs text-stone-600 max-w-md mx-auto mt-1 leading-relaxed">
+                    Reference Number:{' '}
+                    <span className="font-mono font-bold text-[#0A192F] bg-stone-100 px-2 py-0.5 rounded border border-stone-300">
+                      {submitSuccess.referenceNumber}
+                    </span>
+                  </p>
+                  <p className="text-xs text-stone-500 mt-2">
+                    Our procurement desk will review your lot parameters for {submitSuccess.commodityOffered} ({submitSuccess.availableLotSizeMt} MT) and get in touch directly.
+                  </p>
+                </div>
+
+                {/* Direct Dispatch Options */}
+                <div className="pt-2 max-w-md mx-auto space-y-2">
+                  <a
+                    href={whatsappDirectUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg transition-colors shadow-xs"
+                  >
+                    <MessageSquare className="w-4 h-4" />
+                    <span>Send Details to Trade Desk WhatsApp (+91 98246 18484)</span>
+                  </a>
+                  <a
+                    href={mailtoDirectUrl}
+                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-bold text-[#0A192F] bg-stone-100 hover:bg-stone-200 rounded-lg transition-colors border border-stone-300"
+                  >
+                    <Mail className="w-4 h-4" />
+                    <span>Email Offer to contact@nexaris.co.in</span>
+                  </a>
+                </div>
+
+                <div className="pt-4 border-t border-stone-200">
+                  <button
+                    type="button"
+                    onClick={() => setSubmitSuccess(null)}
+                    className="px-5 py-2 text-xs font-semibold text-stone-600 hover:text-stone-900 cursor-pointer"
+                  >
+                    Register Another Commodity Lot
+                  </button>
+                </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="border-b border-[#E2E8F0] pb-3 mb-2">
-                  <h3 className="text-lg font-bold font-display text-[#0B1730]">
-                    Supplier Offer Submission Form
+                <div className="border-b border-stone-200 pb-3">
+                  <h3 className="text-lg font-serif font-bold text-[#0A192F]">
+                    Farmer / Supplier Offer Registration Form
                   </h3>
-                  <p className="text-xs text-[#64748B]">
-                    Provide your business details and commodity specifications.
+                  <p className="text-xs text-stone-500 mt-0.5">
+                    Submit your available crop lot size and location for direct procurement review.
                   </p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                  {/* Supplier / FPO Name */}
                   <div>
-                    <label className="block font-semibold text-[#0B1730] mb-1">
-                      Business / Enterprise Name *
+                    <label className="block font-semibold text-stone-800 mb-1">
+                      Supplier / Farmer / FPO Name *
                     </label>
                     <input
                       type="text"
                       required
-                      value={formData.businessName}
-                      onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
-                      placeholder="e.g. Gujarat Agro Processors Ltd"
-                      className="w-full px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#C7A45B]"
+                      value={formData.supplierName}
+                      onChange={(e) => setFormData({ ...formData, supplierName: e.target.value })}
+                      placeholder="e.g. Saurashtra Farmers Producer Co / Rajesh Patel"
+                      className="w-full px-3 py-2 text-xs sm:text-sm border border-stone-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#0A192F]"
                     />
                   </div>
 
+                  {/* Location (District / State) */}
                   <div>
-                    <label className="block font-semibold text-[#0B1730] mb-1">
-                      Contact Person Name *
+                    <label className="block font-semibold text-stone-800 mb-1 flex items-center gap-1">
+                      <MapPin className="w-3.5 h-3.5 text-[#C5A059]" />
+                      Location (District / State) *
                     </label>
                     <input
                       type="text"
                       required
-                      value={formData.contactName}
-                      onChange={(e) => setFormData({ ...formData, contactName: e.target.value })}
-                      placeholder="e.g. Rajesh Patel"
-                      className="w-full px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#C7A45B]"
+                      value={formData.locationDistrictState}
+                      onChange={(e) => setFormData({ ...formData, locationDistrictState: e.target.value })}
+                      placeholder="e.g. Rajkot, Gujarat / Unjha, Mehsana"
+                      className="w-full px-3 py-2 text-xs sm:text-sm border border-stone-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#0A192F]"
                     />
                   </div>
 
+                  {/* Commodity Offered */}
                   <div>
-                    <label className="block font-semibold text-[#0B1730] mb-1">
-                      Business Email *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="e.g. trade@supplier.com"
-                      className="w-full px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#C7A45B]"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block font-semibold text-[#0B1730] mb-1">
-                      Phone Number with Country Code *
-                    </label>
-                    <input
-                      type="tel"
-                      required
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      placeholder="+91 98765 43210"
-                      className="w-full px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#C7A45B]"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block font-semibold text-[#0B1730] mb-1">
-                      Facility / Processing Location *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.location}
-                      onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                      placeholder="e.g. Gondal / Rajkot, Gujarat"
-                      className="w-full px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#C7A45B]"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block font-semibold text-[#0B1730] mb-1">
+                    <label className="block font-semibold text-stone-800 mb-1">
                       Commodity Offered *
                     </label>
                     <select
                       value={formData.commodityOffered}
                       onChange={(e) => setFormData({ ...formData, commodityOffered: e.target.value })}
-                      className="w-full px-3 py-2 border border-[#CBD5E1] rounded bg-white focus:outline-none focus:ring-1 focus:ring-[#C7A45B]"
+                      className="w-full px-3 py-2 text-xs sm:text-sm border border-stone-300 rounded-lg bg-white focus:outline-none focus:ring-1 focus:ring-[#0A192F]"
                     >
-                      <option value="Red Chilli / Spices">Red Chilli / Spices</option>
-                      <option value="Turmeric (Lakadong/Erode/Salem)">Turmeric (Lakadong/Erode/Salem)</option>
-                      <option value="Cumin / Seeds">Cumin / Seeds</option>
-                      <option value="Groundnut / Peanuts">Groundnut / Peanuts</option>
-                      <option value="Sesame Seeds (Hulled/White/Black)">Sesame Seeds (Hulled/White/Black)</option>
-                      <option value="Mustard Seeds">Mustard Seeds</option>
-                      <option value="Organic Jaggery Powder">Organic Jaggery Powder (HS 17011420)</option>
-                      <option value="Jaggery Cubes / Blocks">Jaggery Cubes &amp; Blocks (HS 17011410)</option>
-                      <option value="Liquid Jaggery Syrup">Liquid Jaggery Syrup (HS 17029090)</option>
-                      <option value="Other Commodity">Other Commodity</option>
+                      <optgroup label="Wholesale Spices">
+                        <option value="Cumin Seeds (Jeera)">Cumin Seeds (Jeera)</option>
+                        <option value="Turmeric Fingers / Powder">Turmeric Fingers / Powder</option>
+                        <option value="Red Chilli (Whole / Powder)">Red Chilli (Whole / Powder)</option>
+                        <option value="Coriander Seeds (Dhania)">Coriander Seeds (Dhania)</option>
+                        <option value="Fennel Seeds (Variyali)">Fennel Seeds (Variyali)</option>
+                        <option value="Fenugreek Seeds (Methi)">Fenugreek Seeds (Methi)</option>
+                        <option value="Black Pepper">Black Pepper</option>
+                      </optgroup>
+                      <optgroup label="Graded Oilseeds">
+                        <option value="Groundnut / Peanuts">Groundnut / Peanuts</option>
+                        <option value="Sesame Seeds (Natural / Hulled)">Sesame Seeds (Natural / Hulled)</option>
+                        <option value="Mustard Seeds (Rai / Sarson)">Mustard Seeds (Rai / Sarson)</option>
+                        <option value="Castor Seeds">Castor Seeds</option>
+                      </optgroup>
+                      <optgroup label="Natural Sweeteners">
+                        <option value="Organic Jaggery Powder">Organic Jaggery Powder</option>
+                        <option value="Jaggery Cubes">Jaggery Cubes</option>
+                        <option value="Traditional Jaggery Blocks">Traditional Jaggery Blocks</option>
+                        <option value="Liquid Jaggery Syrup (Kakvi)">Liquid Jaggery Syrup (Kakvi)</option>
+                      </optgroup>
                     </select>
                   </div>
 
+                  {/* Available Lot Size (MT) */}
                   <div>
-                    <label className="block font-semibold text-[#0B1730] mb-1">
-                      Monthly Supply Capacity
+                    <label className="block font-semibold text-stone-800 mb-1 flex items-center gap-1">
+                      <Scale className="w-3.5 h-3.5 text-[#C5A059]" />
+                      Available Lot Size (in Metric Tons - MT) *
                     </label>
                     <input
-                      type="text"
-                      value={formData.capacity}
-                      onChange={(e) => setFormData({ ...formData, capacity: e.target.value })}
-                      placeholder="e.g. 50 MT / month"
-                      className="w-full px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#C7A45B]"
+                      type="number"
+                      step="any"
+                      min="1"
+                      required
+                      value={formData.availableLotSizeMt}
+                      onChange={(e) => setFormData({ ...formData, availableLotSizeMt: e.target.value })}
+                      placeholder="e.g. 15 MT / 50 MT"
+                      className="w-full px-3 py-2 text-xs sm:text-sm border border-stone-300 rounded-lg font-mono focus:outline-none focus:ring-1 focus:ring-[#0A192F]"
                     />
                   </div>
 
+                  {/* Moisture / Lab Report Availability */}
                   <div>
-                    <label className="block font-semibold text-[#0B1730] mb-1">
-                      Packaging Available
+                    <label className="block font-semibold text-stone-800 mb-1 flex items-center gap-1">
+                      <FileCheck className="w-3.5 h-3.5 text-[#C5A059]" />
+                      Moisture / Lab Report Status *
+                    </label>
+                    <select
+                      value={formData.moistureLabReportAvailable}
+                      onChange={(e) => setFormData({ ...formData, moistureLabReportAvailable: e.target.value })}
+                      className="w-full px-3 py-2 text-xs sm:text-sm border border-stone-300 rounded-lg bg-white focus:outline-none focus:ring-1 focus:ring-[#0A192F]"
+                    >
+                      <option value="Yes — Lab COA Available">Yes — Recent Lab COA Available</option>
+                      <option value="Moisture Tested On-Site">Moisture Tested On-Site (Within Spec)</option>
+                      <option value="Inspection Needed at Warehouse">Inspection / Testing Needed at Warehouse</option>
+                    </select>
+                  </div>
+
+                  {/* Contact Number */}
+                  <div>
+                    <label className="block font-semibold text-stone-800 mb-1">
+                      Contact Phone / WhatsApp Number *
                     </label>
                     <input
-                      type="text"
-                      value={formData.packagingDetails}
-                      onChange={(e) => setFormData({ ...formData, packagingDetails: e.target.value })}
-                      placeholder="e.g. 25kg PP bags, Jumbo FIBC"
-                      className="w-full px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#C7A45B]"
+                      type="tel"
+                      required
+                      value={formData.contactNumber}
+                      onChange={(e) => setFormData({ ...formData, contactNumber: e.target.value })}
+                      placeholder="+91 98246 18484"
+                      className="w-full px-3 py-2 text-xs sm:text-sm border border-stone-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#0A192F]"
                     />
                   </div>
                 </div>
 
+                {/* Additional Notes */}
                 <div className="text-xs">
-                  <label className="block font-semibold text-[#0B1730] mb-1">
-                    Quality Specifications &amp; Certifications Held
+                  <label className="block font-semibold text-stone-800 mb-1">
+                    Harvest Season, Variety Details or Packaging Format
                   </label>
                   <textarea
-                    rows={3}
-                    value={formData.productSpecs}
-                    onChange={(e) => setFormData({ ...formData, productSpecs: e.target.value })}
-                    placeholder="e.g. Sortex 99.5% clean, Moisture < 7%, FSSAI / APEDA registered unit"
-                    className="w-full px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#C7A45B]"
+                    rows={2}
+                    value={formData.additionalNotes}
+                    onChange={(e) => setFormData({ ...formData, additionalNotes: e.target.value })}
+                    placeholder="Mention current bagging (e.g. 50kg Jute/PP), storage location, or variety specifics..."
+                    className="w-full px-3 py-2 text-xs sm:text-sm border border-stone-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#0A192F]"
                   />
                 </div>
 
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-[#070F20] bg-[#C7A45B] hover:bg-[#B89347] rounded-md transition-colors cursor-pointer shadow-md min-h-[44px]"
-                >
-                  <Send className="w-4 h-4" />
-                  <span>{isSubmitting ? 'Submitting Supplier Offer...' : 'Submit Supplier Registration'}</span>
-                </button>
+                {/* Submit CTA */}
+                <div className="pt-2">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-xs font-bold uppercase tracking-wider text-[#0A192F] bg-[#D4AF37] hover:bg-[#C5A059] disabled:opacity-50 rounded-lg transition-all shadow-sm cursor-pointer min-h-[44px]"
+                  >
+                    <Send className="w-4 h-4" />
+                    <span>{isSubmitting ? 'Registering Supplier Offer...' : 'Submit Lot to NEXARIS Procurement'}</span>
+                  </button>
+                </div>
               </form>
             )}
           </div>

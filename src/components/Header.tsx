@@ -143,13 +143,21 @@ export function Header() {
             })}
           </nav>
 
-          {/* Action Buttons: Mobile Toggle */}
+          {/* Action Zone: 1 Primary CTA & Mobile Toggle */}
           <div className="flex items-center gap-2 sm:gap-3">
+            <button
+              onClick={() => openEnquiryModal(undefined, undefined, 'buyer')}
+              type="button"
+              className="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#0A192F] bg-[#D4AF37] hover:bg-[#C5A059] rounded-lg transition-all shadow-xs cursor-pointer whitespace-nowrap"
+            >
+              Request RFQ
+            </button>
+
             {/* Mobile Navigation Toggle Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               type="button"
-              className="p-2 text-[#0B1730] hover:bg-[#F5F7FA] rounded-md transition-colors min-w-[40px] min-h-[40px] flex items-center justify-center cursor-pointer xl:hidden"
+              className="p-2 text-[#0A192F] hover:bg-stone-100 rounded-md transition-colors min-w-[40px] min-h-[40px] flex items-center justify-center cursor-pointer xl:hidden"
               aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
               aria-expanded={mobileMenuOpen}
             >

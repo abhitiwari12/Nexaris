@@ -1,13 +1,17 @@
 import React from 'react';
 import {
   ArrowRight,
-  ArrowUpRight,
   Mail,
   Phone,
   MapPin,
   Linkedin,
   MessageCircle,
   ExternalLink,
+  ShieldCheck,
+  CheckCircle2,
+  Anchor,
+  Package,
+  FileCheck2,
 } from 'lucide-react';
 import { Link } from '../context/RouterContext';
 import { useEnquiry } from '../context/EnquiryContext';
@@ -20,84 +24,137 @@ import { GlobalTradeGlobe3D } from '../components/GlobalTradeGlobe3D';
 
 export function HomePage() {
   const { openEnquiryModal } = useEnquiry();
-  const { contact, founders } = SITE_CONFIG;
+  const { contact, founders, capabilities } = SITE_CONFIG;
   const whatsappUrl = getWhatsAppUrl();
 
   return (
-    <div className="bg-[#F8FAFC] text-[#0B1730]">
+    <div className="bg-[#FAF8F5] text-stone-900">
       {/* ========================================================
-          HERO SECTION — EDITORIAL ASYMMETRIC SPLIT COMPOSITION
+          HERO SECTION — INSTITUTIONAL B2B AGRI COMMODITY HOUSE
           ======================================================== */}
-      <section className="relative bg-[#070F20] text-white border-b border-[#162444] overflow-hidden py-16 lg:py-24">
-        {/* Subtle radial background grid */}
-        <div className="absolute inset-0 bg-[radial-gradient(#C7A45B_1px,transparent_1px)] [background-size:36px_36px] opacity-10 pointer-events-none" />
+      <section className="relative bg-[#0A192F] text-white border-b border-white/10 overflow-hidden py-16 sm:py-20 lg:py-28">
+        {/* Subtle geometric grid background */}
+        <div className="absolute inset-0 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:36px_36px] opacity-10 pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="max-w-4xl mx-auto text-center space-y-6">
             
-            {/* Single Column: High-Impact Editorial Copy */}
-            <div className="lg:col-span-10 lg:col-start-2 space-y-6 text-center lg:py-10">
-              
-              {/* Eyebrow & Origin Badge */}
-              <div className="flex flex-wrap items-center justify-center gap-2.5 text-[11px] font-black tracking-[0.2em] uppercase text-[#C7A45B]">
-                <span>GLOBAL MERCHANDISE EXPORT</span>
-                <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-[#162444]" />
-                <span className="text-[#94A3B8]">Gujarat, India</span>
-              </div>
-
-              {/* Main Headline */}
-              <h1 className="text-4xl sm:text-6xl lg:text-[5.5rem] font-black tracking-tighter text-white leading-[1.05] font-display">
-                Connecting Global Demand with Strategic Indian Sourcing.<br />
-                <span className="text-[#C7A45B]">Precision Quality. Seamless Logistics.</span>
-              </h1>
-
-              {/* Supporting Value Proposition */}
-              <div className="flex justify-center">
-                <p className="text-base sm:text-lg lg:text-xl font-medium text-[#94A3B8] leading-relaxed max-w-4xl opacity-90">
-                  NEXARIS facilitates high-volume B2B trade across premium Indian spices, graded oilseeds, and certified organic jaggery products (natural sugarcane sweeteners under HS Code Chapter 17). Leveraging Western India's primary production belts and strategic maritime gateways to ensure unmatched purity and operational reliability.
-                </p>
-              </div>
-
-              {/* Primary & Secondary Action CTAs */}
-              <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
-                <Link
-                  href="/spices-oilseeds"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-xs font-black uppercase tracking-widest text-[#070F20] bg-[#C7A45B] hover:bg-[#B89347] rounded-sm transition-all cursor-pointer shadow-xl hover:-translate-y-0.5 active:translate-y-0"
-                >
-                  <span>Spices &amp; Oilseeds</span>
-                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
-                </Link>
-                <Link
-                  href="/jaggery"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-xs font-black uppercase tracking-widest text-white bg-white/10 hover:bg-white/20 border border-white/20 rounded-sm transition-all cursor-pointer shadow-xl hover:-translate-y-0.5 active:translate-y-0"
-                >
-                  <span>Jaggery Sweeteners</span>
-                  <ArrowRight className="w-4 h-4 text-[#C7A45B]" aria-hidden="true" />
-                </Link>
-              </div>
-
-              {/* B2B Scope & Protocol Indicators */}
-              <div className="pt-12 border-t border-white/5 grid grid-cols-2 sm:grid-cols-4 gap-6 text-xs text-[#94A3B8] max-w-5xl mx-auto">
-                <div className="space-y-1">
-                  <div className="font-black text-white text-2xl font-display tabular-nums tracking-tighter">19+</div>
-                  <div className="text-[10px] font-bold uppercase tracking-wider text-[#64748B]">Commodity Grades</div>
-                </div>
-                <div className="space-y-1">
-                  <div className="font-black text-white text-2xl font-display tracking-tighter">100%</div>
-                  <div className="text-[10px] font-bold uppercase tracking-wider text-[#64748B]">Lot Inspection</div>
-                </div>
-                <div className="space-y-1">
-                  <div className="font-black text-white text-2xl font-display tracking-tighter">Mundra & Hazira</div>
-                  <div className="text-[10px] font-bold uppercase tracking-wider text-[#64748B]">Strategic Gateways</div>
-                </div>
-                <div className="space-y-1">
-                  <div className="font-black text-[#C7A45B] text-2xl font-display tracking-tighter">FOB / CIF / CFR</div>
-                  <div className="text-[10px] font-bold uppercase tracking-wider text-[#64748B]">Incoterms 2020</div>
-                </div>
-              </div>
-
+            {/* Tagline & Origin Kicker */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold tracking-widest uppercase text-[#D4AF37]">
+              <span>GANDHINAGAR, GUJARAT, INDIA</span>
+              <span aria-hidden="true" className="text-white/30">·</span>
+              <span className="text-stone-300">ESTABLISHED ORIGIN SOURCING</span>
             </div>
 
+            {/* Main Headline */}
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-black tracking-tight text-white leading-[1.08]">
+              One Partner.<br />
+              <span className="text-[#D4AF37]">Many Possibilities.</span>
+            </h1>
+
+            {/* Hero Subheadline */}
+            <p className="text-base sm:text-lg lg:text-xl font-normal text-stone-300 leading-relaxed max-w-3xl mx-auto">
+              B2B Sourcing &amp; Export Coordination for Indian Spices, Graded Oilseeds, and Natural Cane Sweeteners.
+            </p>
+
+            {/* Verifiable Operational Protocols Strip */}
+            <div className="py-4 text-xs text-stone-300 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-medium">
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" />
+                Direct Farm Origin Sourcing
+              </span>
+              <span className="flex items-center gap-1.5">
+                <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                Third-Party Lab Certification (SGS / Geo-Chem)
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Anchor className="w-4 h-4 text-[#D4AF37]" />
+                FOB Mundra &amp; Kandla Port Coordination
+              </span>
+            </div>
+
+            {/* CTAs */}
+            <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
+              <Link
+                href="/spices-oilseeds"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-[#0A192F] bg-[#D4AF37] hover:bg-[#C5A059] rounded-lg transition-all shadow-lg hover:shadow-xl cursor-pointer"
+              >
+                <span>Explore Spices &amp; Oilseeds</span>
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              </Link>
+              <Link
+                href="/jaggery"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-white bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg transition-all shadow-md cursor-pointer"
+              >
+                <span>Natural Jaggery Division</span>
+                <ArrowRight className="w-4 h-4 text-[#D4AF37]" aria-hidden="true" />
+              </Link>
+              <button
+                type="button"
+                onClick={() => openEnquiryModal(undefined, undefined, 'buyer')}
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-stone-300 hover:text-white bg-transparent hover:bg-white/5 border border-stone-500/50 rounded-lg transition-all cursor-pointer"
+              >
+                <span>Submit Buyer RFQ</span>
+              </button>
+            </div>
+
+            {/* B2B Scope & Protocol Indicators */}
+            <div className="pt-10 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs text-stone-400 max-w-3xl mx-auto">
+              <div className="space-y-1">
+                <div className="font-serif font-bold text-white text-2xl tabular-nums">21 Verified Lots</div>
+                <div className="text-[10px] font-bold uppercase tracking-wider text-stone-400">Export Specifications</div>
+              </div>
+              <div className="space-y-1">
+                <div className="font-serif font-bold text-white text-2xl">100% Pre-Shipment</div>
+                <div className="text-[10px] font-bold uppercase tracking-wider text-stone-400">Lot Testing on Request</div>
+              </div>
+              <div className="space-y-1">
+                <div className="font-serif font-bold text-[#D4AF37] text-2xl">Mundra &amp; Kandla</div>
+                <div className="text-[10px] font-bold uppercase tracking-wider text-stone-400">Gateway Logistics</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================
+          QUALITY & EXPORT COMPLIANCE STRIP (APEDA, SPICES BOARD, FSSAI)
+          ======================================================== */}
+      <section className="bg-white border-b border-stone-200 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-2.5">
+              <div className="w-9 h-9 rounded-lg bg-[#0A192F] text-[#D4AF37] flex items-center justify-center shrink-0">
+                <FileCheck2 className="w-5 h-5" />
+              </div>
+              <div>
+                <h2 className="text-xs font-bold uppercase tracking-wider text-[#0A192F]">
+                  Quality &amp; Statutory Export Alignment
+                </h2>
+                <p className="text-[11px] text-stone-500">
+                  Operations structured in conformity with Indian statutory commodity export boards &amp; global standards
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs font-semibold text-stone-700">
+              <span className="px-3 py-1.5 bg-stone-100 rounded-md border border-stone-200" title="Agricultural and Processed Food Products Export Development Authority">
+                APEDA Aligned
+              </span>
+              <span className="px-3 py-1.5 bg-stone-100 rounded-md border border-stone-200" title="Spices Board India, Ministry of Commerce">
+                Spices Board India
+              </span>
+              <span className="px-3 py-1.5 bg-stone-100 rounded-md border border-stone-200" title="Food Safety and Standards Authority of India">
+                FSSAI Standards
+              </span>
+              <span className="px-3 py-1.5 bg-stone-100 rounded-md border border-stone-200" title="Phytosanitary Quarantine Certification">
+                Phytosanitary Certification
+              </span>
+              <span className="px-3 py-1.5 bg-stone-100 rounded-md border border-stone-200" title="Chamber of Commerce Origin Issuance">
+                Certificate of Origin
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -113,48 +170,71 @@ export function HomePage() {
       <DivisionImageGallery />
 
       {/* ========================================================
+          VERIFIABLE OPERATIONAL CAPABILITIES
+          ======================================================== */}
+      <section className="py-16 sm:py-20 bg-white border-y border-stone-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-12">
+            <div className="text-xs font-bold uppercase tracking-wider text-[#C5A059] mb-2">
+              VERIFIABLE CAPABILITIES
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#0A192F]">
+              Direct Origin Sourcing &amp; Execution Protocols
+            </h2>
+            <p className="mt-2 text-sm text-stone-600 leading-relaxed">
+              We focus on measurable, transparent trade execution across Gujarat's agricultural belts and Western Indian maritime ports.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {capabilities.map((cap, i) => (
+              <div key={i} className="p-6 rounded-xl border border-stone-200 bg-[#FAF8F5] space-y-3">
+                <div className="text-xs font-mono font-bold text-[#C5A059]">0{i + 1}.</div>
+                <h3 className="text-base font-bold text-[#0A192F] font-serif">{cap.title}</h3>
+                <p className="text-xs text-stone-600 leading-relaxed">{cap.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================
           EXPORT SERVICES & SOURCING SOLUTIONS
           ======================================================== */}
       <ExportServicesSection />
 
       {/* ========================================================
-          REGULATORY CERTIFICATIONS & COMPLIANCE
+          REGULATORY CERTIFICATIONS & COMPLIANCE SECTION
           ======================================================== */}
       <CertificationsSection />
 
       {/* ========================================================
-          SECTION G — THE PEOPLE BEHIND NEXARIS (FOUNDERS)
+          LEADERSHIP TEAM — MANAGING PARTNERS
           ======================================================== */}
-      <section id="founders" className="py-20 lg:py-24 bg-[#F5F7FA]">
+      <section id="founders" className="py-20 bg-[#FAF8F5] border-t border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-10">
-            <div className="text-xs font-semibold tracking-wider uppercase text-[#C7A45B] mb-2">
-              LEADERSHIP
+          <div className="max-w-3xl mb-12">
+            <div className="text-xs font-bold tracking-wider uppercase text-[#C5A059] mb-2">
+              LEADERSHIP &amp; MANAGEMENT
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0B1730] font-display tracking-tight">
-              The People Behind NEXARIS
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#0A192F]">
+              The Managing Partners Behind NEXARIS
             </h2>
-            <p className="mt-3 text-sm sm:text-base text-[#64748B] leading-relaxed">
-              Meet the partners bringing their individual expertise and responsibilities together to build NEXARIS.
+            <p className="mt-3 text-sm sm:text-base text-stone-600 leading-relaxed">
+              Meet the partners responsible for strategic direction, international business development, and on-ground agricultural procurement execution.
             </p>
           </div>
 
-          {/* Mobile Swipe Hint */}
-          <div className="md:hidden flex items-center justify-between text-[11px] text-[#C7A45B] font-semibold mb-3 px-1">
-            <span>Partners &amp; Leadership</span>
-            <span>Swipe horizontally →</span>
-          </div>
-
-          <div className="flex md:grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 overflow-x-auto snap-x snap-mandatory no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 pb-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {founders.map((founder) => (
               <div
                 key={founder.name}
-                className="bg-white rounded-lg border border-[#E2E8F0] hover:border-[#C7A45B] transition-all duration-200 p-6 flex flex-col justify-between shadow-xs min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-start"
+                className="bg-white rounded-xl border border-stone-200 hover:border-[#C5A059] transition-all duration-200 p-6 flex flex-col justify-between shadow-xs hover:shadow-md"
               >
                 <div className="space-y-4">
                   {/* Monogram Avatar & LinkedIn Button */}
-                  <div className="flex items-center justify-between pb-4 border-b border-[#F5F7FA]">
-                    <div className="w-12 h-12 rounded-md bg-[#0B1730] text-[#C7A45B] flex items-center justify-center font-display font-bold text-base">
+                  <div className="flex items-center justify-between pb-4 border-b border-stone-100">
+                    <div className="w-12 h-12 rounded-lg bg-[#0A192F] text-[#D4AF37] flex items-center justify-center font-serif font-bold text-base">
                       {founder.initials}
                     </div>
 
@@ -162,37 +242,37 @@ export function HomePage() {
                       href={founder.linkedIn}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2.5 text-[#64748B] hover:text-[#0B1730] hover:bg-[#F5F7FA] rounded-md transition-colors min-w-[40px] min-h-[40px] flex items-center justify-center"
+                      className="p-2 text-stone-500 hover:text-[#0A192F] hover:bg-stone-50 rounded-lg transition-colors"
                       aria-label={`View ${founder.name}'s LinkedIn profile`}
-                      title="LinkedIn Profile (opens in a new tab)"
+                      title="LinkedIn Profile"
                     >
-                      <Linkedin className="w-5 h-5 text-[#0B1730] hover:text-[#C7A45B] transition-colors" />
+                      <Linkedin className="w-5 h-5 text-[#0A192F] hover:text-[#C5A059] transition-colors" />
                     </a>
                   </div>
 
                   {/* Name and Role */}
                   <div>
-                    <h3 className="text-lg font-bold text-[#0B1730] font-display">
+                    <h3 className="text-lg font-serif font-bold text-[#0A192F]">
                       {founder.name}
                     </h3>
-                    <p className="text-xs font-semibold text-[#C7A45B] mt-1">
+                    <p className="text-xs font-semibold text-[#C5A059] mt-0.5">
                       {founder.role}
                     </p>
                   </div>
 
                   {/* Description */}
-                  <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
+                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
                     {founder.description}
                   </p>
                 </div>
 
                 {/* Direct Clickable Email Link */}
-                <div className="mt-6 pt-4 border-t border-[#E2E8F0] flex items-center text-xs">
+                <div className="mt-6 pt-4 border-t border-stone-100 flex items-center text-xs">
                   <a
                     href={`mailto:${founder.email}`}
-                    className="font-mono text-[#0B1730] hover:text-[#C7A45B] font-medium transition-colors inline-flex items-center gap-1.5"
+                    className="font-mono text-[#0A192F] hover:text-[#C5A059] font-medium transition-colors inline-flex items-center gap-1.5"
                   >
-                    <Mail className="w-3.5 h-3.5 text-[#C7A45B]" aria-hidden="true" />
+                    <Mail className="w-3.5 h-3.5 text-[#C5A059]" aria-hidden="true" />
                     <span>{founder.email}</span>
                   </a>
                 </div>
@@ -203,116 +283,113 @@ export function HomePage() {
       </section>
 
       {/* ========================================================
-          SECTION H — INTERNATIONAL BUYER FAQS
+          INTERNATIONAL BUYER FAQS
           ======================================================== */}
       <ExportFaqSection />
 
       {/* ========================================================
-          SECTION I — BUYER AND SUPPLIER ENQUIRIES
+          DUAL-TRACK CONVERSION FUNNEL (BUYERS & SUPPLIERS)
           ======================================================== */}
-      <section id="enquiry" className="py-20 lg:py-24 bg-white border-y border-[#E2E8F0]">
+      <section id="enquiry" className="py-20 bg-white border-y border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <div className="text-xs font-semibold tracking-wider uppercase text-[#C7A45B] mb-2">
-              TRADE ENQUIRIES
+            <div className="text-xs font-bold tracking-wider uppercase text-[#C5A059] mb-2">
+              COMMERCIAL TRADE DESK
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0B1730] font-display tracking-tight">
-              Let's Explore an Opportunity Together.
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#0A192F]">
+              Dual-Track Sourcing &amp; Procurement
             </h2>
-            <p className="mt-3 text-sm sm:text-base text-[#64748B] leading-relaxed">
-              Whether you are looking to source commodities or discuss a potential supply opportunity, connect with NEXARIS to start a conversation.
+            <p className="mt-3 text-sm sm:text-base text-stone-600 leading-relaxed">
+              Whether you are an international bulk buyer requesting container quotation or a domestic farmer/FPO offering agricultural harvest lots, our Gandhinagar desk coordinates directly with you.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            
             {/* For Buyers */}
-            <div className="p-8 rounded-lg bg-[#F5F7FA] border border-[#E2E8F0] hover:border-[#C7A45B] transition-colors flex flex-col justify-between space-y-6">
+            <div className="p-8 rounded-xl bg-[#FAF8F5] border border-stone-200 hover:border-[#C5A059] transition-colors flex flex-col justify-between space-y-6 shadow-xs">
               <div>
-                <div className="w-10 h-10 rounded-md bg-[#0B1730] text-[#C7A45B] flex items-center justify-center font-bold text-sm mb-4 font-display">
+                <div className="w-10 h-10 rounded-lg bg-[#0A192F] text-[#D4AF37] flex items-center justify-center font-bold text-sm mb-4 font-serif">
                   B
                 </div>
-                <h3 className="text-xl font-bold text-[#0B1730] font-display">
-                  For Buyers
+                <h3 className="text-xl font-serif font-bold text-[#0A192F]">
+                  For International Buyers
                 </h3>
-                <p className="mt-2 text-sm text-[#64748B] leading-relaxed">
-                  Discuss your commodity requirements and sourcing enquiry.
+                <p className="mt-2 text-xs sm:text-sm text-stone-600 leading-relaxed">
+                  Request spot or contract FOB Mundra / CIF container pricing, custom retail pouches, and lot laboratory certificates of analysis.
                 </p>
               </div>
 
               <button
                 type="button"
                 onClick={() => openEnquiryModal(undefined, undefined, 'buyer')}
-                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 text-xs font-semibold uppercase tracking-wider text-white bg-[#0B1730] hover:bg-[#162444] rounded-md transition-colors cursor-pointer min-h-[44px]"
+                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 text-xs font-bold uppercase tracking-wider text-[#0A192F] bg-[#D4AF37] hover:bg-[#C5A059] rounded-lg transition-colors cursor-pointer shadow-xs min-h-[44px]"
               >
-                <span>Submit a Buyer Enquiry</span>
+                <span>Request Buyer Quotation (RFQ)</span>
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </button>
             </div>
 
             {/* For Suppliers */}
-            <div className="p-8 rounded-lg bg-[#F5F7FA] border border-[#E2E8F0] hover:border-[#C7A45B] transition-colors flex flex-col justify-between space-y-6">
+            <div className="p-8 rounded-xl bg-[#FAF8F5] border border-stone-200 hover:border-[#C5A059] transition-colors flex flex-col justify-between space-y-6 shadow-xs">
               <div>
-                <div className="w-10 h-10 rounded-md bg-[#0B1730] text-[#C7A45B] flex items-center justify-center font-bold text-sm mb-4 font-display">
+                <div className="w-10 h-10 rounded-lg bg-[#0A192F] text-[#D4AF37] flex items-center justify-center font-bold text-sm mb-4 font-serif">
                   S
                 </div>
-                <h3 className="text-xl font-bold text-[#0B1730] font-display">
-                  For Suppliers
+                <h3 className="text-xl font-serif font-bold text-[#0A192F]">
+                  For Farmers &amp; FPOs (Suppliers)
                 </h3>
-                <p className="mt-2 text-sm text-[#64748B] leading-relaxed">
-                  Introduce your commodities and discuss potential trading opportunities.
+                <p className="mt-2 text-xs sm:text-sm text-stone-600 leading-relaxed">
+                  Register available crop lots, lot sizes in MT, and warehouse locations in Gujarat for direct export procurement.
                 </p>
               </div>
 
-              <button
-                type="button"
-                onClick={() => openEnquiryModal(undefined, undefined, 'supplier')}
-                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 text-xs font-semibold uppercase tracking-wider text-white bg-[#0B1730] hover:bg-[#162444] rounded-md transition-colors cursor-pointer min-h-[44px]"
+              <Link
+                href="/for-suppliers"
+                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 text-xs font-bold uppercase tracking-wider text-white bg-[#0A192F] hover:bg-[#10243D] rounded-lg transition-colors cursor-pointer shadow-xs min-h-[44px]"
               >
-                <span>Submit a Supplier Enquiry</span>
+                <span>Sell to NEXARIS (Supplier Form)</span>
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
-              </button>
+              </Link>
             </div>
-
           </div>
         </div>
       </section>
 
       {/* ========================================================
-          SECTION H — CONTACT DETAILS & TRADE DESK
+          REGISTERED OFFICE & DIRECT TRADE DESK
           ======================================================== */}
-      <section className="py-20 lg:py-24 bg-[#0B1730] text-white">
+      <section className="py-16 sm:py-20 bg-[#0A192F] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
-            <div className="lg:col-span-6 space-y-4">
-              <div className="text-xs font-semibold tracking-wider uppercase text-[#C7A45B]">
-                DIRECT CONTACT
+            <div className="lg:col-span-5 space-y-4">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#C5A059]">
+                REGISTERED OFFICE &amp; COMMERCIAL DESK
               </div>
-              <h2 className="text-3xl sm:text-4xl font-bold font-display text-white">
-                NEXARIS Trade Desk
+              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white">
+                NEXARIS Commercial Desk
               </h2>
-              <p className="text-sm sm:text-base text-[#94A3B8] leading-relaxed">
-                Connect with our team directly for commodity trade opportunities, sourcing requests, or operational coordination.
+              <p className="text-sm text-stone-300 leading-relaxed">
+                Connect with our commercial officers directly for container bookings, proforma invoices, sample dispatches, or mandi aggregations.
               </p>
             </div>
 
-            <div className="lg:col-span-6 bg-white/5 border border-white/10 rounded-lg p-6 sm:p-8 space-y-5 text-sm text-[#94A3B8]">
+            <div className="lg:col-span-7 bg-white/5 border border-white/10 rounded-xl p-6 sm:p-8 space-y-5 text-sm text-stone-300">
               <div className="flex items-start gap-4 pb-4 border-b border-white/10">
-                <MapPin className="w-5 h-5 text-[#C7A45B] shrink-0 mt-0.5" aria-hidden="true" />
+                <MapPin className="w-5 h-5 text-[#C5A059] shrink-0 mt-0.5" aria-hidden="true" />
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-[#94A3B8]/70 font-semibold">Location</div>
-                  <div className="text-white font-medium mt-0.5">{contact.location}</div>
+                  <div className="text-xs uppercase tracking-wider text-stone-400 font-semibold">Registered Office</div>
+                  <div className="text-white font-medium mt-0.5">{contact.registeredOffice}</div>
                 </div>
               </div>
 
               <div className="flex items-start gap-4 pb-4 border-b border-white/10">
-                <Mail className="w-5 h-5 text-[#C7A45B] shrink-0 mt-0.5" aria-hidden="true" />
+                <Mail className="w-5 h-5 text-[#C5A059] shrink-0 mt-0.5" aria-hidden="true" />
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-[#94A3B8]/70 font-semibold">Email</div>
+                  <div className="text-xs uppercase tracking-wider text-stone-400 font-semibold">Official Business Email</div>
                   <a
                     href={getMailtoLink()}
-                    className="text-white hover:text-[#C7A45B] font-mono font-medium transition-colors mt-0.5 block break-all"
+                    className="text-white hover:text-[#C5A059] font-mono font-medium transition-colors mt-0.5 block break-all"
                   >
                     {contact.email}
                   </a>
@@ -321,27 +398,29 @@ export function HomePage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-4 border-b border-white/10">
                 <div className="flex items-start gap-4">
-                  <Phone className="w-5 h-5 text-[#C7A45B] shrink-0 mt-0.5" aria-hidden="true" />
+                  <Phone className="w-5 h-5 text-[#C5A059] shrink-0 mt-0.5" aria-hidden="true" />
                   <div>
-                    <div className="text-xs uppercase tracking-wider text-[#94A3B8]/70 font-semibold">Phone</div>
-                    <a
-                      href={getTelLink()}
-                      className="text-white hover:text-[#C7A45B] font-medium transition-colors mt-0.5 block"
-                    >
-                      {contact.phone}
-                    </a>
+                    <div className="text-xs uppercase tracking-wider text-stone-400 font-semibold">Trade Desk Telephone</div>
+                    <div className="text-white font-mono font-medium mt-0.5">
+                      <a href={`tel:${contact.phoneTel}`} className="hover:text-[#C5A059] block">
+                        {contact.phone}
+                      </a>
+                      <a href="tel:+918511912115" className="hover:text-[#C5A059] block text-xs text-stone-300">
+                        +91 85119 12115
+                      </a>
+                    </div>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
                   <MessageCircle className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" aria-hidden="true" />
                   <div>
-                    <div className="text-xs uppercase tracking-wider text-[#94A3B8]/70 font-semibold">WhatsApp</div>
+                    <div className="text-xs uppercase tracking-wider text-stone-400 font-semibold">WhatsApp Direct</div>
                     <a
                       href={whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white hover:text-emerald-300 font-medium transition-colors mt-0.5 block"
+                      className="text-white hover:text-emerald-300 font-mono font-medium transition-colors mt-0.5 block"
                     >
                       {contact.phone}
                     </a>
@@ -350,14 +429,14 @@ export function HomePage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <Linkedin className="w-5 h-5 text-[#C7A45B] shrink-0 mt-0.5" aria-hidden="true" />
+                <Linkedin className="w-5 h-5 text-[#C5A059] shrink-0 mt-0.5" aria-hidden="true" />
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-[#94A3B8]/70 font-semibold">Official LinkedIn</div>
+                  <div className="text-xs uppercase tracking-wider text-stone-400 font-semibold">Institutional LinkedIn</div>
                   <a
                     href={contact.companyLinkedIn}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#C7A45B] hover:text-white font-medium transition-colors inline-flex items-center gap-1.5 mt-0.5"
+                    className="text-[#C5A059] hover:text-white font-medium transition-colors inline-flex items-center gap-1.5 mt-0.5 text-xs"
                   >
                     <span>Follow NEXARIS on LinkedIn</span>
                     <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
@@ -372,4 +451,3 @@ export function HomePage() {
     </div>
   );
 }
-

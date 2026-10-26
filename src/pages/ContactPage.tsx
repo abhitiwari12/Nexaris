@@ -9,7 +9,7 @@ import { Division } from '../types';
 export function ContactPage() {
   const { contact } = SITE_CONFIG;
 
-  const [division, setDivision] = useState<Division>('spices-oilseeds');
+  const [division, setDivision] = useState<Division>('spices');
   const [productSlug, setProductSlug] = useState('');
   const [fullName, setFullName] = useState('');
   const [companyName, setCompanyName] = useState('');
@@ -26,9 +26,9 @@ export function ContactPage() {
   const [submissionResult, setSubmissionResult] = useState<any | null>(null);
   const [copiedRef, setCopiedRef] = useState(false);
 
-  const availableProducts = ALL_PRODUCTS.filter((p) => p.division === division);
+  const availableProducts = ALL_PRODUCTS.filter((p) => p.category === division || p.division === division);
   const selectedProductObj = ALL_PRODUCTS.find((p) => p.slug === productSlug);
-  const whatsappUrl = getWhatsAppUrl(selectedProductObj?.name);
+  const whatsappUrl = getWhatsAppUrl(selectedProductObj?.name, selectedProductObj?.hsCode);
 
   const validate = () => {
     const errs: Record<string, string> = {};
@@ -229,25 +229,39 @@ export function ContactPage() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 
-                {/* Division Tabs */}
+                {/* Division Tabs (3 Agricultural Divisions) */}
                 <div>
                   <label className="block text-xs font-semibold text-[#10243D] mb-1.5">
-                    Trading Division *
+                    Agricultural Division *
                   </label>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-3 gap-2">
                     <button
                       type="button"
                       onClick={() => {
-                        setDivision('spices-oilseeds');
+                        setDivision('spices');
                         setProductSlug('');
                       }}
                       className={`px-3 py-2 text-xs font-semibold rounded border transition-colors ${
-                        division === 'spices-oilseeds'
-                          ? 'bg-[#10243D] text-white border-[#10243D]'
-                          : 'bg-white text-[#344256] border-[#DCE2E8] hover:bg-[#F1F4F7]'
+                        division === 'spices'
+                          ? 'bg-[#0A192F] text-[#D4AF37] border-[#0A192F]'
+                          : 'bg-white text-stone-700 border-stone-200 hover:bg-stone-50'
                       }`}
                     >
-                      Spices & Oilseeds
+                      Wholesale Spices
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setDivision('oilseeds');
+                        setProductSlug('');
+                      }}
+                      className={`px-3 py-2 text-xs font-semibold rounded border transition-colors ${
+                        division === 'oilseeds'
+                          ? 'bg-[#0A192F] text-[#D4AF37] border-[#0A192F]'
+                          : 'bg-white text-stone-700 border-stone-200 hover:bg-stone-50'
+                      }`}
+                    >
+                      Graded Oilseeds
                     </button>
                     <button
                       type="button"
@@ -257,11 +271,11 @@ export function ContactPage() {
                       }}
                       className={`px-3 py-2 text-xs font-semibold rounded border transition-colors ${
                         division === 'jaggery'
-                          ? 'bg-[#10243D] text-white border-[#10243D]'
-                          : 'bg-white text-[#344256] border-[#DCE2E8] hover:bg-[#F1F4F7]'
+                          ? 'bg-[#0A192F] text-[#D4AF37] border-[#0A192F]'
+                          : 'bg-white text-stone-700 border-stone-200 hover:bg-stone-50'
                       }`}
                     >
-                      Jaggery (Natural Sweeteners)
+                      Natural Jaggery
                     </button>
                   </div>
                 </div>
@@ -493,29 +507,37 @@ export function ContactPage() {
                   </div>
                 </div>
 
-                {/* Business Location */}
+                {/* Registered Office Address */}
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded bg-[#10243D]/5 border border-[#10243D]/10 flex items-center justify-center shrink-0">
-                    <MapPin className="w-4 h-4 text-[#10243D]" />
+                  <div className="w-8 h-8 rounded bg-[#0A192F]/5 border border-[#0A192F]/10 flex items-center justify-center shrink-0">
+                    <MapPin className="w-4 h-4 text-[#0A192F]" />
                   </div>
                   <div>
-                    <span className="block text-[11px] text-[#5E6D82]">Business Location</span>
-                    <span className="text-sm font-semibold text-[#10243D]">{contact.location}</span>
+                    <span className="block text-[11px] text-[#5E6D82]">Registered Office</span>
+                    <span className="text-xs font-semibold text-[#0A192F] leading-relaxed block">
+                      {contact.registeredOffice}
+                    </span>
                   </div>
                 </div>
 
                 {/* Phone */}
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded bg-[#10243D]/5 border border-[#10243D]/10 flex items-center justify-center shrink-0">
-                    <Phone className="w-4 h-4 text-[#10243D]" />
+                  <div className="w-8 h-8 rounded bg-[#0A192F]/5 border border-[#0A192F]/10 flex items-center justify-center shrink-0">
+                    <Phone className="w-4 h-4 text-[#0A192F]" />
                   </div>
                   <div>
-                    <span className="block text-[11px] text-[#5E6D82]">Business Phone</span>
+                    <span className="block text-[11px] text-[#5E6D82]">Trade Desk Phone</span>
                     <a
                       href={getTelLink()}
-                      className="text-sm font-semibold text-[#10243D] hover:text-[#183653] hover:underline"
+                      className="text-sm font-semibold text-[#0A192F] hover:text-[#C5A059] block font-mono"
                     >
                       {contact.phone}
+                    </a>
+                    <a
+                      href="tel:+918511912115"
+                      className="text-xs text-stone-600 hover:text-[#C5A059] block font-mono mt-0.5"
+                    >
+                      +91 85119 12115
                     </a>
                   </div>
                 </div>
