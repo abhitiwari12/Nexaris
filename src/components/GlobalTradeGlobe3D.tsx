@@ -73,7 +73,7 @@ const DESTINATION_PORTS: ShippingPortRoute[] = [
     lat: 31.23,
     lng: 121.47,
     fclTransit: '12 - 16 Days',
-    primaryCargo: 'Premium Jaggery Cubes & Cane Syrup',
+    primaryCargo: 'Premium Jaggery Cubes & Spiced Jaggery',
     color: '#A855F7',
   },
   {

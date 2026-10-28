@@ -62,7 +62,7 @@ export function Footer() {
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
                 <Link
-                  href="/jaggery#organic-jaggery-powder"
+                  href="/jaggery/jaggery-powder"
                   className="hover:text-white transition-colors block text-stone-300"
                 >
                   Organic Jaggery Powder (HS: 17011420)
@@ -70,26 +70,26 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/jaggery#premium-jaggery-cubes"
+                  href="/jaggery/small-solid-blocks"
                   className="hover:text-white transition-colors block text-stone-300"
                 >
-                  Premium Jaggery Cubes (HS: 17011410)
+                  Small Solid Blocks / Cubes (HS: 17011410)
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/jaggery#traditional-jaggery-blocks"
+                  href="/jaggery/whole-jaggery-blocks"
                   className="hover:text-white transition-colors block text-stone-300"
                 >
-                  Traditional Jaggery Blocks (HS: 17011410)
+                  Traditional Whole Blocks (HS: 17011410)
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/jaggery#liquid-jaggery-syrup"
+                  href="/jaggery/spiced-jaggery"
                   className="hover:text-white transition-colors block text-stone-300"
                 >
-                  Liquid Jaggery / Cane Syrup (HS: 17029090)
+                  Spiced Jaggery — Ginger, Cardamom &amp; Nuts (HS: 17011490)
                 </Link>
               </li>
               <li className="pt-2 border-t border-white/10 space-y-2">
@@ -171,8 +171,11 @@ export function Footer() {
                 <Phone className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" aria-hidden="true" />
                 <div>
                   <span className="block text-[11px] text-stone-400">Trade Desk Phone</span>
-                  <div className="font-mono text-white font-medium">
-                    <a href={`tel:${contact.phoneTel}`} className="hover:text-[#D4AF37] block">
+                  <div className="font-mono text-white font-medium space-y-0.5">
+                    <a href="tel:+918511912115" className="hover:text-[#D4AF37] block">
+                      +91 85119 12115
+                    </a>
+                    <a href={`tel:${contact.phoneTel}`} className="hover:text-[#D4AF37] block text-[11px] text-stone-400">
                       {contact.phone}
                     </a>
                   </div>

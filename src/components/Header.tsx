@@ -121,11 +121,11 @@ export function Header() {
                             <span className="text-[11px] text-[#64748B] font-normal">HS: 17011410 · 1kg/5kg/10kg solid blocks</span>
                           </Link>
                           <Link
-                            href="/jaggery#liquid-jaggery-syrup"
+                            href="/jaggery#spiced-jaggery"
                             className="block px-3 py-2 rounded text-xs font-semibold text-[#0B1730] hover:bg-[#F5F7FA] transition-colors"
                           >
-                            <span className="block font-bold">Liquid Jaggery / Cane Syrup</span>
-                            <span className="text-[11px] text-[#64748B] font-normal">HS: 17029090 · Brix 75°–80° pure cane syrup</span>
+                            <span className="block font-bold">Spiced Jaggery (Specialty)</span>
+                            <span className="text-[11px] text-[#64748B] font-normal">HS: 17011490 · Ginger, Cardamom, Fennel &amp; Sesame</span>
                           </Link>
                         </div>
                       </div>

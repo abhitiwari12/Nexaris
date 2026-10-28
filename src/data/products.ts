@@ -54,7 +54,7 @@ export const ALL_PRODUCTS: Product[] = [
       { label: 'Pack Sizes', value: '250 g, 500 g, 1 kg (Retail) | 5 kg, 25 kg (Bulk)' },
       { label: 'Certifications', value: 'FSSAI, APEDA, FDA Registered, Laboratory Tested' },
     ],
-    image: '/src/assets/images/organic_jaggery_powder_1793009899563.jpg',
+    image: '/src/assets/images/real_jaggery_powder_1793217606180.jpg',
     featured: true,
   },
   {
@@ -104,7 +104,7 @@ export const ALL_PRODUCTS: Product[] = [
       { label: 'Pack Sizes', value: '250 g, 500 g, 1 kg (Retail) | 5 kg, 25 kg (Bulk)' },
       { label: 'Certifications', value: 'FSSAI, APEDA, FDA Registered, Laboratory Tested' },
     ],
-    image: '/src/assets/images/premium_jaggery_cubes_1793009915803.jpg',
+    image: '/src/assets/images/real_jaggery_cubes_1793217620230.jpg',
     featured: true,
   },
   {
@@ -153,7 +153,7 @@ export const ALL_PRODUCTS: Product[] = [
       { label: 'Pack Sizes', value: '5 kg Bulk Boxes | 25 kg Master Cartons' },
       { label: 'Certifications', value: 'FSSAI, APEDA, FDA Registered, Laboratory Tested' },
     ],
-    image: '/src/assets/images/traditional_jaggery_blocks_1793009916103.jpg',
+    image: '/src/assets/images/real_jaggery_blocks_1793217633798.jpg',
     featured: true,
   },
   {
@@ -203,55 +203,8 @@ export const ALL_PRODUCTS: Product[] = [
       { label: 'Pack Sizes', value: '250 g, 500 g, 1 kg (Retail) | 5 kg, 25 kg (Bulk)' },
       { label: 'Certifications', value: 'FSSAI, APEDA, FDA Registered, Laboratory Tested' },
     ],
-    image: '/src/assets/images/liquid_jaggery_syrup_1793009935103.jpg',
+    image: '/src/assets/images/real_spiced_jaggery_1793217647577.jpg',
     featured: true,
-  },
-  {
-    id: 'liquid-jaggery-syrup',
-    slug: 'liquid-jaggery-syrup',
-    name: 'Liquid Jaggery / Cane Syrup (Kakvi)',
-    tagline: 'Concentrated, nutrient-rich liquid sugarcane syrup (Kakvi)',
-    hsCode: '17029090',
-    division: 'jaggery',
-    category: 'jaggery',
-    shortDescription:
-      'High-Brix (75°–80°), micro-filtered unrefined sugarcane syrup with smooth pourable viscosity. Total sugars 60%–65%, Ash ≤ 4.0%, for commercial bakeries, craft breweries, and food processing.',
-    subCategories: ['Brix 75° Standard Pouring Syrup', 'Brix 80° Heavy Viscous Confectionery Syrup'],
-    forms: ['Pourable Viscous Syrup (Kakvi)', 'Industrial Liquid Sweetener'],
-    overview:
-      'Also known in regional trade as Kakvi, NEXARIS Liquid Jaggery is concentrated clarified sugarcane syrup collected at the optimal stage before crystallization. Smooth, pourable viscosity with complex warm molasses notes. Ideal for formulations requiring liquid consistency without crystalline dissolution time.',
-    commercialApplications: [
-      'Craft Breweries, Distilleries & Specialty Rum Fermentation',
-      'Pancake, Waffle & Dessert Table Syrups (Natural Maple Substitute)',
-      'Sauce, Marinade & Barbecue Glaze Manufacturing',
-      'Industrial Bakery, Granola Coatings & Confectionery Fillings',
-    ],
-    standardPackaging: [
-      '250 g & 500 g PET Squeeze Bottles with Anti-Drip Caps (Retail OEM)',
-      '5 kg & 20 kg Food-Grade HDPE Pails with Tamper-Evident Lids',
-      '250 kg Epoxy-Lined Food-Grade Steel Drums with Bungs',
-    ],
-    technicalDrawer: {
-      moisture: 'Water Activity < 0.70 (Microbially Stable)',
-      purity: '100% Pure Micro-Filtered Cane Concentrate / Zero Additives',
-      activeContent: 'Brix Value: 75.0°–80.0° Brix | Total Sugars: 60.0%–65.0%',
-      packaging: '500g Squeeze Bottles / 20kg HDPE Pails / 250kg Steel Drums',
-      loadingPort: 'Mundra Port (INMUN) & Kandla Port (IXY), Gujarat',
-    },
-    specifications: [
-      { label: 'Product Type', value: 'Liquid Jaggery / Pure Sugarcane Syrup (Kakvi)' },
-      { label: 'HS Code', value: '17029090' },
-      { label: 'Brix Value', value: '75° – 80° refractometric' },
-      { label: 'Total Sugars', value: '60% – 65%' },
-      { label: 'Ash Content', value: '≤ 4.0%' },
-      { label: 'Consistency', value: 'Smooth highly viscous pourable liquid syrup' },
-      { label: 'Taste & Purity', value: '100% Natural Sweet — Chemical-Free (Zero Sulphur & Zero Bleaching)' },
-      { label: 'Shelf Life', value: '12 Months' },
-      { label: 'Storage', value: 'Cool, dry place away from direct sunlight' },
-      { label: 'Certifications', value: 'FSSAI, APEDA, FDA Registered, Laboratory Tested' },
-    ],
-    image: '/src/assets/images/jaggery_division_banner_1793009935414.jpg',
-    featured: false,
   },
 ];
 

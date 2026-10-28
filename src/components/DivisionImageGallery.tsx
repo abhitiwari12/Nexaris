@@ -21,47 +21,47 @@ interface JaggeryGalleryItem {
 const JAGGERY_GALLERY: JaggeryGalleryItem[] = [
   {
     id: 'powder',
-    slug: 'organic-jaggery-powder',
+    slug: 'jaggery-powder',
     title: 'Organic Jaggery Powder',
     category: 'Natural Free-Flowing Sweetener',
     hsCode: '17011420',
-    description: 'Free-flowing granulated alternative to refined cane sugar. Moisture ≤ 2.0%, 100% sulphur-free with zero bleaching agents.',
-    image: '/src/assets/images/organic_jaggery_powder_1793009899563.jpg',
-    badge: 'Moisture ≤ 2.0%',
-    keySpecs: ['Sucrose: 80%–90%', 'Mesh: 40/60/80', 'Packaging: 500g / 1kg / 25kg'],
+    description: 'Free-flowing granulated alternative to refined cane sugar. Moisture ≤ 2.0% – 3.0%, 100% sulphur-free with zero chemical bleaching.',
+    image: '/src/assets/images/real_jaggery_powder_1793217606180.jpg',
+    badge: 'Moisture ≤ 3.0%',
+    keySpecs: ['Sucrose: Min 80%', 'Mesh: 40/60/80', 'Packaging: 250g to 25kg'],
   },
   {
     id: 'cubes',
-    slug: 'premium-jaggery-cubes',
-    title: 'Premium Jaggery Cubes',
+    slug: 'small-solid-blocks',
+    title: 'Small Solid Blocks (Cubes)',
     category: 'Portion-Controlled Sweeteners',
     hsCode: '17011410',
-    description: 'Precision molded 15mm & 20mm uniform sweetener cubes for HORECA, hotel breakfast tables, and premium retail packaging.',
-    image: '/src/assets/images/premium_jaggery_cubes_1793009915803.jpg',
+    description: 'Precision molded 15mm & 20mm uniform sweetener cubes for HORECA table service, cafes, and premium retail packaging.',
+    image: '/src/assets/images/real_jaggery_cubes_1793217620230.jpg',
     badge: 'Uniform 15mm / 20mm',
-    keySpecs: ['Sucrose: ≥ 85%', 'Moisture: ≤ 5.0%', 'Packaging: Food Jars / Cartons'],
+    keySpecs: ['Sucrose: 75%–82%', 'Moisture: ≤ 5.0%–7.0%', 'Packaging: Food Jars / Cartons'],
   },
   {
     id: 'blocks',
-    slug: 'traditional-jaggery-blocks',
-    title: 'Traditional Jaggery Blocks',
+    slug: 'whole-jaggery-blocks',
+    title: 'Traditional Whole Jaggery Blocks',
     category: 'Solid Unrefined Cane Sugar',
     hsCode: '17011410',
-    description: 'Solid traditional bheli blocks cooked to Brix ≥ 85°. Ideal for commercial food processors, confectionery, and ayurvedic formulations.',
-    image: '/src/assets/images/traditional_jaggery_blocks_1793009916103.jpg',
+    description: 'Solid traditional bheli blocks cooked to Brix ≥ 85°. Ideal for wholesale distribution, commercial food processors, and confectioners.',
+    image: '/src/assets/images/real_jaggery_blocks_1793217633798.jpg',
     badge: 'Brix ≥ 85°',
     keySpecs: ['Weights: 1kg / 5kg / 10kg', 'Moisture: ≤ 7.0%', 'Shrink-wrapped blocks'],
   },
   {
-    id: 'syrup',
-    slug: 'liquid-jaggery-syrup',
-    title: 'Liquid Jaggery / Cane Syrup',
-    category: 'Concentrated Pure Sugarcane Syrup (Kakvi)',
-    hsCode: '17029090',
-    description: 'Smooth, highly viscous unrefined sugarcane syrup with rich mineral content. Designed for industrial brewing, bakeries, and beverage syrups.',
-    image: '/src/assets/images/liquid_jaggery_syrup_1793009935103.jpg',
-    badge: 'Brix 75°–80°',
-    keySpecs: ['Total Sugars: 60%–65%', 'Ash: ≤ 4.0%', 'Pails: 20kg / 250kg Drums'],
+    id: 'spiced',
+    slug: 'spiced-jaggery',
+    title: 'Spiced Jaggery (Specialty Range)',
+    category: 'Cane Sweetener with Whole Spices',
+    hsCode: '17011490',
+    description: 'Handcrafted jaggery infused with pure culinary spices: Ginger (Sonth), Cardamom (Elaichi), Fennel (Saunf), and Sesame & Peanuts.',
+    image: '/src/assets/images/real_spiced_jaggery_1793217647577.jpg',
+    badge: 'Whole Spices Infused',
+    keySpecs: ['Ginger, Cardamom, Fennel & Sesame', 'Forms: Blocks & Powder', '100% Chemical-Free'],
   },
 ];
 
@@ -77,7 +77,7 @@ export function DivisionImageGallery({
   subtitle = 'Discover our full range of 100% sulphur-free sugarcane sweeteners with certified technical specifications and international container logistics.',
 }: DivisionImageGalleryProps) {
   const { openEnquiryModal } = useEnquiry();
-  const [activeTab, setActiveTab] = useState<'all' | 'powder' | 'cubes' | 'blocks' | 'syrup'>('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'powder' | 'cubes' | 'blocks' | 'spiced'>('all');
   const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
   const [tdsModalProduct, setTdsModalProduct] = useState<Product | null>(null);
 
@@ -159,14 +159,14 @@ export function DivisionImageGallery({
             </button>
             <button
               type="button"
-              onClick={() => setActiveTab('syrup')}
+              onClick={() => setActiveTab('spiced')}
               className={`px-3.5 py-2 text-xs font-semibold rounded-md transition-colors cursor-pointer whitespace-nowrap min-h-[38px] ${
-                activeTab === 'syrup'
+                activeTab === 'spiced'
                   ? 'bg-[#0A192F] text-[#D4AF37]'
                   : 'text-stone-600 hover:text-[#0A192F]'
               }`}
             >
-              Liquid Cane Syrup
+              Spiced Jaggery
             </button>
           </div>
         </div>

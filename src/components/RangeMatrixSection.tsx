@@ -58,7 +58,7 @@ const PRODUCT_TYPES: ProductType[] = [
     name: 'Jaggery Powder',
     tagline: 'Free-flowing fine powder',
     application: 'For retail pouches, table use, beverages & daily sweetening.',
-    image: '/src/assets/images/organic_jaggery_powder_1793009899563.jpg',
+    image: '/src/assets/images/real_jaggery_powder_1793217606180.jpg',
     specs: 'Moisture Max 3% | Sucrose Min 80% | 40/60/80 Mesh',
   },
   {
@@ -66,7 +66,7 @@ const PRODUCT_TYPES: ProductType[] = [
     name: 'Small Solid Blocks',
     tagline: 'Bite-sized cubes & pieces',
     application: 'Easy portioning for direct use, retail tubs & consumer boxes.',
-    image: '/src/assets/images/premium_jaggery_cubes_1793009915803.jpg',
+    image: '/src/assets/images/real_jaggery_cubes_1793217620230.jpg',
     specs: 'Moisture Max 5%–7% | Sucrose Min 75%–82% | 15mm/20mm Pieces',
   },
   {
@@ -74,7 +74,7 @@ const PRODUCT_TYPES: ProductType[] = [
     name: 'Whole Block',
     tagline: 'Traditional solid blocks',
     application: 'For wholesale distribution, repackers & food processing.',
-    image: '/src/assets/images/traditional_jaggery_blocks_1793009916103.jpg',
+    image: '/src/assets/images/real_jaggery_blocks_1793217633798.jpg',
     specs: 'Moisture Max 5%–7% | Sucrose Min 75%–82% | Brix ≥ 85°',
   },
 ];
@@ -262,49 +262,68 @@ export function RangeMatrixSection() {
         </div>
 
         {/* 3. SPECIALTY RANGE — SPICED JAGGERY */}
-        <div className="bg-[#0A192F] text-white rounded-2xl p-8 sm:p-12 relative overflow-hidden shadow-xl border border-white/10">
+        <div className="bg-[#0A192F] text-white rounded-2xl p-6 sm:p-10 lg:p-12 relative overflow-hidden shadow-xl border border-white/10">
           <div className="absolute inset-0 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:28px_28px] opacity-10 pointer-events-none" />
 
-          <div className="relative z-10 max-w-4xl space-y-6">
-            <div>
-              <div className="text-xs font-bold uppercase tracking-widest text-[#D4AF37] mb-1">
-                SPECIALTY RANGE
-              </div>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-white">
-                Spiced Jaggery Blends
-              </h3>
-              <p className="mt-2 text-xs sm:text-sm text-stone-300 leading-relaxed max-w-2xl">
-                Natural sugarcane jaggery blended with traditional spices &amp; nuts. Available in both <strong className="text-white">Blocks &amp; Powder</strong> for gourmet retail, digestive candies, and premium beverage formulations.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
-              {SPICED_VARIETIES.map((spice) => (
-                <div
-                  key={spice.name}
-                  className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-[#D4AF37]/50 transition-colors space-y-2"
-                >
-                  <div className="text-2xl">{spice.icon}</div>
-                  <h4 className="font-serif font-bold text-base text-white">{spice.name}</h4>
-                  <p className="text-[11px] text-stone-300 leading-relaxed">{spice.benefit}</p>
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-7 space-y-6">
+              <div>
+                <div className="text-xs font-bold uppercase tracking-widest text-[#D4AF37] mb-1">
+                  SPECIALTY RANGE
                 </div>
-              ))}
-            </div>
-
-            <div className="pt-4 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 text-xs">
-              <div className="text-stone-300 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#D4AF37]" />
-                <span>100% Natural • Zero Chemical Additives • Available in Retail Tubs &amp; Master Cartons</span>
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-white">
+                  Spiced Jaggery Blends
+                </h3>
+                <p className="mt-2 text-xs sm:text-sm text-stone-300 leading-relaxed max-w-xl">
+                  Natural sugarcane jaggery blended with pure culinary whole spices &amp; nuts. Available in both <strong className="text-white">Solid Blocks &amp; Fine Powder</strong> for gourmet retail, digestive candies, and hot beverage formulations.
+                </p>
               </div>
 
-              <button
-                type="button"
-                onClick={() => openEnquiryModal(undefined, 'jaggery', 'buyer')}
-                className="inline-flex items-center gap-2 px-6 py-3 text-xs font-bold uppercase tracking-wider text-[#0A192F] bg-[#D4AF37] hover:bg-[#C5A059] rounded-lg transition-colors cursor-pointer shadow-md"
-              >
-                <span>Request Spiced Jaggery Samples</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                {SPICED_VARIETIES.map((spice) => (
+                  <div
+                    key={spice.name}
+                    className="p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-[#D4AF37]/50 transition-colors space-y-1.5"
+                  >
+                    <div className="flex items-center gap-2">
+                      <span className="text-xl" aria-hidden="true">{spice.icon}</span>
+                      <h4 className="font-serif font-bold text-sm text-white">{spice.name}</h4>
+                    </div>
+                    <p className="text-[11px] text-stone-300 leading-relaxed">{spice.benefit}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="pt-4 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 text-xs">
+                <span className="text-stone-300 text-[11px]">
+                  100% Natural · Zero Chemical Additives · Available in Retail Tubs &amp; Master Cartons
+                </span>
+
+                <button
+                  type="button"
+                  onClick={() => openEnquiryModal(undefined, 'jaggery', 'buyer')}
+                  className="inline-flex items-center gap-2 px-6 py-3 text-xs font-bold uppercase tracking-wider text-[#0A192F] bg-[#D4AF37] hover:bg-[#C5A059] rounded-lg transition-colors cursor-pointer shadow-md"
+                >
+                  <span>Request Spiced Jaggery Samples</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5">
+              <div className="relative rounded-xl overflow-hidden border border-white/15 shadow-2xl aspect-4/3 bg-stone-900 group">
+                <img
+                  src="/src/assets/images/real_spiced_jaggery_1793217647577.jpg"
+                  alt="Authentic Spiced Jaggery Cubes and Powder with whole cardamom, ginger, fennel and sesame"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F]/80 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-3 left-3 right-3 bg-[#0A192F]/90 backdrop-blur-md px-3 py-2 rounded-lg border border-white/10 text-xs">
+                  <span className="font-bold text-[#D4AF37] block">Culinary Whole Spices Infused</span>
+                  <span className="text-[11px] text-stone-300">Pure Sonth, Elaichi, Saunf &amp; Til on authentic Gur</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

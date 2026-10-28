@@ -10,7 +10,7 @@ import { SITE_CONFIG } from '../config/site';
 
 export function JaggeryPage() {
   const { openEnquiryModal } = useEnquiry();
-  const [selectedFilter, setSelectedFilter] = useState<'all' | 'powder' | 'cubes' | 'blocks' | 'spiced' | 'syrup'>('all');
+  const [selectedFilter, setSelectedFilter] = useState<'all' | 'powder' | 'cubes' | 'blocks' | 'spiced'>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredProducts = useMemo(() => {
@@ -21,7 +21,6 @@ export function JaggeryPage() {
         if (selectedFilter === 'cubes' && !product.slug.includes('cubes') && !product.slug.includes('small-solid-blocks')) return false;
         if (selectedFilter === 'blocks' && !product.slug.includes('whole-jaggery-blocks') && !product.slug.includes('traditional-jaggery-blocks')) return false;
         if (selectedFilter === 'spiced' && !product.slug.includes('spiced')) return false;
-        if (selectedFilter === 'syrup' && !product.slug.includes('syrup')) return false;
       }
       // Search filter
       if (searchQuery.trim()) {
@@ -114,8 +113,8 @@ export function JaggeryPage() {
             <div className="lg:col-span-5">
               <div className="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-stone-900 aspect-4/3">
                 <img
-                  src="/src/assets/images/jaggery_division_banner_1793009935414.jpg"
-                  alt="NEXARIS Pure Sugarcane Jaggery Product Catalogue"
+                  src="/src/assets/images/real_jaggery_hero_export_1793217661972.jpg"
+                  alt="NEXARIS Pure Sugarcane Jaggery Export Processing & Aggregation"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover"
                 />
@@ -209,17 +208,6 @@ export function JaggeryPage() {
               }`}
             >
               Spiced Jaggery
-            </button>
-            <button
-              type="button"
-              onClick={() => setSelectedFilter('syrup')}
-              className={`px-3.5 py-2 text-xs font-semibold rounded-md transition-colors whitespace-nowrap cursor-pointer ${
-                selectedFilter === 'syrup'
-                  ? 'bg-[#0A192F] text-[#D4AF37] shadow-xs'
-                  : 'text-stone-600 hover:text-[#0A192F]'
-              }`}
-            >
-              Liquid Syrup
             </button>
           </div>
 

@@ -23,17 +23,17 @@ export const KNOWLEDGE_ARTICLES: Article[] = [
     readTime: '6 min read',
     date: 'October 2026',
     author: 'NEXARIS Agro Division',
-    excerpt: 'Comprehensive B2B guide to export specifications for organic jaggery powder, portioned cubes, traditional blocks, and liquid syrup under HS Code Chapter 17.',
+    excerpt: 'Comprehensive B2B guide to export specifications for organic jaggery powder, portioned cubes, traditional blocks, and specialty spiced jaggery under HS Code Chapter 17.',
     tableOfContents: [
-      'Understanding HS Codes: 17011410, 17011420 & 17029090',
-      'Moisture Control (≤ 2.0% for Powder) & Microbial Stability',
+      'Understanding HS Codes: 17011410, 17011420 & 17011490',
+      'Moisture Control (≤ 2.0% – 3.0% for Powder) & Microbial Stability',
       'Zero-Chemical Clarification vs. Sodium Hydrosulphite Bleaching',
       'Packaging Standards for Ocean Container Shipments',
     ],
     content: [
-      'Exporting Indian jaggery (cane gur) demands strict adherence to moisture thresholds to ensure shelf stability during long ocean voyages. For Organic Jaggery Powder (HS Code 17011420), a moisture level at or below 2.0% prevents clumping and microbiological degradation, making it suitable for international retail shelves and industrial bakery formulations.',
-      'Unlike conventional domestic jaggery bleached using sodium hydrosulphite (hydrose), export-grade jaggery from NEXARIS is 100% sulphur-free, relying exclusively on organic clarification agents such as herbal extracts to achieve a natural golden hue without toxic chemical residues.',
-      'For portioned Jaggery Cubes (HS Code 17011410) and Traditional Blocks, moisture is maintained below 5.0% and 7.0% respectively, with Brix values exceeding 85°. In liquid jaggery syrup (Kakvi, HS Code 17029090), high concentration (Brix 75°–80°) ensures natural osmotic preservation without synthetic preservatives.',
+      'Exporting Indian jaggery (cane gur) demands strict adherence to moisture thresholds to ensure shelf stability during long ocean voyages. For Organic Jaggery Powder (HS Code 17011420), a moisture level at or below 2.0% to 3.0% prevents clumping and microbiological degradation, making it suitable for international retail shelves and industrial bakery formulations.',
+      'Unlike conventional domestic jaggery bleached using sodium hydrosulphite (hydrose), export-grade jaggery from NEXARIS is 100% sulphur-free, relying exclusively on natural clarification agents such as herbal extracts to achieve a natural golden hue without toxic chemical residues.',
+      'For portioned Jaggery Cubes (HS Code 17011410) and Traditional Blocks, moisture is maintained below 5.0% and 7.0% respectively, with Brix values exceeding 85°. In Spiced Jaggery (HS Code 17011490), freshly crushed culinary spices (ginger, cardamom, fennel, sesame) are infused into clarified cane syrup before setting into blocks or powder.',
     ],
   },
   {

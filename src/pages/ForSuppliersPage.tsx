@@ -118,8 +118,8 @@ export function ForSuppliersPage() {
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-stone-900 block">Liquid Jaggery / Cane Syrup (Kakvi):</strong>
-                    <span>Brix 75°–80°, rich pourable viscous syrup, total sugars 60%–65%, zero synthetic additives.</span>
+                    <strong className="text-stone-900 block">Spiced Jaggery (Specialty Range):</strong>
+                    <span>Natural cane jaggery blended with whole culinary spices (Ginger, Cardamom, Fennel, Sesame) in blocks or powder.</span>
                   </div>
                 </li>
               </ul>
@@ -246,7 +246,7 @@ export function ForSuppliersPage() {
                         <option value="Organic Jaggery Powder (100% Sulphur-Free)">Organic Jaggery Powder (100% Sulphur-Free)</option>
                         <option value="Premium Jaggery Cubes (15mm / 20mm)">Premium Jaggery Cubes (15mm / 20mm)</option>
                         <option value="Traditional Jaggery Blocks (1kg / 5kg / 10kg)">Traditional Jaggery Blocks (1kg / 5kg / 10kg)</option>
-                        <option value="Liquid Jaggery Syrup (Kakvi Brix 75°-80°)">Liquid Jaggery Syrup (Kakvi Brix 75°-80°)</option>
+                        <option value="Spiced Jaggery (Ginger, Cardamom, Fennel & Sesame)">Spiced Jaggery (Ginger, Cardamom, Fennel &amp; Sesame)</option>
                       </optgroup>
                     </select>
                   </div>

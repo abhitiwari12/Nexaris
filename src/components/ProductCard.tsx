@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, MessageSquare, Leaf, Sparkles, ChevronDown, ChevronUp, FileText, Anchor, ShieldCheck } from 'lucide-react';
+import { ArrowUpRight, MessageSquare, Leaf, Package, ChevronDown, ChevronUp, FileText, Anchor, ShieldCheck } from 'lucide-react';
 import { Product } from '../types';
 import { Link } from '../context/RouterContext';
 import { useEnquiry } from '../context/EnquiryContext';
@@ -71,7 +71,7 @@ export function ProductCard({ product, onOpenTds, onQuickQuote }: ProductCardPro
             ) : (
               <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-[#0A192F]/5 to-[#C5A059]/15 p-6 text-center">
                 {product.category === 'jaggery' ? (
-                  <Sparkles className="w-10 h-10 text-[#C5A059] mb-2" />
+                  <Package className="w-10 h-10 text-[#C5A059] mb-2" />
                 ) : (
                   <Leaf className="w-10 h-10 text-[#0A192F]/40 mb-2" />
                 )}
