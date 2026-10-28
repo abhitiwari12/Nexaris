@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, ChevronDown, ShoppingBag } from 'lucide-react';
+import { Menu, X, ArrowUpRight, ChevronDown, ShoppingBag, Download } from 'lucide-react';
 import { Link, useRouter } from '../context/RouterContext';
 import { useEnquiry } from '../context/EnquiryContext';
 import { SITE_CONFIG } from '../config/site';
@@ -43,7 +43,7 @@ export function Header() {
 
   const navLinks = [
     { href: '/', label: 'Home' },
-    { href: '/spices-oilseeds', label: 'Commodities', hasDropdown: true },
+    { href: '/jaggery', label: 'Jaggery Catalogue', hasDropdown: true },
     { href: '/buyers', label: 'For Buyers' },
     { href: '/suppliers', label: 'For Suppliers' },
     { href: '/knowledge', label: 'Knowledge Centre' },
@@ -97,28 +97,35 @@ export function Header() {
 
                     {/* Products Quick Dropdown */}
                     {productsDropdownOpen && (
-                      <div className="absolute top-full left-0 w-64 pt-2 z-50">
+                      <div className="absolute top-full left-0 w-72 pt-2 z-50">
                         <div className="bg-white rounded-lg shadow-xl border border-[#E2E8F0] p-2 space-y-1">
                           <Link
-                            href="/spices-oilseeds?category=spices"
+                            href="/jaggery#organic-jaggery-powder"
                             className="block px-3 py-2 rounded text-xs font-semibold text-[#0B1730] hover:bg-[#F5F7FA] transition-colors"
                           >
-                            <span className="block font-bold">Wholesale Spices</span>
-                            <span className="text-[11px] text-[#64748B] font-normal">Chilli, Cumin, Turmeric, Pepper, Cloves</span>
+                            <span className="block font-bold">Organic Jaggery Powder</span>
+                            <span className="text-[11px] text-[#64748B] font-normal">HS: 17011420 · Free-flowing, ≤2.0% moisture</span>
                           </Link>
                           <Link
-                            href="/spices-oilseeds?category=oilseeds"
+                            href="/jaggery#premium-jaggery-cubes"
                             className="block px-3 py-2 rounded text-xs font-semibold text-[#0B1730] hover:bg-[#F5F7FA] transition-colors"
                           >
-                            <span className="block font-bold">Graded Oilseeds</span>
-                            <span className="text-[11px] text-[#64748B] font-normal">Groundnut, Sesame, Mustard</span>
+                            <span className="block font-bold">Premium Jaggery Cubes</span>
+                            <span className="text-[11px] text-[#64748B] font-normal">HS: 17011410 · 15mm/20mm HORECA cubes</span>
                           </Link>
                           <Link
-                            href="/jaggery"
+                            href="/jaggery#traditional-jaggery-blocks"
                             className="block px-3 py-2 rounded text-xs font-semibold text-[#0B1730] hover:bg-[#F5F7FA] transition-colors"
                           >
-                            <span className="block font-bold">Natural Jaggery Sweeteners</span>
-                            <span className="text-[11px] text-[#64748B] font-normal">Organic Powder, Cubes, Blocks, Liquid Syrup</span>
+                            <span className="block font-bold">Traditional Jaggery Blocks</span>
+                            <span className="text-[11px] text-[#64748B] font-normal">HS: 17011410 · 1kg/5kg/10kg solid blocks</span>
+                          </Link>
+                          <Link
+                            href="/jaggery#liquid-jaggery-syrup"
+                            className="block px-3 py-2 rounded text-xs font-semibold text-[#0B1730] hover:bg-[#F5F7FA] transition-colors"
+                          >
+                            <span className="block font-bold">Liquid Jaggery / Cane Syrup</span>
+                            <span className="text-[11px] text-[#64748B] font-normal">HS: 17029090 · Brix 75°–80° pure cane syrup</span>
                           </Link>
                         </div>
                       </div>
@@ -143,8 +150,18 @@ export function Header() {
             })}
           </nav>
 
-          {/* Action Zone: 1 Primary CTA & Mobile Toggle */}
+          {/* Action Zone: PDF Catalogue, Primary CTA & Mobile Toggle */}
           <div className="flex items-center gap-2 sm:gap-3">
+            <a
+              href={SITE_CONFIG.cataloguePdfUrl}
+              download="NEXARIS_Jaggery_Export_Catalogue.pdf"
+              className="hidden lg:inline-flex items-center gap-1.5 px-3 py-2 text-xs font-bold text-[#0A192F] hover:text-[#C5A059] border border-stone-200 hover:border-[#C5A059] rounded-lg transition-colors whitespace-nowrap bg-white shadow-2xs"
+              title="Download official 5-page Jaggery Export Catalogue (PDF)"
+            >
+              <Download className="w-3.5 h-3.5 text-[#D4AF37]" />
+              <span>PDF Catalogue</span>
+            </a>
+
             <button
               onClick={() => openEnquiryModal(undefined, undefined, 'buyer')}
               type="button"
@@ -203,18 +220,11 @@ export function Header() {
                 Home
               </Link>
               <Link
-                href="/spices-oilseeds"
-                onClick={() => setMobileMenuOpen(false)}
-                className="block px-3 py-2.5 font-bold text-[#0B1730] hover:bg-[#F5F7FA] rounded-md"
-              >
-                Spices &amp; Oilseeds
-              </Link>
-              <Link
                 href="/jaggery"
                 onClick={() => setMobileMenuOpen(false)}
                 className="block px-3 py-2.5 font-bold text-[#0B1730] hover:bg-[#F5F7FA] rounded-md"
               >
-                Natural Jaggery Sweeteners
+                Jaggery Catalogue (HS Ch. 17)
               </Link>
 
               <div className="pt-2 border-t border-[#F1F5F9]" />
@@ -257,7 +267,17 @@ export function Header() {
             </nav>
 
             {/* Mobile Contact & Quote Button */}
-            <div className="pt-4 border-t border-[#E2E8F0] space-y-3">
+            <div className="pt-4 border-t border-[#E2E8F0] space-y-2">
+              <a
+                href={SITE_CONFIG.cataloguePdfUrl}
+                download="NEXARIS_Jaggery_Export_Catalogue.pdf"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full flex items-center justify-center gap-2 px-5 py-3 text-xs font-bold text-[#0A192F] border border-stone-300 hover:border-[#D4AF37] rounded-md shadow-2xs cursor-pointer min-h-[44px] bg-stone-50"
+              >
+                <Download className="w-4 h-4 text-[#D4AF37]" />
+                <span>Download PDF Catalogue (5-Page)</span>
+              </a>
+
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);

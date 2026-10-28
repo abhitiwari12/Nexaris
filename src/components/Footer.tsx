@@ -35,7 +35,7 @@ export function Footer() {
               {SITE_CONFIG.tagline}
             </p>
             <p className="text-xs sm:text-sm text-stone-300 leading-relaxed max-w-sm">
-              NEXARIS is a B2B Agricultural Commodity Trading &amp; Sourcing House based in Gandhinagar, Gujarat, India. Coordinating direct origin sourcing, custom packaging, and FOB Mundra / Kandla ocean container logistics.
+              NEXARIS is a B2B Natural Cane Sweetener &amp; Jaggery Sourcing House based in Gandhinagar, Gujarat, India. Coordinating direct origin procurement, certified laboratory analysis, export packaging, and FOB Mundra / Kandla ocean container logistics.
             </p>
             
             {/* Company LinkedIn Official Badge */}
@@ -54,42 +54,57 @@ export function Footer() {
             </div>
           </div>
 
-          {/* 3 Core Agricultural Divisions Column (Span 3) */}
+          {/* Natural Cane Sweeteners (Jaggery) Column (Span 3) */}
           <div className="lg:col-span-3 space-y-4">
             <h3 className="text-xs font-bold uppercase tracking-wider text-white">
-              Agricultural Divisions
+              Natural Cane Sweeteners (HS Ch. 17)
             </h3>
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
                 <Link
-                  href="/spices-oilseeds?category=spices"
+                  href="/jaggery#organic-jaggery-powder"
                   className="hover:text-white transition-colors block text-stone-300"
                 >
-                  Wholesale Spices (13 Items · Ch. 09)
+                  Organic Jaggery Powder (HS: 17011420)
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/spices-oilseeds?category=oilseeds"
+                  href="/jaggery#premium-jaggery-cubes"
                   className="hover:text-white transition-colors block text-stone-300"
                 >
-                  Graded Oilseeds (4 Items · Ch. 12)
+                  Premium Jaggery Cubes (HS: 17011410)
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/jaggery"
+                  href="/jaggery#traditional-jaggery-blocks"
                   className="hover:text-white transition-colors block text-stone-300"
                 >
-                  Natural Cane Sweeteners (4 Items · Ch. 17)
+                  Traditional Jaggery Blocks (HS: 17011410)
                 </Link>
               </li>
-              <li className="pt-2 border-t border-white/10">
+              <li>
+                <Link
+                  href="/jaggery#liquid-jaggery-syrup"
+                  className="hover:text-white transition-colors block text-stone-300"
+                >
+                  Liquid Jaggery / Cane Syrup (HS: 17029090)
+                </Link>
+              </li>
+              <li className="pt-2 border-t border-white/10 space-y-2">
+                <a
+                  href={SITE_CONFIG.cataloguePdfUrl}
+                  download="NEXARIS_Jaggery_Export_Catalogue.pdf"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#D4AF37] hover:underline"
+                >
+                  <span>📥 Download Jaggery Catalogue (PDF)</span>
+                </a>
                 <Link
                   href="/for-suppliers"
-                  className="text-xs font-semibold text-[#D4AF37] hover:underline block"
+                  className="text-xs text-stone-300 hover:text-white block"
                 >
-                  Farmer &amp; FPO Portal (Sell to NEXARIS) →
+                  Sugarcane Grower &amp; Miller Portal →
                 </Link>
               </li>
             </ul>
@@ -159,9 +174,6 @@ export function Footer() {
                   <div className="font-mono text-white font-medium">
                     <a href={`tel:${contact.phoneTel}`} className="hover:text-[#D4AF37] block">
                       {contact.phone}
-                    </a>
-                    <a href="tel:+918511912115" className="hover:text-[#D4AF37] block text-[11px] text-stone-400">
-                      +91 85119 12115
                     </a>
                   </div>
                 </div>

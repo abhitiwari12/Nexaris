@@ -12,12 +12,15 @@ import {
   Anchor,
   Package,
   FileCheck2,
+  FileDown,
 } from 'lucide-react';
 import { Link } from '../context/RouterContext';
 import { useEnquiry } from '../context/EnquiryContext';
 import { SITE_CONFIG, getTelLink, getMailtoLink, getWhatsAppUrl } from '../config/site';
 import { CertificationsSection } from '../components/CertificationsSection';
 import { DivisionImageGallery } from '../components/DivisionImageGallery';
+import { RangeMatrixSection } from '../components/RangeMatrixSection';
+import { WhiteLabelingSection } from '../components/WhiteLabelingSection';
 import { ExportServicesSection } from '../components/ExportServicesSection';
 import { ExportFaqSection } from '../components/ExportFaqSection';
 import { GlobalTradeGlobe3D } from '../components/GlobalTradeGlobe3D';
@@ -43,7 +46,7 @@ export function HomePage() {
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold tracking-widest uppercase text-[#D4AF37]">
               <span>GANDHINAGAR, GUJARAT, INDIA</span>
               <span aria-hidden="true" className="text-white/30">·</span>
-              <span className="text-stone-300">ESTABLISHED ORIGIN SOURCING</span>
+              <span className="text-stone-300">NATURAL CANE SWEETENERS ORIGIN</span>
             </div>
 
             {/* Main Headline */}
@@ -54,14 +57,14 @@ export function HomePage() {
 
             {/* Hero Subheadline */}
             <p className="text-base sm:text-lg lg:text-xl font-normal text-stone-300 leading-relaxed max-w-3xl mx-auto">
-              B2B Sourcing &amp; Export Coordination for Indian Spices, Graded Oilseeds, and Natural Cane Sweeteners.
+              B2B Sourcing &amp; Export Coordination for Certified Jaggery &amp; Natural Cane Sweeteners (HS Code Chapter 17).
             </p>
 
             {/* Verifiable Operational Protocols Strip */}
             <div className="py-4 text-xs text-stone-300 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-medium">
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" />
-                Direct Farm Origin Sourcing
+                Direct Sugarcane Harvest Sourcing
               </span>
               <span className="flex items-center gap-1.5">
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />
@@ -76,41 +79,51 @@ export function HomePage() {
             {/* CTAs */}
             <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
               <Link
-                href="/spices-oilseeds"
+                href="/jaggery"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-[#0A192F] bg-[#D4AF37] hover:bg-[#C5A059] rounded-lg transition-all shadow-lg hover:shadow-xl cursor-pointer"
               >
-                <span>Explore Spices &amp; Oilseeds</span>
+                <span>Explore Jaggery Products</span>
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
-              </Link>
-              <Link
-                href="/jaggery"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-white bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg transition-all shadow-md cursor-pointer"
-              >
-                <span>Natural Jaggery Division</span>
-                <ArrowRight className="w-4 h-4 text-[#D4AF37]" aria-hidden="true" />
               </Link>
               <button
                 type="button"
-                onClick={() => openEnquiryModal(undefined, undefined, 'buyer')}
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-stone-300 hover:text-white bg-transparent hover:bg-white/5 border border-stone-500/50 rounded-lg transition-all cursor-pointer"
+                onClick={() => openEnquiryModal(undefined, 'jaggery', 'buyer')}
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-white bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg transition-all shadow-md cursor-pointer"
               >
                 <span>Submit Buyer RFQ</span>
+                <ArrowRight className="w-4 h-4 text-[#D4AF37]" aria-hidden="true" />
               </button>
+              <a
+                href={SITE_CONFIG.cataloguePdfUrl}
+                download="NEXARIS_Jaggery_Product_Catalogue.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-[#D4AF37] hover:text-white bg-white/5 hover:bg-white/15 border border-[#D4AF37]/40 rounded-lg transition-all shadow-xs cursor-pointer"
+              >
+                <FileDown className="w-4 h-4 text-[#D4AF37]" />
+                <span>PDF Catalogue</span>
+              </a>
+              <Link
+                href="/for-suppliers"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-stone-300 hover:text-white bg-transparent hover:bg-white/5 border border-stone-500/50 rounded-lg transition-all cursor-pointer"
+              >
+                <span>Sell Cane / Jaggery</span>
+              </Link>
             </div>
 
             {/* B2B Scope & Protocol Indicators */}
             <div className="pt-10 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs text-stone-400 max-w-3xl mx-auto">
               <div className="space-y-1">
-                <div className="font-serif font-bold text-white text-2xl tabular-nums">21 Verified Lots</div>
-                <div className="text-[10px] font-bold uppercase tracking-wider text-stone-400">Export Specifications</div>
+                <div className="font-serif font-bold text-white text-2xl tabular-nums">4 Export Grades</div>
+                <div className="text-[10px] font-bold uppercase tracking-wider text-stone-400">HS Code Chapter 17</div>
               </div>
               <div className="space-y-1">
-                <div className="font-serif font-bold text-white text-2xl">100% Pre-Shipment</div>
-                <div className="text-[10px] font-bold uppercase tracking-wider text-stone-400">Lot Testing on Request</div>
+                <div className="font-serif font-bold text-white text-2xl">100% Sulphur-Free</div>
+                <div className="text-[10px] font-bold uppercase tracking-wider text-stone-400">Zero Chemical Bleaching</div>
               </div>
               <div className="space-y-1">
                 <div className="font-serif font-bold text-[#D4AF37] text-2xl">Mundra &amp; Kandla</div>
-                <div className="text-[10px] font-bold uppercase tracking-wider text-stone-400">Gateway Logistics</div>
+                <div className="text-[10px] font-bold uppercase tracking-wider text-stone-400">Container Port Logistics</div>
               </div>
             </div>
 
@@ -142,9 +155,6 @@ export function HomePage() {
               <span className="px-3 py-1.5 bg-stone-100 rounded-md border border-stone-200" title="Agricultural and Processed Food Products Export Development Authority">
                 APEDA Aligned
               </span>
-              <span className="px-3 py-1.5 bg-stone-100 rounded-md border border-stone-200" title="Spices Board India, Ministry of Commerce">
-                Spices Board India
-              </span>
               <span className="px-3 py-1.5 bg-stone-100 rounded-md border border-stone-200" title="Food Safety and Standards Authority of India">
                 FSSAI Standards
               </span>
@@ -153,6 +163,9 @@ export function HomePage() {
               </span>
               <span className="px-3 py-1.5 bg-stone-100 rounded-md border border-stone-200" title="Chamber of Commerce Origin Issuance">
                 Certificate of Origin
+              </span>
+              <span className="px-3 py-1.5 bg-stone-100 rounded-md border border-stone-200" title="SGS / Geo-Chem Laboratory Certificate of Analysis">
+                SGS / Geo-Chem COA
               </span>
             </div>
           </div>
@@ -165,9 +178,19 @@ export function HomePage() {
       <GlobalTradeGlobe3D />
 
       {/* ========================================================
-          COMMODITY DIVISIONS (CATALOGUES & SPECIFICATIONS)
+          OUR RANGE: COLOURS, FORMS & SPICED JAGGERY (PDF PAGE 2)
+          ======================================================== */}
+      <RangeMatrixSection />
+
+      {/* ========================================================
+          PRODUCT SHOWCASE GALLERY (SPECIFICATIONS & TDS)
           ======================================================== */}
       <DivisionImageGallery />
+
+      {/* ========================================================
+          CUSTOM PACKING & WHITE LABELING (PDF PAGE 4)
+          ======================================================== */}
+      <WhiteLabelingSection />
 
       {/* ========================================================
           VERIFIABLE OPERATIONAL CAPABILITIES
@@ -300,7 +323,7 @@ export function HomePage() {
               Dual-Track Sourcing &amp; Procurement
             </h2>
             <p className="mt-3 text-sm sm:text-base text-stone-600 leading-relaxed">
-              Whether you are an international bulk buyer requesting container quotation or a domestic farmer/FPO offering agricultural harvest lots, our Gandhinagar desk coordinates directly with you.
+              Whether you are an international buyer requesting container quotations for export-grade jaggery or a domestic sugarcane farmer/khandsari miller offering production lots, our Gandhinagar desk coordinates directly with you.
             </p>
           </div>
 
@@ -315,13 +338,13 @@ export function HomePage() {
                   For International Buyers
                 </h3>
                 <p className="mt-2 text-xs sm:text-sm text-stone-600 leading-relaxed">
-                  Request spot or contract FOB Mundra / CIF container pricing, custom retail pouches, and lot laboratory certificates of analysis.
+                  Request spot or contract FOB Mundra / CIF container pricing for Organic Jaggery Powder, Cubes, Blocks, and Cane Syrup with custom OEM retail packaging.
                 </p>
               </div>
 
               <button
                 type="button"
-                onClick={() => openEnquiryModal(undefined, undefined, 'buyer')}
+                onClick={() => openEnquiryModal(undefined, 'jaggery', 'buyer')}
                 className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 text-xs font-bold uppercase tracking-wider text-[#0A192F] bg-[#D4AF37] hover:bg-[#C5A059] rounded-lg transition-colors cursor-pointer shadow-xs min-h-[44px]"
               >
                 <span>Request Buyer Quotation (RFQ)</span>
@@ -336,10 +359,10 @@ export function HomePage() {
                   S
                 </div>
                 <h3 className="text-xl font-serif font-bold text-[#0A192F]">
-                  For Farmers &amp; FPOs (Suppliers)
+                  For Sugarcane Farmers &amp; Millers
                 </h3>
                 <p className="mt-2 text-xs sm:text-sm text-stone-600 leading-relaxed">
-                  Register available crop lots, lot sizes in MT, and warehouse locations in Gujarat for direct export procurement.
+                  Register available jaggery production lots, lot sizes in MT, sucrose/brix reports, and warehouse locations in Gujarat for direct export procurement.
                 </p>
               </div>
 

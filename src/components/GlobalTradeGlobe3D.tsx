@@ -23,7 +23,7 @@ const DESTINATION_PORTS: ShippingPortRoute[] = [
     lat: 51.92,
     lng: 4.47,
     fclTransit: '18 - 22 Days',
-    primaryCargo: 'Spices, Oilseeds & Non-Ferrous Scrap',
+    primaryCargo: 'Organic Jaggery Powder, Cubes & Natural Sweeteners',
     color: '#C7A45B',
   },
   {

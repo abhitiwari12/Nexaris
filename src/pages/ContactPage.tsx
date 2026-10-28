@@ -9,7 +9,7 @@ import { Division } from '../types';
 export function ContactPage() {
   const { contact } = SITE_CONFIG;
 
-  const [division, setDivision] = useState<Division>('spices');
+  const [division, setDivision] = useState<Division>('jaggery');
   const [productSlug, setProductSlug] = useState('');
   const [fullName, setFullName] = useState('');
   const [companyName, setCompanyName] = useState('');
@@ -26,7 +26,7 @@ export function ContactPage() {
   const [submissionResult, setSubmissionResult] = useState<any | null>(null);
   const [copiedRef, setCopiedRef] = useState(false);
 
-  const availableProducts = ALL_PRODUCTS.filter((p) => p.category === division || p.division === division);
+  const availableProducts = ALL_PRODUCTS;
   const selectedProductObj = ALL_PRODUCTS.find((p) => p.slug === productSlug);
   const whatsappUrl = getWhatsAppUrl(selectedProductObj?.name, selectedProductObj?.hsCode);
 
@@ -229,55 +229,19 @@ export function ContactPage() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 
-                {/* Division Tabs (3 Agricultural Divisions) */}
-                <div>
-                  <label className="block text-xs font-semibold text-[#10243D] mb-1.5">
-                    Agricultural Division *
-                  </label>
-                  <div className="grid grid-cols-3 gap-2">
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setDivision('spices');
-                        setProductSlug('');
-                      }}
-                      className={`px-3 py-2 text-xs font-semibold rounded border transition-colors ${
-                        division === 'spices'
-                          ? 'bg-[#0A192F] text-[#D4AF37] border-[#0A192F]'
-                          : 'bg-white text-stone-700 border-stone-200 hover:bg-stone-50'
-                      }`}
-                    >
-                      Wholesale Spices
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setDivision('oilseeds');
-                        setProductSlug('');
-                      }}
-                      className={`px-3 py-2 text-xs font-semibold rounded border transition-colors ${
-                        division === 'oilseeds'
-                          ? 'bg-[#0A192F] text-[#D4AF37] border-[#0A192F]'
-                          : 'bg-white text-stone-700 border-stone-200 hover:bg-stone-50'
-                      }`}
-                    >
-                      Graded Oilseeds
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setDivision('jaggery');
-                        setProductSlug('');
-                      }}
-                      className={`px-3 py-2 text-xs font-semibold rounded border transition-colors ${
-                        division === 'jaggery'
-                          ? 'bg-[#0A192F] text-[#D4AF37] border-[#0A192F]'
-                          : 'bg-white text-stone-700 border-stone-200 hover:bg-stone-50'
-                      }`}
-                    >
-                      Natural Jaggery
-                    </button>
+                {/* Dedicated Jaggery Division Badge */}
+                <div className="p-3 bg-[#FAF8F5] border border-stone-200 rounded-lg flex items-center justify-between">
+                  <div>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#C5A059] block">
+                      Commodity Division
+                    </span>
+                    <span className="text-xs font-bold text-[#0A192F]">
+                      Natural Cane Sweeteners &amp; Jaggery (HS Chapter 17)
+                    </span>
                   </div>
+                  <span className="text-[11px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full">
+                    100% Sulphur-Free
+                  </span>
                 </div>
 
                 {/* Specific Commodity Dropdown */}
@@ -533,12 +497,7 @@ export function ContactPage() {
                     >
                       {contact.phone}
                     </a>
-                    <a
-                      href="tel:+918511912115"
-                      className="text-xs text-stone-600 hover:text-[#C5A059] block font-mono mt-0.5"
-                    >
-                      +91 85119 12115
-                    </a>
+                    <span className="text-[11px] text-stone-500 block">Mon – Sat, 09:30 – 18:30 IST</span>
                   </div>
                 </div>
 

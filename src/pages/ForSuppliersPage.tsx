@@ -6,7 +6,7 @@ export function ForSuppliersPage() {
   const [formData, setFormData] = useState({
     supplierName: '',
     locationDistrictState: '',
-    commodityOffered: 'Cumin Seeds (Jeera)',
+    commodityOffered: 'Organic Jaggery Powder (100% Sulphur-Free)',
     availableLotSizeMt: '',
     moistureLabReportAvailable: 'Yes — Lab COA Available',
     contactNumber: '',
@@ -97,22 +97,29 @@ export function ForSuppliersPage() {
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-stone-900 block">Wholesale Spices:</strong>
-                    <span>Turmeric Whole/Powder, Cumin Seeds (Sortex 99.5%), Coriander, Red Chilli, Fennel Seeds, Fenugreek, and Whole Cloves/Cardamom.</span>
+                    <strong className="text-stone-900 block">Organic Jaggery Powder:</strong>
+                    <span>100% Sulphur-free (zero chemical bleaching), moisture ≤ 2.0%, free-flowing granulated texture, 40/60/80 mesh.</span>
                   </div>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-stone-900 block">Graded Oilseeds:</strong>
-                    <span>Groundnut (Bold &amp; Java counts), Sesame Seeds (Natural White 99/1 &amp; Hulled 99.95%), Mustard Seeds, and Castor Seeds.</span>
+                    <strong className="text-stone-900 block">Premium Jaggery Cubes:</strong>
+                    <span>Uniform 15mm x 15mm or 20mm x 20mm cubes, moisture ≤ 5.0%, sucrose ≥ 85%, solid non-crumbling consistency.</span>
                   </div>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-stone-900 block">Natural Jaggery Sweeteners:</strong>
-                    <span>100% Sulphur-free organic jaggery powder, uniform cubes (15mm/20mm), traditional blocks, and pure sugarcane syrup (Kakvi).</span>
+                    <strong className="text-stone-900 block">Traditional Jaggery Blocks:</strong>
+                    <span>Solid cane blocks (1kg, 5kg, 10kg), moisture ≤ 7.0%, Brix value ≥ 85°, natural golden to dark brown color.</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-stone-900 block">Liquid Jaggery / Cane Syrup (Kakvi):</strong>
+                    <span>Brix 75°–80°, rich pourable viscous syrup, total sugars 60%–65%, zero synthetic additives.</span>
                   </div>
                 </li>
               </ul>
@@ -161,7 +168,7 @@ export function ForSuppliersPage() {
                     className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg transition-colors shadow-xs"
                   >
                     <MessageSquare className="w-4 h-4" />
-                    <span>Send Details to Trade Desk WhatsApp (+91 98246 18484)</span>
+                    <span>Send Details to Trade Desk WhatsApp ({SITE_CONFIG.contact.phone})</span>
                   </a>
                   <a
                     href={mailtoDirectUrl}
@@ -235,26 +242,11 @@ export function ForSuppliersPage() {
                       onChange={(e) => setFormData({ ...formData, commodityOffered: e.target.value })}
                       className="w-full px-3 py-2 text-xs sm:text-sm border border-stone-300 rounded-lg bg-white focus:outline-none focus:ring-1 focus:ring-[#0A192F]"
                     >
-                      <optgroup label="Wholesale Spices">
-                        <option value="Cumin Seeds (Jeera)">Cumin Seeds (Jeera)</option>
-                        <option value="Turmeric Fingers / Powder">Turmeric Fingers / Powder</option>
-                        <option value="Red Chilli (Whole / Powder)">Red Chilli (Whole / Powder)</option>
-                        <option value="Coriander Seeds (Dhania)">Coriander Seeds (Dhania)</option>
-                        <option value="Fennel Seeds (Variyali)">Fennel Seeds (Variyali)</option>
-                        <option value="Fenugreek Seeds (Methi)">Fenugreek Seeds (Methi)</option>
-                        <option value="Black Pepper">Black Pepper</option>
-                      </optgroup>
-                      <optgroup label="Graded Oilseeds">
-                        <option value="Groundnut / Peanuts">Groundnut / Peanuts</option>
-                        <option value="Sesame Seeds (Natural / Hulled)">Sesame Seeds (Natural / Hulled)</option>
-                        <option value="Mustard Seeds (Rai / Sarson)">Mustard Seeds (Rai / Sarson)</option>
-                        <option value="Castor Seeds">Castor Seeds</option>
-                      </optgroup>
-                      <optgroup label="Natural Sweeteners">
-                        <option value="Organic Jaggery Powder">Organic Jaggery Powder</option>
-                        <option value="Jaggery Cubes">Jaggery Cubes</option>
-                        <option value="Traditional Jaggery Blocks">Traditional Jaggery Blocks</option>
-                        <option value="Liquid Jaggery Syrup (Kakvi)">Liquid Jaggery Syrup (Kakvi)</option>
+                      <optgroup label="Natural Cane Sweeteners (HS Chapter 17)">
+                        <option value="Organic Jaggery Powder (100% Sulphur-Free)">Organic Jaggery Powder (100% Sulphur-Free)</option>
+                        <option value="Premium Jaggery Cubes (15mm / 20mm)">Premium Jaggery Cubes (15mm / 20mm)</option>
+                        <option value="Traditional Jaggery Blocks (1kg / 5kg / 10kg)">Traditional Jaggery Blocks (1kg / 5kg / 10kg)</option>
+                        <option value="Liquid Jaggery Syrup (Kakvi Brix 75°-80°)">Liquid Jaggery Syrup (Kakvi Brix 75°-80°)</option>
                       </optgroup>
                     </select>
                   </div>
@@ -304,7 +296,7 @@ export function ForSuppliersPage() {
                       required
                       value={formData.contactNumber}
                       onChange={(e) => setFormData({ ...formData, contactNumber: e.target.value })}
-                      placeholder="+91 98246 18484"
+                      placeholder="+91 85119 12115"
                       className="w-full px-3 py-2 text-xs sm:text-sm border border-stone-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#0A192F]"
                     />
                   </div>

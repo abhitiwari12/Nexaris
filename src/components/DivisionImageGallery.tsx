@@ -1,44 +1,67 @@
 import React, { useState } from 'react';
 import { Link } from '../context/RouterContext';
-import { ArrowRight, Globe } from 'lucide-react';
+import { ArrowRight, Globe, Sparkles, FileText, CheckCircle2 } from 'lucide-react';
+import { useEnquiry } from '../context/EnquiryContext';
+import { TdsModal } from './TdsModal';
+import { Product } from '../types';
+import { ALL_PRODUCTS } from '../data/products';
 
-interface DivisionItem {
+interface JaggeryGalleryItem {
   id: string;
+  slug: string;
   title: string;
   category: string;
+  hsCode: string;
   description: string;
   image: string;
-  link: string;
   badge: string;
+  keySpecs: string[];
 }
 
-const DIVISIONS_GALLERY: DivisionItem[] = [
+const JAGGERY_GALLERY: JaggeryGalleryItem[] = [
   {
-    id: 'div-spices',
-    title: 'Spices Commodities',
-    category: 'Spices & Seasonings',
-    description: 'Bulk wholesale spices including Red Chilli, Cumin, Turmeric, Clove, and Black Pepper sourced from Gujarat and Rajasthan farming belts.',
-    image: '/images/commodities/spices_division_banner_1792832350716.jpg',
-    link: '/spices-oilseeds?category=spices',
-    badge: '13 Varieties',
+    id: 'powder',
+    slug: 'organic-jaggery-powder',
+    title: 'Organic Jaggery Powder',
+    category: 'Natural Free-Flowing Sweetener',
+    hsCode: '17011420',
+    description: 'Free-flowing granulated alternative to refined cane sugar. Moisture ≤ 2.0%, 100% sulphur-free with zero bleaching agents.',
+    image: '/src/assets/images/organic_jaggery_powder_1793009899563.jpg',
+    badge: 'Moisture ≤ 2.0%',
+    keySpecs: ['Sucrose: 80%–90%', 'Mesh: 40/60/80', 'Packaging: 500g / 1kg / 25kg'],
   },
   {
-    id: 'div-oilseeds',
-    title: 'Graded Oilseeds',
-    category: 'Oilseeds & Feedstock',
-    description: 'Cleaned and sorted Sesame Seeds, Mustard Seeds, Black Mustard, and Groundnuts for oil pressing, roasting, and food processing.',
-    image: '/images/commodities/sesame_seeds.png',
-    link: '/spices-oilseeds?category=oilseeds',
-    badge: '4 Categories',
+    id: 'cubes',
+    slug: 'premium-jaggery-cubes',
+    title: 'Premium Jaggery Cubes',
+    category: 'Portion-Controlled Sweeteners',
+    hsCode: '17011410',
+    description: 'Precision molded 15mm & 20mm uniform sweetener cubes for HORECA, hotel breakfast tables, and premium retail packaging.',
+    image: '/src/assets/images/premium_jaggery_cubes_1793009915803.jpg',
+    badge: 'Uniform 15mm / 20mm',
+    keySpecs: ['Sucrose: ≥ 85%', 'Moisture: ≤ 5.0%', 'Packaging: Food Jars / Cartons'],
   },
   {
-    id: 'div-jaggery',
-    title: 'Natural Jaggery Sweeteners',
-    category: 'Jaggery & Cane Sugars (HS Ch. 17)',
-    description: 'Export-grade organic jaggery powder, portioned sweetener cubes, traditional solid cane blocks, and nutrient-rich liquid jaggery syrup.',
-    image: '/src/assets/images/jaggery_division_banner_1793009935414.jpg',
-    link: '/jaggery',
-    badge: '4 Export Grades',
+    id: 'blocks',
+    slug: 'traditional-jaggery-blocks',
+    title: 'Traditional Jaggery Blocks',
+    category: 'Solid Unrefined Cane Sugar',
+    hsCode: '17011410',
+    description: 'Solid traditional bheli blocks cooked to Brix ≥ 85°. Ideal for commercial food processors, confectionery, and ayurvedic formulations.',
+    image: '/src/assets/images/traditional_jaggery_blocks_1793009916103.jpg',
+    badge: 'Brix ≥ 85°',
+    keySpecs: ['Weights: 1kg / 5kg / 10kg', 'Moisture: ≤ 7.0%', 'Shrink-wrapped blocks'],
+  },
+  {
+    id: 'syrup',
+    slug: 'liquid-jaggery-syrup',
+    title: 'Liquid Jaggery / Cane Syrup',
+    category: 'Concentrated Pure Sugarcane Syrup (Kakvi)',
+    hsCode: '17029090',
+    description: 'Smooth, highly viscous unrefined sugarcane syrup with rich mineral content. Designed for industrial brewing, bakeries, and beverage syrups.',
+    image: '/src/assets/images/liquid_jaggery_syrup_1793009935103.jpg',
+    badge: 'Brix 75°–80°',
+    keySpecs: ['Total Sugars: 60%–65%', 'Ash: ≤ 4.0%', 'Pails: 20kg / 250kg Drums'],
   },
 ];
 
@@ -50,154 +73,205 @@ interface DivisionImageGalleryProps {
 
 export function DivisionImageGallery({
   className = '',
-  title = 'Commodity Categories & Sourcing Catalogues',
-  subtitle = 'Explore our primary wholesale commodity categories with verified specifications, direct farmgate procurement, and Sortex cleaning.',
+  title = 'Export-Grade Jaggery Variants (HS Code Ch. 17)',
+  subtitle = 'Discover our full range of 100% sulphur-free sugarcane sweeteners with certified technical specifications and international container logistics.',
 }: DivisionImageGalleryProps) {
-  const [activeTab, setActiveTab] = useState<'all' | 'spices' | 'oilseeds' | 'jaggery'>('all');
+  const { openEnquiryModal } = useEnquiry();
+  const [activeTab, setActiveTab] = useState<'all' | 'powder' | 'cubes' | 'blocks' | 'syrup'>('all');
   const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
+  const [tdsModalProduct, setTdsModalProduct] = useState<Product | null>(null);
 
-  const filteredItems = DIVISIONS_GALLERY.filter((item) => {
+  const filteredItems = JAGGERY_GALLERY.filter((item) => {
     if (activeTab === 'all') return true;
-    if (activeTab === 'spices' && item.id === 'div-spices') return true;
-    if (activeTab === 'oilseeds' && item.id === 'div-oilseeds') return true;
-    if (activeTab === 'jaggery' && item.id === 'div-jaggery') return true;
-    return false;
+    return item.id === activeTab;
   });
 
+  const handleOpenTds = (itemSlug: string) => {
+    const prod = ALL_PRODUCTS.find((p) => p.slug === itemSlug);
+    if (prod) {
+      setTdsModalProduct(prod);
+    }
+  };
+
   return (
-    <section id="products" className={`py-16 sm:py-20 bg-[#F5F7FA] ${className}`}>
+    <section id="products" className={`py-16 sm:py-20 bg-[#FAF8F5] border-b border-stone-200 ${className}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
           <div className="max-w-2xl">
-            <div className="text-xs font-semibold uppercase tracking-wider text-[#C7A45B] mb-2">
-              Visual Product Gallery
+            <div className="text-xs font-bold uppercase tracking-wider text-[#C5A059] mb-2">
+              NATURAL CANE SWEETENERS SHOWCASE
             </div>
-            <h2 className="text-3xl font-bold text-[#0B1730] font-display tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0A192F] tracking-tight">
               {title}
             </h2>
-            <p className="mt-2 text-sm text-[#64748B] leading-relaxed">
+            <p className="mt-2 text-xs sm:text-sm text-stone-600 leading-relaxed">
               {subtitle}
             </p>
           </div>
 
           {/* Interactive Filter Tabs */}
-          <div className="flex items-center gap-1.5 p-1 bg-white rounded-lg border border-[#E2E8F0] shadow-xs overflow-x-auto no-scrollbar shrink-0 max-w-full">
+          <div className="flex items-center gap-1.5 p-1 bg-white rounded-lg border border-stone-200 shadow-xs overflow-x-auto no-scrollbar shrink-0 max-w-full">
             <button
               type="button"
               onClick={() => setActiveTab('all')}
-              className={`px-3.5 py-2 text-xs font-semibold rounded transition-colors cursor-pointer whitespace-nowrap min-h-[38px] ${
+              className={`px-3.5 py-2 text-xs font-semibold rounded-md transition-colors cursor-pointer whitespace-nowrap min-h-[38px] ${
                 activeTab === 'all'
-                  ? 'bg-[#0B1730] text-white'
-                  : 'text-[#64748B] hover:text-[#0B1730]'
+                  ? 'bg-[#0A192F] text-[#D4AF37]'
+                  : 'text-stone-600 hover:text-[#0A192F]'
               }`}
             >
-              All Commodities
+              All Variants ({JAGGERY_GALLERY.length})
             </button>
             <button
               type="button"
-              onClick={() => setActiveTab('spices')}
-              className={`px-3.5 py-2 text-xs font-semibold rounded transition-colors cursor-pointer whitespace-nowrap min-h-[38px] ${
-                activeTab === 'spices'
-                  ? 'bg-[#0B1730] text-white'
-                  : 'text-[#64748B] hover:text-[#0B1730]'
+              onClick={() => setActiveTab('powder')}
+              className={`px-3.5 py-2 text-xs font-semibold rounded-md transition-colors cursor-pointer whitespace-nowrap min-h-[38px] ${
+                activeTab === 'powder'
+                  ? 'bg-[#0A192F] text-[#D4AF37]'
+                  : 'text-stone-600 hover:text-[#0A192F]'
               }`}
             >
-              Spices
+              Organic Powder
             </button>
             <button
               type="button"
-              onClick={() => setActiveTab('oilseeds')}
-              className={`px-3.5 py-2 text-xs font-semibold rounded transition-colors cursor-pointer whitespace-nowrap min-h-[38px] ${
-                activeTab === 'oilseeds'
-                  ? 'bg-[#0B1730] text-white'
-                  : 'text-[#64748B] hover:text-[#0B1730]'
+              onClick={() => setActiveTab('cubes')}
+              className={`px-3.5 py-2 text-xs font-semibold rounded-md transition-colors cursor-pointer whitespace-nowrap min-h-[38px] ${
+                activeTab === 'cubes'
+                  ? 'bg-[#0A192F] text-[#D4AF37]'
+                  : 'text-stone-600 hover:text-[#0A192F]'
               }`}
             >
-              Oilseeds
+              Sweetener Cubes
             </button>
             <button
               type="button"
-              onClick={() => setActiveTab('jaggery')}
-              className={`px-3.5 py-2 text-xs font-semibold rounded transition-colors cursor-pointer whitespace-nowrap min-h-[38px] ${
-                activeTab === 'jaggery'
-                  ? 'bg-[#0B1730] text-white'
-                  : 'text-[#64748B] hover:text-[#0B1730]'
+              onClick={() => setActiveTab('blocks')}
+              className={`px-3.5 py-2 text-xs font-semibold rounded-md transition-colors cursor-pointer whitespace-nowrap min-h-[38px] ${
+                activeTab === 'blocks'
+                  ? 'bg-[#0A192F] text-[#D4AF37]'
+                  : 'text-stone-600 hover:text-[#0A192F]'
               }`}
             >
-              Jaggery Sweeteners
+              Traditional Blocks
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveTab('syrup')}
+              className={`px-3.5 py-2 text-xs font-semibold rounded-md transition-colors cursor-pointer whitespace-nowrap min-h-[38px] ${
+                activeTab === 'syrup'
+                  ? 'bg-[#0A192F] text-[#D4AF37]'
+                  : 'text-stone-600 hover:text-[#0A192F]'
+              }`}
+            >
+              Liquid Cane Syrup
             </button>
           </div>
         </div>
 
-        {/* Mobile Swipe Hint */}
-        <div className="md:hidden flex items-center justify-between text-[11px] text-[#C7A45B] font-semibold mb-3 px-1">
-          <span>Explore Divisions</span>
-          <span>Swipe horizontally →</span>
-        </div>
-
-        {/* Mobile First Horizontal Touch Gallery Grid */}
-        <div className="flex md:grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 pb-4">
+        {/* 4 Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {filteredItems.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-lg border border-[#E2E8F0] hover:border-[#C7A45B] transition-all duration-200 overflow-hidden flex flex-col justify-between shadow-xs group min-w-[85vw] sm:min-w-[320px] md:min-w-0 snap-start"
+              className="bg-white rounded-xl border border-stone-200 hover:border-[#C5A059] transition-all duration-200 overflow-hidden flex flex-col justify-between shadow-xs hover:shadow-md group"
             >
               <div>
                 {/* Image Container with Fallback */}
-                <div className="relative aspect-4/3 bg-slate-100 overflow-hidden">
+                <div className="relative aspect-4/3 bg-stone-100 overflow-hidden">
                   {!imageErrors[item.id] ? (
                     <img
                       src={item.image}
                       alt={item.title}
                       referrerPolicy="no-referrer"
                       onError={() => setImageErrors((prev) => ({ ...prev, [item.id]: true }))}
-                      className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-300"
                       loading="lazy"
                     />
                   ) : (
-                    <div className="w-full h-full flex flex-col items-center justify-center bg-[#0B1730]/10 p-6 text-center">
-                      <Globe className="w-8 h-8 text-[#0B1730]/40 mb-2" />
-                      <span className="text-xs font-semibold text-[#0B1730]">{item.title}</span>
+                    <div className="w-full h-full flex flex-col items-center justify-center bg-[#0A192F]/10 p-6 text-center">
+                      <Globe className="w-8 h-8 text-[#0A192F]/40 mb-2" />
+                      <span className="text-xs font-semibold text-[#0A192F]">{item.title}</span>
                     </div>
                   )}
 
-                  {/* Badge */}
-                  <div className="absolute top-3 left-3 bg-[#0B1730]/90 backdrop-blur-md px-2.5 py-1 text-[#C7A45B] text-xs font-semibold rounded border border-white/10">
+                  {/* HS Code Badge */}
+                  <div className="absolute top-3 left-3 bg-[#0A192F]/90 backdrop-blur-md px-2.5 py-1 text-[#D4AF37] text-xs font-mono font-bold rounded border border-white/10 shadow-xs">
+                    HS: {item.hsCode}
+                  </div>
+
+                  {/* Quality Highlight */}
+                  <div className="absolute bottom-3 right-3 bg-emerald-950/80 backdrop-blur-md px-2 py-0.5 text-emerald-300 text-[10px] font-semibold rounded border border-emerald-500/20">
                     {item.badge}
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-5">
-                  <div className="text-xs text-[#64748B] font-medium mb-1.5">
-                    {item.category}
+                <div className="p-5 space-y-3">
+                  <div>
+                    <span className="text-[11px] text-[#C5A059] font-bold uppercase tracking-wider block">
+                      {item.category}
+                    </span>
+                    <h3 className="text-lg font-serif font-bold text-[#0A192F] mt-0.5 group-hover:text-[#C5A059] transition-colors">
+                      {item.title}
+                    </h3>
                   </div>
-                  <h3 className="text-lg font-bold text-[#0B1730] font-display group-hover:text-[#162444] transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-xs text-[#64748B] leading-relaxed line-clamp-3">
+
+                  <p className="text-xs text-stone-600 leading-relaxed line-clamp-3">
                     {item.description}
                   </p>
+
+                  {/* Specs Quick Strip */}
+                  <div className="pt-2 border-t border-stone-100 space-y-1">
+                    {item.keySpecs.map((spec, sIdx) => (
+                      <div key={sIdx} className="flex items-center gap-1.5 text-[11px] text-stone-600 font-medium">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                        <span>{spec}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
 
-              {/* Footer CTA */}
-              <div className="px-5 pb-5 pt-3 border-t border-[#F5F7FA]">
-                <Link
-                  href={item.link}
-                  className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-xs font-semibold text-[#0B1730] bg-[#F5F7FA] hover:bg-[#0B1730] hover:text-white rounded transition-colors min-h-[40px]"
+              {/* Actions Footer */}
+              <div className="p-5 pt-0 grid grid-cols-2 gap-2 border-t border-stone-100 mt-2">
+                <button
+                  type="button"
+                  onClick={() => handleOpenTds(item.slug)}
+                  className="inline-flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-semibold text-stone-700 bg-stone-100 hover:bg-stone-200 rounded-lg transition-colors cursor-pointer"
                 >
-                  <span>Explore Division</span>
-                  <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
-                </Link>
+                  <FileText className="w-3.5 h-3.5 text-[#C5A059]" />
+                  <span>Spec Sheet</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    const prod = ALL_PRODUCTS.find((p) => p.slug === item.slug);
+                    openEnquiryModal(prod, 'jaggery', 'buyer');
+                  }}
+                  className="inline-flex items-center justify-center gap-1 px-3 py-2 text-xs font-bold uppercase tracking-wider text-[#0A192F] bg-[#D4AF37] hover:bg-[#C5A059] rounded-lg transition-colors cursor-pointer shadow-xs"
+                >
+                  <span>RFQ</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
               </div>
             </div>
           ))}
         </div>
 
       </div>
+
+      {/* TDS Specification Modal */}
+      {tdsModalProduct && (
+        <TdsModal
+          product={tdsModalProduct}
+          isOpen={!!tdsModalProduct}
+          onClose={() => setTdsModalProduct(null)}
+        />
+      )}
     </section>
   );
 }

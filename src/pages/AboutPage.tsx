@@ -19,7 +19,7 @@ export function AboutPage() {
             NEXARIS — One Partner. Many Possibilities.
           </h1>
           <p className="text-sm sm:text-base text-[#94A3B8] max-w-3xl leading-relaxed">
-            NEXARIS facilitates international B2B trade in premium Indian spices, graded oilseeds, and natural jaggery sweeteners (HS Code Chapter 17). Operating out of Gandhinagar, Gujarat, with ocean dispatch through Mundra Port &amp; Hazira Port.
+            NEXARIS facilitates international B2B trade in premium export-grade natural cane sweeteners and jaggery (HS Code Chapter 17). Operating out of Gandhinagar, Gujarat, with direct ocean container dispatch through Mundra Port &amp; Kandla Port.
           </p>
         </div>
       </section>
@@ -28,23 +28,23 @@ export function AboutPage() {
       <section className="py-16 bg-white border-b border-[#E2E8F0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="p-6 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] space-y-2">
-            <h3 className="text-lg font-bold font-display text-[#0B1730]">Direct Sourcing Belts</h3>
+            <h3 className="text-lg font-bold font-display text-[#0B1730]">Sugarcane Origin Belts</h3>
             <p className="text-xs text-[#64748B] leading-relaxed">
-              Procuring directly from Western Indian agricultural centers (Gujarat &amp; Rajasthan farming belts) and verified sugarcane tracts for farmgate purity.
+              Procuring directly from Western Indian sugarcane tracts and certified khandsari clusters for 100% sulphur-free unrefined cane purity.
             </p>
           </div>
 
           <div className="p-6 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] space-y-2">
             <h3 className="text-lg font-bold font-display text-[#0B1730]">Gateway Infrastructure</h3>
             <p className="text-xs text-[#64748B] leading-relaxed">
-              Positioned near Mundra Port &amp; Hazira Port for efficient ocean container loading, mechanized stuffing, and international bill of lading dispatch.
+              Positioned near Mundra Port &amp; Kandla Port for fast ocean container loading, mechanized stuffing, and international bill of lading dispatch.
             </p>
           </div>
 
           <div className="p-6 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] space-y-2">
             <h3 className="text-lg font-bold font-display text-[#0B1730]">100% Quality Protocol</h3>
             <p className="text-xs text-[#64748B] leading-relaxed">
-              Every shipment undergoes pre-loading lab testing, Sortex cleaning, and compliance verification with APEDA, Spices Board CRES, and FSSAI food export standards.
+              Every shipment undergoes pre-loading laboratory testing, moisture verification (≤2.0% for powder), and compliance with APEDA and FSSAI export standards.
             </p>
           </div>
         </div>

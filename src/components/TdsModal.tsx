@@ -84,7 +84,7 @@ export const TdsModal: React.FC<TdsModalProps> = ({
                 REF: TDS-{product.id.toUpperCase()}-2026
               </p>
               <p className="text-stone-400 text-[10px]">
-                Standards: APEDA · Spices Board · FSSAI
+                Standards: FSSAI · APEDA · FDA · Laboratory Tested
               </p>
             </div>
           </div>
@@ -198,7 +198,7 @@ export const TdsModal: React.FC<TdsModalProps> = ({
           {/* Footer Note */}
           <div className="pt-4 border-t border-stone-200 text-stone-400 text-[10px] flex flex-col sm:flex-row justify-between gap-2">
             <div>
-              Commercial Desk: contact@nexaris.co.in | +91 98246 18484 / +91 85119 12115
+              Commercial Desk: {SITE_CONFIG.contact.email} | {SITE_CONFIG.contact.phone}
             </div>
             <div>
               Official export document valid for container quotation purposes.

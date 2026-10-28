@@ -19,14 +19,14 @@ export function EnquiryModal() {
     buyerLocation: '',
     destinationPort: '',
     enquiryType: 'buyer',
-    division: 'spices',
+    division: 'jaggery',
     productSlug: '',
     productName: '',
     selectedSubCategory: '',
     requiredQuantity: '',
     quantityUnit: 'Metric Tons (MT)',
     incoterm: 'FOB Mundra',
-    packagingPreference: 'Bulk 25kg / 50kg PP Bags with Liner',
+    packagingPreference: '25kg / 50kg Inner-Lined Kraft / PP Bags',
     sampleRequested: false,
     additionalRequirements: '',
     consentAccepted: false,
@@ -264,7 +264,7 @@ export function EnquiryModal() {
                     className="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg transition-colors shadow-xs"
                   >
                     <MessageSquare className="w-4 h-4" />
-                    <span>Send via WhatsApp (+91 98246 18484)</span>
+                    <span>Send via WhatsApp (+91 85119 12115)</span>
                   </a>
 
                   <a
@@ -310,70 +310,19 @@ export function EnquiryModal() {
                 autoComplete="off"
               />
 
-              {/* 3 Core Agricultural Divisions Filter */}
-              <div>
-                <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">
-                  1. Agricultural Commodity Division *
-                </label>
-                <div className="grid grid-cols-3 gap-2">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setFormData((prev) => ({
-                        ...prev,
-                        division: 'spices',
-                        productSlug: '',
-                        productName: '',
-                        selectedSubCategory: '',
-                      }));
-                    }}
-                    className={`px-3 py-2 text-xs font-semibold rounded-lg border transition-all cursor-pointer text-center ${
-                      formData.division === 'spices'
-                        ? 'bg-[#0A192F] text-[#D4AF37] border-[#0A192F] shadow-xs'
-                        : 'bg-white text-stone-600 border-stone-200 hover:bg-stone-50'
-                    }`}
-                  >
-                    Wholesale Spices
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setFormData((prev) => ({
-                        ...prev,
-                        division: 'oilseeds',
-                        productSlug: '',
-                        productName: '',
-                        selectedSubCategory: '',
-                      }));
-                    }}
-                    className={`px-3 py-2 text-xs font-semibold rounded-lg border transition-all cursor-pointer text-center ${
-                      formData.division === 'oilseeds'
-                        ? 'bg-[#0A192F] text-[#D4AF37] border-[#0A192F] shadow-xs'
-                        : 'bg-white text-stone-600 border-stone-200 hover:bg-stone-50'
-                    }`}
-                  >
-                    Graded Oilseeds
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setFormData((prev) => ({
-                        ...prev,
-                        division: 'jaggery',
-                        productSlug: '',
-                        productName: '',
-                        selectedSubCategory: '',
-                      }));
-                    }}
-                    className={`px-3 py-2 text-xs font-semibold rounded-lg border transition-all cursor-pointer text-center ${
-                      formData.division === 'jaggery'
-                        ? 'bg-[#0A192F] text-[#D4AF37] border-[#0A192F] shadow-xs'
-                        : 'bg-white text-stone-600 border-stone-200 hover:bg-stone-50'
-                    }`}
-                  >
-                    Natural Jaggery
-                  </button>
+              {/* Dedicated Jaggery Division Badge */}
+              <div className="p-3 bg-[#FAF8F5] border border-stone-200 rounded-lg flex items-center justify-between">
+                <div>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#C5A059] block">
+                    Product Division
+                  </span>
+                  <span className="text-xs font-bold text-[#0A192F]">
+                    Natural Cane Sweeteners &amp; Jaggery (HS Chapter 17)
+                  </span>
                 </div>
+                <span className="text-[11px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full">
+                  100% Sulphur-Free
+                </span>
               </div>
 
               {/* Product & Grade Dropdown */}
@@ -563,7 +512,7 @@ export function EnquiryModal() {
 
                 <div>
                   <label htmlFor="enquiry-packaging" className="block text-xs font-semibold text-stone-700 mb-1">
-                    Packaging Preference
+                    Packaging Preference (5 Standard Sizes)
                   </label>
                   <select
                     id="enquiry-packaging"
@@ -571,13 +520,12 @@ export function EnquiryModal() {
                     onChange={(e) => setFormData({ ...formData, packagingPreference: e.target.value })}
                     className="w-full px-3 py-2 text-xs sm:text-sm border border-stone-300 rounded-lg bg-white focus:outline-none focus:ring-1 focus:ring-[#0A192F]"
                   >
-                    <option value="Bulk 25kg / 50kg PP Bags with Liner">Bulk 25kg / 50kg PP Bags with Liner</option>
-                    <option value="Export Breathable Jute Bags">Export Breathable Jute Bags</option>
-                    <option value="500g / 1kg Stand-Up Zip Pouches (Private Label Retail)">500g / 1kg Stand-Up Zip Pouches (Private Label Retail)</option>
-                    <option value="500g / 1kg Food Jars in Master Cartons">500g / 1kg Food Jars in Master Cartons</option>
-                    <option value="Individual Shrink Wrap + Master Cartons">Individual Shrink Wrap + Master Cartons (Blocks)</option>
-                    <option value="20kg HDPE Pails / 250kg Steel Drums">20kg HDPE Pails / 250kg Steel Drums (Liquid)</option>
-                    <option value="1,000kg Jumbo Bulk FIBC Totes">1,000kg Jumbo Bulk FIBC Totes</option>
+                    <option value="250 g Retail Packs (Pouches / Jars)">250 g Retail Packs (Pouches / Jars)</option>
+                    <option value="500 g Retail Packs (Pouches / Jars)">500 g Retail Packs (Pouches / Jars)</option>
+                    <option value="1 kg Retail Packs (Pouches / Jars / Boxes)">1 kg Retail Packs (Pouches / Jars / Boxes)</option>
+                    <option value="5 kg Bulk Packing (Poly-lined bags & cartons)">5 kg Bulk Packing (Poly-lined bags &amp; cartons)</option>
+                    <option value="25 kg Bulk Packing (Poly-lined bags & export cartons)">25 kg Bulk Packing (Poly-lined bags &amp; export cartons)</option>
+                    <option value="Custom White Labeling (Under Buyer Brand)">Custom White Labeling (Under Buyer Brand)</option>
                   </select>
                 </div>
               </div>

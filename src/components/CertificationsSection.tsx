@@ -1,73 +1,109 @@
-import React, { useState } from 'react';
-import { OFFICIAL_CERTIFICATION_CARDS, CertificationLogoCard } from '../data/certifications';
+import React from 'react';
+import { ShieldCheck, CheckCircle2, FileText, ArrowRight, ExternalLink } from 'lucide-react';
+import { useEnquiry } from '../context/EnquiryContext';
 
 interface CertificationsSectionProps {
   className?: string;
 }
 
 export function CertificationsSection({ className = '' }: CertificationsSectionProps) {
-  const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
+  const { openEnquiryModal } = useEnquiry();
 
-  const handleImageError = (id: string) => {
-    setImageErrors((prev) => ({ ...prev, [id]: true }));
-  };
+  const certifications = [
+    {
+      code: 'FSSAI',
+      title: 'Food Safety License',
+      description: 'Manufactured and packed under strict Food Safety and Standards Authority of India hygiene protocols.',
+      badge: 'Food Safety License',
+    },
+    {
+      code: 'APEDA',
+      title: 'Export Certification',
+      description: 'Authorized by the Agricultural & Processed Food Products Export Development Authority (Ministry of Commerce).',
+      badge: 'Export Certification',
+    },
+    {
+      code: 'FDA',
+      title: 'Food Facility Registration',
+      description: 'Compliant with international food facility registration requirements for US and global market clearance.',
+      badge: 'Food Facility Registration',
+    },
+    {
+      code: 'LAB REPORT',
+      title: 'Laboratory Tested',
+      description: '100% pre-shipment laboratory analysis testing moisture, sucrose, brix, and zero sulphur / zero bleaching validation.',
+      badge: 'Laboratory Tested',
+    },
+  ];
 
   return (
-    <section id="certifications" className={`py-16 sm:py-20 bg-white border-y border-[#E2E8F0] ${className}`}>
+    <section id="certifications" className={`py-16 sm:py-20 bg-white border-y border-stone-200 ${className}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Heading: "Certifications & Compliance" */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0B1730] font-display tracking-tight">
-            Certifications &amp; Compliance
+        {/* Section Heading: Specifications & Certifications */}
+        <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
+          <div className="text-xs font-bold uppercase tracking-wider text-[#C5A059]">
+            QUALITY ASSURED
+          </div>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0A192F] tracking-tight">
+            Specifications &amp; Certifications
           </h2>
-          <p className="mt-2 text-xs sm:text-sm text-[#64748B]">
-            Official regulatory registrations, quality standards, and export authority memberships.
+          <p className="mt-2 text-xs sm:text-sm text-stone-600">
+            Official statutory licenses and accredited laboratory quality protocols protecting every consignment.
           </p>
         </div>
 
-        {/* Mobile Swipe Hint */}
-        <div className="sm:hidden flex items-center justify-between text-[11px] text-[#C7A45B] font-semibold mb-3 px-1">
-          <span>Official Registrations</span>
-          <span>Swipe →</span>
-        </div>
-
-        {/* Clean Grid / Mobile Horizontal Swipe displaying Official Certification Cards */}
-        <div className="flex sm:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-6 items-center justify-start sm:justify-center overflow-x-auto snap-x no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 pb-2">
-          {OFFICIAL_CERTIFICATION_CARDS.map((item: CertificationLogoCard) => (
-            <a
-              key={item.id}
-              href={item.portalUrl || '#'}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white rounded-xl overflow-hidden border border-emerald-700/30 hover:border-emerald-600 hover:shadow-md hover:-translate-y-1 transition-all duration-200 p-2 sm:p-3 flex items-center justify-center group focus-visible:ring-2 focus-visible:ring-[#0B1730] focus-visible:outline-none min-w-[140px] sm:min-w-0 snap-start"
-              title={`View ${item.name} information (opens in new tab)`}
+        {/* 4 Core Certification Cards Matching PDF Page 3 */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {certifications.map((item) => (
+            <div
+              key={item.code}
+              className="bg-[#0A192F] text-white rounded-xl p-6 flex flex-col justify-between space-y-4 shadow-sm hover:shadow-md transition-all duration-200 border border-white/10 group"
             >
-              {!imageErrors[item.id] ? (
-                <img
-                  src={item.imageSrc}
-                  alt={item.name}
-                  referrerPolicy="no-referrer"
-                  onError={() => handleImageError(item.id)}
-                  className="w-full h-auto object-contain rounded group-hover:scale-102 transition-transform duration-200"
-                  loading="lazy"
-                />
-              ) : (
-                <div className="p-4 text-center">
-                  <span className="text-xs font-bold text-[#0B1730] font-display uppercase tracking-wider block">
-                    {item.name}
-                  </span>
+              <div className="space-y-3">
+                <div className="w-12 h-12 rounded-full bg-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#D4AF37] flex items-center justify-center">
+                  <CheckCircle2 className="w-6 h-6 text-[#D4AF37]" />
                 </div>
-              )}
-            </a>
+
+                <div>
+                  <h3 className="text-xl font-bold font-mono tracking-wide text-white group-hover:text-[#D4AF37] transition-colors">
+                    {item.code}
+                  </h3>
+                  <div className="text-xs font-semibold text-[#D4AF37] mt-0.5">
+                    {item.badge}
+                  </div>
+                </div>
+
+                <p className="text-xs text-stone-300 leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+
+              <div className="pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-stone-400">
+                <span>Verified Standard</span>
+                <span className="text-[#D4AF37] font-semibold">Active</span>
+              </div>
+            </div>
           ))}
         </div>
 
-        {/* Verification & Compliance Disclaimer Note */}
-        <div className="mt-8 p-4 bg-[#F8FAFC] rounded-lg border border-[#E2E8F0] text-center max-w-3xl mx-auto">
-          <p className="text-[11px] sm:text-xs text-[#64748B] leading-relaxed">
-            <strong className="text-[#0B1730]">Export Compliance Note:</strong> Specific registrations, statutory memberships (FSSAI, Spices Board CRES, IOPEPC, IEC), and consignment certificates (SGS test reports, Phytosanitary, Halal, ISO parameters) are verified and issued per shipment lot based on buyer destination and regulatory requirements.
-          </p>
+        {/* Verification Note Matching PDF Page 3 */}
+        <div className="mt-10 p-5 bg-[#FAF8F5] rounded-xl border border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-4 max-w-4xl mx-auto">
+          <div className="flex items-center gap-3 text-xs text-stone-700">
+            <FileText className="w-5 h-5 text-[#C5A059] shrink-0" />
+            <div>
+              <strong className="text-[#0A192F] font-semibold">Copies of certificates and laboratory reports are available on request.</strong>
+              <div className="text-stone-500 text-[11px]">Contact our trade desk for accredited SGS / Geo-Chem COA and statutory filings.</div>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => openEnquiryModal(undefined, 'jaggery', 'buyer')}
+            className="px-4 py-2 text-xs font-bold text-[#0A192F] bg-[#D4AF37] hover:bg-[#C5A059] rounded-lg transition-colors cursor-pointer shrink-0 shadow-xs"
+          >
+            Request Certificate Copies
+          </button>
         </div>
 
       </div>

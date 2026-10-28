@@ -35,15 +35,13 @@ function RouteRenderer() {
   // Dynamic document title updater
   useEffect(() => {
     if (cleanPath === '/') {
-      document.title = 'NEXARIS | One Partner. Many Possibilities. — Spices, Oilseeds & Natural Jaggery Sweeteners';
-    } else if (cleanPath === '/spices-oilseeds') {
-      document.title = 'Spices & Oilseeds Wholesale Catalogue | NEXARIS';
-    } else if (cleanPath === '/jaggery' || cleanPath === '/aluminium-scrap') {
-      document.title = 'Premium Jaggery & Natural Sweeteners Export Catalogue | NEXARIS';
+      document.title = 'NEXARIS | One Partner. Many Possibilities. — Premium Jaggery & Natural Sweeteners Export';
+    } else if (cleanPath === '/spices-oilseeds' || cleanPath === '/jaggery' || cleanPath === '/aluminium-scrap') {
+      document.title = 'Export Quality Jaggery & Natural Sweeteners Catalogue | NEXARIS';
     } else if (cleanPath === '/buyers') {
       document.title = 'For International Buyers | NEXARIS B2B Sourcing';
     } else if (cleanPath === '/suppliers') {
-      document.title = 'For Suppliers & Aggregators | NEXARIS Procurement';
+      document.title = 'For Sugarcane Farmers & Millers | NEXARIS Procurement';
     } else if (cleanPath === '/knowledge' || cleanPath.startsWith('/knowledge/')) {
       document.title = 'Trade Knowledge Centre & Specifications | NEXARIS';
     } else if (cleanPath === '/about') {
@@ -60,20 +58,8 @@ function RouteRenderer() {
       document.title = 'Refund & Cancellation Policy | NEXARIS';
     } else if (cleanPath === '/cookie-policy') {
       document.title = 'Cookie Policy | NEXARIS';
-    } else if (cleanPath.startsWith('/spices-oilseeds/')) {
-      const slug = cleanPath.replace('/spices-oilseeds/', '');
-      const product = ALL_PRODUCTS.find((p) => p.slug === slug && p.division === 'spices-oilseeds');
-      if (product) {
-        document.title = `${product.name} | Spices & Oilseeds | NEXARIS`;
-      }
-    } else if (cleanPath.startsWith('/jaggery/')) {
-      const slug = cleanPath.replace('/jaggery/', '');
-      const product = ALL_PRODUCTS.find((p) => p.slug === slug && p.division === 'jaggery');
-      if (product) {
-        document.title = `${product.name} | Natural Sweeteners | NEXARIS`;
-      }
-    } else if (cleanPath.startsWith('/aluminium-scrap/')) {
-      const slug = cleanPath.replace('/aluminium-scrap/', '');
+    } else if (cleanPath.startsWith('/jaggery/') || cleanPath.startsWith('/spices-oilseeds/')) {
+      const slug = cleanPath.split('/').pop() || '';
       const product = ALL_PRODUCTS.find((p) => p.slug === slug);
       if (product) {
         document.title = `${product.name} | Natural Sweeteners | NEXARIS`;
@@ -86,9 +72,9 @@ function RouteRenderer() {
     return <HomePage />;
   }
 
-  // Route 2: Spices & Oilseeds Division
-  if (cleanPath === '/spices-oilseeds') {
-    return <SpicesOilseedsPage />;
+  // Route 2: Jaggery Division (also handling legacy /spices-oilseeds and /aluminium-scrap)
+  if (cleanPath === '/jaggery' || cleanPath === '/spices-oilseeds' || cleanPath === '/aluminium-scrap') {
+    return <JaggeryPage />;
   }
 
   // Route 3: Spices & Oilseeds Product Detail (/spices-oilseeds/:slug)
@@ -190,16 +176,10 @@ function RouteRenderer() {
             <span>Return to Corporate Homepage</span>
           </Link>
           <Link
-            href="/spices-oilseeds"
-            className="px-4 py-2.5 text-xs font-semibold text-[#10243D] bg-[#F1F4F7] hover:bg-[#DCE2E8] rounded transition-colors border border-[#DCE2E8]"
-          >
-            Spices &amp; Oilseeds
-          </Link>
-          <Link
             href="/jaggery"
             className="px-4 py-2.5 text-xs font-semibold text-[#10243D] bg-[#F1F4F7] hover:bg-[#DCE2E8] rounded transition-colors border border-[#DCE2E8]"
           >
-            Jaggery (Natural Sweeteners)
+            Explore Jaggery Catalogue
           </Link>
         </div>
       </div>

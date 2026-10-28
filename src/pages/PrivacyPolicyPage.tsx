@@ -116,7 +116,7 @@ export function PrivacyPolicyPage() {
               Data Retention Schedule
             </h2>
             <p>
-              We retain commercial enquiry records for the duration of the commercial relationship or active trading negotiations. If an enquiry does not result in an executed contract, we retain records for up to 24 months for reference against future seasonal crop or metal procurement cycles, after which they are systematically purged, unless longer retention is mandated by Indian tax or trade record-keeping statutes.
+              We retain commercial enquiry records for the duration of the commercial relationship or active trading negotiations. If an enquiry does not result in an executed contract, we retain records for up to 24 months for reference against future seasonal sugarcane harvest and jaggery production cycles, after which they are systematically purged, unless longer retention is mandated by Indian tax or trade record-keeping statutes.
             </p>
           </section>
 

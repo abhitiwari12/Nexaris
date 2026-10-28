@@ -17,49 +17,9 @@ export interface Article {
 
 export const KNOWLEDGE_ARTICLES: Article[] = [
   {
-    slug: 'indian-spice-grades-asta-curcumin-guide',
-    title: 'Understanding Indian Spice Export Grades: ASTA Color, Pungency (SHU) & Curcumin Percentage',
-    category: 'Spices & Quality Specifications',
-    readTime: '6 min read',
-    date: 'October 2026',
-    author: 'NEXARIS Commodity Research Desk',
-    excerpt: 'A commercial guide for international buyers on ASTA color values for Kashmiri & Guntur chillies, heat SHU scales, and curcumin grading (6%-7.5% in Lakadong vs 2%-4% in Salem turmeric).',
-    tableOfContents: [
-      'Overview of Indian Spice Export Specifications',
-      'Red Chilli Grading: ASTA Color vs Scoville Heat Units (SHU)',
-      'Turmeric Varieties & Curcumin Potency Analysis',
-      'Quality Compliance: APEDA & Spices Board CRES Protocol',
-    ],
-    content: [
-      'International spice procurement relies on precise analytical specifications rather than generic naming. In red chilli powder, commercial contracts specify two primary variables: ASTA Color Value and Scoville Heat Units (SHU). Kashmiri chillies provide high ASTA color (100-140+ ASTA) with low pungency (<15,000 SHU), making them ideal for visual appeal in food formulations. Conversely, Guntur Sannam S4 balances heat (~30,000 SHU) and color, while Teja S17 delivers high pungency (>70,000 SHU) required for oleoresin extraction.',
-      'In turmeric, curcumin percentage dictates commercial valuation. Lakadong turmeric from Meghalaya yields exception high curcumin content between 6.0% and 7.5%, widely preferred by pharmaceutical and nutraceutical extractors. Salem and Erode varieties yield 2.0% to 4.0% curcumin, providing the ideal warm yellow hue and aroma for retail culinary blending.',
-      'All NEXARIS spice shipments are Sortex-cleaned, steam-sterilized when specified, and certified under Spices Board CRES and FSSAI laboratory guidelines prior to ocean container loading at Mundra Port.',
-    ],
-  },
-  {
-    slug: 'fob-mundra-vs-cif-destination-shipping-terms',
-    title: 'Export Shipping Logistics: FOB Mundra Port vs. CIF Destination Freight Protocols',
-    category: 'International Trade Processes',
-    readTime: '5 min read',
-    date: 'October 2026',
-    author: 'NEXARIS Logistics & Trade Desk',
-    excerpt: 'Comparing Incoterms 2020 for B2B commodity shipments departing Western Indian gateways: Container stuffing, customs clearance, and BL dispatch.',
-    tableOfContents: [
-      'Mundra Port & Hazira Port Gateway Advantages',
-      'FOB Mundra/Hazira Responsibilities & Documentation',
-      'CIF Destination Port Quotes & Freight Booking',
-      'Container Allocation & FCL Transit Schedules',
-    ],
-    content: [
-      'Mundra Port in Kutch, Gujarat, stands as India’s premier commercial container port, offering mechanized container handling, cold storage facilities, and direct liner calls to Europe, the Middle East, Southeast Asia, and the Americas.',
-      'Under FOB (Free On Board) Mundra terms, NEXARIS coordinates farmgate transport, Sortex processing, stuffing into 20ft or 40ft FCL containers, Indian customs clearance, and delivery onto the ocean vessel. The buyer handles ocean freight freight booking and destination marine insurance.',
-      'Under CIF (Cost, Insurance & Freight) terms, NEXARIS manages ocean transport booking, marine insurance coverage, and provides guaranteed bill of lading (BL) tracking to your designated port of discharge.',
-    ],
-  },
-  {
     slug: 'jaggery-export-standards-hs-code-17-organic-sweeteners',
     title: 'Indian Jaggery Export Standards: HS Code Chapter 17, Moisture Thresholds & Zero-Chemical Processing',
-    category: 'Jaggery & Natural Sweeteners',
+    category: 'Jaggery Specifications & Compliance',
     readTime: '6 min read',
     date: 'October 2026',
     author: 'NEXARIS Agro Division',
@@ -71,9 +31,49 @@ export const KNOWLEDGE_ARTICLES: Article[] = [
       'Packaging Standards for Ocean Container Shipments',
     ],
     content: [
-      'Exporting Indian jaggery (cane gur) demands strict adherence to moisture thresholds to ensure shelf stability during long ocean voyages. For Organic Jaggery Powder (HS Code 17011420), a moisture level at or below 2.0% prevents clumping and micro-biological degradation, making it suitable for international retail shelves and industrial bakery formulations.',
-      'Unlike conventional domestic jaggery bleached using sodium hydrosulphite (hydrose), export-grade jaggery from NEXARIS is 100% sulphur-free, relying exclusively on organic clarification agents such as okra stalk extract to achieve a natural golden hue without toxic residues.',
+      'Exporting Indian jaggery (cane gur) demands strict adherence to moisture thresholds to ensure shelf stability during long ocean voyages. For Organic Jaggery Powder (HS Code 17011420), a moisture level at or below 2.0% prevents clumping and microbiological degradation, making it suitable for international retail shelves and industrial bakery formulations.',
+      'Unlike conventional domestic jaggery bleached using sodium hydrosulphite (hydrose), export-grade jaggery from NEXARIS is 100% sulphur-free, relying exclusively on organic clarification agents such as herbal extracts to achieve a natural golden hue without toxic chemical residues.',
       'For portioned Jaggery Cubes (HS Code 17011410) and Traditional Blocks, moisture is maintained below 5.0% and 7.0% respectively, with Brix values exceeding 85°. In liquid jaggery syrup (Kakvi, HS Code 17029090), high concentration (Brix 75°–80°) ensures natural osmotic preservation without synthetic preservatives.',
+    ],
+  },
+  {
+    slug: 'fob-mundra-vs-cif-destination-shipping-terms',
+    title: 'Export Shipping Logistics: FOB Mundra Port vs. CIF Destination Freight Protocols',
+    category: 'International Trade Logistics',
+    readTime: '5 min read',
+    date: 'October 2026',
+    author: 'NEXARIS Logistics & Trade Desk',
+    excerpt: 'Comparing Incoterms 2020 for B2B natural sweetener container shipments departing Western Indian gateways: Container stuffing, customs clearance, and BL dispatch.',
+    tableOfContents: [
+      'Mundra Port & Kandla Port Gateway Advantages',
+      'FOB Mundra/Kandla Responsibilities & Documentation',
+      'CIF Destination Port Quotes & Freight Booking',
+      'Container Allocation & FCL Transit Schedules',
+    ],
+    content: [
+      'Mundra Port in Kutch, Gujarat, stands as India’s premier commercial container port, offering mechanized container handling, food-grade storage facilities, and direct mainline vessel connectivity to Europe, the Middle East, Southeast Asia, and the Americas.',
+      'Under FOB (Free On Board) Mundra terms, NEXARIS coordinates harvest aggregation, secondary screening, moisture-barrier packaging, stuffing into 20ft or 40ft FCL containers, Indian customs clearance, and loading onto the ocean vessel. The buyer handles ocean freight booking and marine insurance.',
+      'Under CIF (Cost, Insurance & Freight) terms, NEXARIS manages ocean transport booking, marine insurance coverage, and provides guaranteed bill of lading (BL) tracking directly to your designated port of discharge.',
+    ],
+  },
+  {
+    slug: 'jaggery-powder-vs-refined-sugar-industrial-applications',
+    title: 'Technical Comparison: Free-Flowing Jaggery Powder vs. Refined White Sugar in Commercial Food Processing',
+    category: 'Food Processing Applications',
+    readTime: '7 min read',
+    date: 'October 2026',
+    author: 'NEXARIS Technical Sourcing Desk',
+    excerpt: 'Nutritional profile, mineral retention (Iron, Magnesium, Potassium), caramelization properties, and moisture considerations when replacing refined sugar with unrefined cane powder.',
+    tableOfContents: [
+      'Nutritional & Mineral Retention vs White Sugar',
+      'Baking & Confectionery Caramelization Temperatures',
+      'Solubility & Granulometry (40/60/80 Mesh)',
+      'Clean-Label Regulatory Positioning',
+    ],
+    content: [
+      'Unlike refined white sugar (which undergoes extensive chemical bleaching and bone char/chemical crystallization leaving 99.9% pure sucrose with zero micronutrients), unrefined organic jaggery powder retains naturally occurring sugarcane minerals including iron (10-15 mg/100g), magnesium (70-90 mg/100g), potassium (1000+ mg/100g), and trace calcium.',
+      'In commercial baking, jaggery powder caramelizes at slightly lower temperatures than sucrose due to trace reducing sugars, providing a rich golden crust and deep molasses-toffee aroma. Our 40/60/80 mesh grading ensures rapid dissolution in continuous industrial dough mixing and beverage preparation.',
+      'For global clean-label food brands, export-grade sulphur-free jaggery qualifies as a minimally processed, non-centrifugal whole cane sweetener, meeting clean-label ingredient standards in Europe, North America, and the GCC.',
     ],
   },
 ];
@@ -88,7 +88,7 @@ export function KnowledgeCentrePage() {
   const articleSlug = cleanPath.startsWith('/knowledge/') ? cleanPath.replace('/knowledge/', '') : null;
   const currentArticle = articleSlug ? KNOWLEDGE_ARTICLES.find((a) => a.slug === articleSlug) : null;
 
-  const categories = ['All', 'Spices & Quality Specifications', 'International Trade Processes', 'Jaggery & Natural Sweeteners'];
+  const categories = ['All', 'Jaggery Specifications & Compliance', 'International Trade Logistics', 'Food Processing Applications'];
 
   const filteredArticles = KNOWLEDGE_ARTICLES.filter((art) => {
     const matchesCategory = selectedCategory === 'All' || art.category === selectedCategory;
