@@ -11,6 +11,7 @@ interface ColourGrade {
   borderHex: string;
   description: string;
   flavorNote: string;
+  image: string;
 }
 
 const COLOUR_GRADES: ColourGrade[] = [
@@ -22,6 +23,7 @@ const COLOUR_GRADES: ColourGrade[] = [
     borderHex: 'border-amber-400',
     description: 'Bright golden colour with a clean, mild sweetness.',
     flavorNote: 'Subtle delicate cane notes, light caramel, ideal for everyday tea & table use.',
+    image: '/assets/catalogue_images/catalogue_golden_yellow.png',
   },
   {
     id: 'light',
@@ -31,6 +33,7 @@ const COLOUR_GRADES: ColourGrade[] = [
     borderHex: 'border-amber-500',
     description: 'Soft light-brown shade, balanced and versatile.',
     flavorNote: 'Well-rounded molasses richness, versatile for bakery, beverages & confectioneries.',
+    image: '/assets/catalogue_images/catalogue_light_brown.png',
   },
   {
     id: 'dark',
@@ -40,6 +43,7 @@ const COLOUR_GRADES: ColourGrade[] = [
     borderHex: 'border-amber-950',
     description: 'Deep, rich colour with a bold, full-bodied flavour.',
     flavorNote: 'Intense earthy molasses sweetness, high mineral profile, ideal for traditional recipes.',
+    image: '/assets/catalogue_images/catalogue_dark_brown.png',
   },
 ];
 
@@ -58,7 +62,7 @@ const PRODUCT_TYPES: ProductType[] = [
     name: 'Jaggery Powder',
     tagline: 'Free-flowing fine powder',
     application: 'For retail pouches, table use, beverages & daily sweetening.',
-    image: '/src/assets/images/real_jaggery_powder_1793217606180.jpg',
+    image: '/assets/catalogue_images/catalogue_jaggery_powder.png',
     specs: 'Moisture Max 3% | Sucrose Min 80% | 40/60/80 Mesh',
   },
   {
@@ -66,7 +70,7 @@ const PRODUCT_TYPES: ProductType[] = [
     name: 'Small Solid Blocks',
     tagline: 'Bite-sized cubes & pieces',
     application: 'Easy portioning for direct use, retail tubs & consumer boxes.',
-    image: '/src/assets/images/real_jaggery_cubes_1793217620230.jpg',
+    image: '/assets/catalogue_images/catalogue_small_solid_blocks.png',
     specs: 'Moisture Max 5%–7% | Sucrose Min 75%–82% | 15mm/20mm Pieces',
   },
   {
@@ -74,7 +78,7 @@ const PRODUCT_TYPES: ProductType[] = [
     name: 'Whole Block',
     tagline: 'Traditional solid blocks',
     application: 'For wholesale distribution, repackers & food processing.',
-    image: '/src/assets/images/real_jaggery_blocks_1793217633798.jpg',
+    image: '/assets/catalogue_images/catalogue_whole_block.png',
     specs: 'Moisture Max 5%–7% | Sucrose Min 75%–82% | Brix ≥ 85°',
   },
 ];
@@ -154,7 +158,11 @@ export function RangeMatrixSection() {
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <span className={`w-8 h-8 rounded-full shadow-inner border border-black/10 shrink-0 ${colour.colorHex}`} />
+                        <img
+                          src={colour.image}
+                          alt={colour.name}
+                          className="w-11 h-11 rounded-lg object-cover border border-stone-200 shrink-0 bg-stone-50"
+                        />
                         <div>
                           <h4 className="font-serif font-bold text-lg text-[#0A192F]">{colour.name}</h4>
                           <span className="text-[11px] font-semibold text-[#C5A059] uppercase tracking-wider">Natural Cane Hue</span>

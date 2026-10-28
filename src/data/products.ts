@@ -54,7 +54,7 @@ export const ALL_PRODUCTS: Product[] = [
       { label: 'Pack Sizes', value: '250 g, 500 g, 1 kg (Retail) | 5 kg, 25 kg (Bulk)' },
       { label: 'Certifications', value: 'FSSAI, APEDA, FDA Registered, Laboratory Tested' },
     ],
-    image: '/src/assets/images/real_jaggery_powder_1793217606180.jpg',
+    image: '/assets/catalogue_images/catalogue_jaggery_powder.png',
     featured: true,
   },
   {
@@ -104,7 +104,7 @@ export const ALL_PRODUCTS: Product[] = [
       { label: 'Pack Sizes', value: '250 g, 500 g, 1 kg (Retail) | 5 kg, 25 kg (Bulk)' },
       { label: 'Certifications', value: 'FSSAI, APEDA, FDA Registered, Laboratory Tested' },
     ],
-    image: '/src/assets/images/real_jaggery_cubes_1793217620230.jpg',
+    image: '/assets/catalogue_images/catalogue_small_solid_blocks.png',
     featured: true,
   },
   {
@@ -153,7 +153,7 @@ export const ALL_PRODUCTS: Product[] = [
       { label: 'Pack Sizes', value: '5 kg Bulk Boxes | 25 kg Master Cartons' },
       { label: 'Certifications', value: 'FSSAI, APEDA, FDA Registered, Laboratory Tested' },
     ],
-    image: '/src/assets/images/real_jaggery_blocks_1793217633798.jpg',
+    image: '/assets/catalogue_images/catalogue_whole_block.png',
     featured: true,
   },
   {
@@ -203,7 +203,7 @@ export const ALL_PRODUCTS: Product[] = [
       { label: 'Pack Sizes', value: '250 g, 500 g, 1 kg (Retail) | 5 kg, 25 kg (Bulk)' },
       { label: 'Certifications', value: 'FSSAI, APEDA, FDA Registered, Laboratory Tested' },
     ],
-    image: '/src/assets/images/real_spiced_jaggery_1793217647577.jpg',
+    image: '/assets/catalogue_images/catalogue_spiced_specialty.png',
     featured: true,
   },
 ];

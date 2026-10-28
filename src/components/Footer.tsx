@@ -159,7 +159,7 @@ export function Footer() {
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" aria-hidden="true" />
                 <div>
-                  <span className="block text-[11px] text-stone-400">Registered Office</span>
+                  <span className="block text-[11px] text-stone-400">Location</span>
                   <span className="text-white font-medium leading-relaxed">
                     {contact.registeredOffice}
                   </span>

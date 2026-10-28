@@ -113,8 +113,8 @@ export function JaggeryPage() {
             <div className="lg:col-span-5">
               <div className="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-stone-900 aspect-4/3">
                 <img
-                  src="/src/assets/images/real_jaggery_hero_export_1793217661972.jpg"
-                  alt="NEXARIS Pure Sugarcane Jaggery Export Processing & Aggregation"
+                  src="/assets/catalogue_images/catalogue_cover_hero.png"
+                  alt="NEXARIS Pure Sugarcane Jaggery Official Catalogue Cover"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover"
                 />

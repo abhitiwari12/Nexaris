@@ -73,7 +73,7 @@ export const SITE_CONFIG = {
     whatsappClean: '918511912115',
     whatsappUrl: 'https://wa.me/918511912115',
     email: 'contact@nexaris.co.in',
-    registeredOffice: 'F-203, Sarthak Safal-2, Vavol, Gandhinagar – 382016, Gujarat, India.',
+    registeredOffice: 'Gandhinagar, Gujarat, India',
     location: 'Gandhinagar, Gujarat, India',
     website: 'https://nexaris.co.in',
     companyLinkedIn: 'https://www.linkedin.com/company/nexaris1/home/?viewAsMember=true',

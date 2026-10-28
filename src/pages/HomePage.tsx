@@ -121,12 +121,12 @@ export function HomePage() {
 
             </div>
 
-            {/* Right Column: Authentic Facility Photo */}
+            {/* Right Column: Authentic Catalogue Cover Photo */}
             <div className="lg:col-span-5">
               <div className="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-stone-900 aspect-4/3">
                 <img
-                  src="/src/assets/images/real_jaggery_hero_export_1793217661972.jpg"
-                  alt="NEXARIS Export Packaging & Jaggery Sourcing Facility"
+                  src="/assets/catalogue_images/catalogue_cover_hero.png"
+                  alt="NEXARIS Pure Sugarcane Jaggery Official Catalogue Cover"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover"
                 />
@@ -135,7 +135,7 @@ export function HomePage() {
                   <div>
                     <span className="font-bold text-[#D4AF37] block font-serif">Export Jaggery Dispatch Hub</span>
                     <span className="text-[11px] text-stone-300">
-                      Standard Retail &amp; Master Corrugated Bulk Packaging
+                      Gandhinagar, Gujarat, India · FOB Mundra &amp; Kandla
                     </span>
                   </div>
                   <span className="px-2 py-1 bg-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#D4AF37] rounded font-mono text-[10px] font-bold">
@@ -235,7 +235,7 @@ export function HomePage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             
-            {/* 3 Natural Cane Colours */}
+            {/* 3 Natural Cane Colours with Catalogue Images */}
             <div className="p-6 sm:p-8 rounded-xl bg-[#FAF8F5] border border-stone-200 space-y-5">
               <h3 className="text-base font-serif font-bold text-[#0A192F] flex items-center gap-2">
                 <Layers className="w-5 h-5 text-[#C5A059]" />
@@ -243,8 +243,12 @@ export function HomePage() {
               </h3>
 
               <div className="space-y-3">
-                <div className="p-3.5 rounded-lg bg-white border border-stone-200 flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-amber-300 border border-amber-400 shrink-0 mt-0.5" />
+                <div className="p-3 rounded-lg bg-white border border-stone-200 flex items-center gap-3.5">
+                  <img
+                    src="/assets/catalogue_images/catalogue_golden_yellow.png"
+                    alt="Golden Yellow Jaggery"
+                    className="w-14 h-14 rounded-lg object-cover border border-stone-200 shrink-0 bg-stone-50"
+                  />
                   <div>
                     <h4 className="text-xs font-bold text-[#0A192F]">Golden Yellow</h4>
                     <p className="text-[11px] text-stone-600 mt-0.5">
@@ -253,8 +257,12 @@ export function HomePage() {
                   </div>
                 </div>
 
-                <div className="p-3.5 rounded-lg bg-white border border-stone-200 flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-amber-600 border border-amber-700 shrink-0 mt-0.5" />
+                <div className="p-3 rounded-lg bg-white border border-stone-200 flex items-center gap-3.5">
+                  <img
+                    src="/assets/catalogue_images/catalogue_light_brown.png"
+                    alt="Light Brown Jaggery"
+                    className="w-14 h-14 rounded-lg object-cover border border-stone-200 shrink-0 bg-stone-50"
+                  />
                   <div>
                     <h4 className="text-xs font-bold text-[#0A192F]">Light Brown</h4>
                     <p className="text-[11px] text-stone-600 mt-0.5">
@@ -263,8 +271,12 @@ export function HomePage() {
                   </div>
                 </div>
 
-                <div className="p-3.5 rounded-lg bg-white border border-stone-200 flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-amber-900 border border-amber-950 shrink-0 mt-0.5" />
+                <div className="p-3 rounded-lg bg-white border border-stone-200 flex items-center gap-3.5">
+                  <img
+                    src="/assets/catalogue_images/catalogue_dark_brown.png"
+                    alt="Dark Brown Jaggery"
+                    className="w-14 h-14 rounded-lg object-cover border border-stone-200 shrink-0 bg-stone-50"
+                  />
                   <div>
                     <h4 className="text-xs font-bold text-[#0A192F]">Dark Brown</h4>
                     <p className="text-[11px] text-stone-600 mt-0.5">

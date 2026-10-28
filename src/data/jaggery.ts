@@ -43,7 +43,7 @@ export const ORGANIC_JAGGERY_POWDER: Product = {
     { label: 'Acid Insoluble Ash', value: '≤ 0.25%' },
     { label: 'Origin', value: 'Western India Sugarcane Belt (APEDA & FSSAI Registered)' },
   ],
-  image: '/src/assets/images/real_jaggery_powder_1793217606180.jpg',
+  image: '/assets/catalogue_images/catalogue_jaggery_powder.png',
   featured: true,
 };
 
@@ -82,7 +82,7 @@ export const PREMIUM_JAGGERY_CUBES: Product = {
     { label: 'Insoluble Matter', value: '≤ 1.0%' },
     { label: 'Shelf Life', value: '12 Months in dry, cool conditions' },
   ],
-  image: '/src/assets/images/real_jaggery_cubes_1793217620230.jpg',
+  image: '/assets/catalogue_images/catalogue_small_solid_blocks.png',
   featured: true,
 };
 
@@ -121,7 +121,7 @@ export const TRADITIONAL_JAGGERY_BLOCKS: Product = {
     { label: 'Clarification', value: '100% natural vegetable-based clarification (Okra mucilage)' },
     { label: 'Preservatives', value: 'Nil / No artificial chemicals or bleaching agents' },
   ],
-  image: '/src/assets/images/real_jaggery_blocks_1793217633798.jpg',
+  image: '/assets/catalogue_images/catalogue_whole_block.png',
   featured: true,
 };
 
