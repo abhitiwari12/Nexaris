@@ -3,27 +3,24 @@ import { Globe, Anchor, ShieldCheck, Ship, Plane, MapPin } from 'lucide-react';
 
 export function GlobalExportMapSection() {
   return (
-    <section id="global-network" className="py-16 sm:py-24 bg-[#0B1730] text-white border-y border-[#162444] relative overflow-hidden">
-      {/* Background Grid Pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(#C7A45B_1px,transparent_1px)] [background-size:32px_32px] opacity-5 pointer-events-none" />
-
+    <section id="global-network" className="py-16 sm:py-24 bg-[#0A192F] text-white border-y border-white/10 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <div className="text-xs font-semibold tracking-wider uppercase text-[#C7A45B] flex items-center justify-center gap-2">
-            <Globe className="w-4 h-4 text-[#C7A45B]" aria-hidden="true" />
-            <span>GLOBAL COMMERCE & FOOTPRINT</span>
-            <span aria-hidden="true" className="text-[#64748B]">·</span>
-            <span className="text-[#94A3B8] font-normal">Export Desk Gandhinagar, Gujarat</span>
+          <div className="text-xs font-semibold tracking-wider uppercase text-[#D4AF37] flex items-center justify-center gap-2">
+            <Globe className="w-4 h-4 text-[#D4AF37]" aria-hidden="true" />
+            <span>GLOBAL COMMODITY CORRIDORS</span>
+            <span aria-hidden="true" className="text-white/30">·</span>
+            <span className="text-stone-300 font-normal">Export Desk Gandhinagar, Gujarat</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-display tracking-tight">
-            Exporting Across 20+ Countries
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white tracking-tight">
+            International Maritime Corridors &amp; Port Coordination
           </h2>
 
-          <p className="text-sm sm:text-base text-[#94A3B8] leading-relaxed">
-            Connecting credible Indian agricultural producers, Sortex millers, and certified sugarcane jaggery processors to importers, food brands, and wholesale distributors across key global corridors.
+          <p className="text-sm sm:text-base text-stone-300 leading-relaxed">
+            Coordinating direct origin export from Gujarat via Mundra Port and Deendayal Port (Kandla) to food manufacturers, retail brands, and wholesale distributors across key global trade destinations.
           </p>
         </div>
 
@@ -79,10 +76,10 @@ export function GlobalExportMapSection() {
         {/* Trade Execution Highlights Strip */}
         <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 text-xs text-[#94A3B8]">
           <div className="p-4 rounded-lg bg-white/5 border border-white/10 flex items-center gap-3">
-            <Anchor className="w-6 h-6 text-[#C7A45B] shrink-0" />
+            <Anchor className="w-6 h-6 text-[#D4AF37] shrink-0" />
             <div>
-              <div className="font-bold text-white text-sm font-display">Mundra &amp; Hazira</div>
-              <div className="text-[11px] text-[#94A3B8]">Primary Origin Loading Ports</div>
+              <div className="font-bold text-white text-sm font-serif">Mundra &amp; Kandla</div>
+              <div className="text-[11px] text-[#94A3B8]">Primary Origin Loading Ports (Gujarat)</div>
             </div>
           </div>
 

@@ -39,8 +39,6 @@ export function JaggeryPage() {
     <div className="pb-24 space-y-16 bg-[#FAF8F5]">
       {/* Hero Section with Official Catalogue Branding */}
       <section className="bg-[#0A192F] text-white py-14 sm:py-20 border-b border-white/10 overflow-hidden relative">
-        <div className="absolute inset-0 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:32px_32px] opacity-10 pointer-events-none" />
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             

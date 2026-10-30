@@ -271,8 +271,6 @@ export function RangeMatrixSection() {
 
         {/* 3. SPECIALTY RANGE — SPICED JAGGERY */}
         <div className="bg-[#0A192F] text-white rounded-2xl p-6 sm:p-10 lg:p-12 relative overflow-hidden shadow-xl border border-white/10">
-          <div className="absolute inset-0 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:28px_28px] opacity-10 pointer-events-none" />
-
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7 space-y-6">
               <div>

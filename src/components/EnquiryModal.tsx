@@ -65,9 +65,9 @@ export function EnquiryModal() {
 
   // Active division filter for product dropdown
   const divisionProducts = ALL_PRODUCTS.filter((p) => {
-    if (formData.division === 'spices') return p.category === 'spices';
-    if (formData.division === 'oilseeds') return p.category === 'oilseeds';
-    if (formData.division === 'jaggery') return p.category === 'jaggery';
+    if (formData.division === 'spices') return p.division === 'spices';
+    if (formData.division === 'pulses') return p.division === 'pulses';
+    if (formData.division === 'dry-fruits') return p.division === 'dry-fruits';
     return true;
   });
 
@@ -310,19 +310,38 @@ export function EnquiryModal() {
                 autoComplete="off"
               />
 
-              {/* Dedicated Jaggery Division Badge */}
-              <div className="p-3 bg-[#FAF8F5] border border-stone-200 rounded-lg flex items-center justify-between">
-                <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#C5A059] block">
-                    Product Division
-                  </span>
-                  <span className="text-xs font-bold text-[#0A192F]">
-                    Natural Cane Sweeteners &amp; Jaggery (HS Chapter 17)
-                  </span>
+              {/* Product Division Selector */}
+              <div>
+                <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1">
+                  1. Select Category / Division
+                </label>
+                <div className="grid grid-cols-3 gap-2">
+                  {[
+                    { id: 'spices', label: 'Spices & Seeds' },
+                    { id: 'pulses', label: 'Dal & Pulses' },
+                    { id: 'dry-fruits', label: 'Dry Fruits' },
+                  ].map((div) => (
+                    <button
+                      key={div.id}
+                      type="button"
+                      onClick={() => {
+                        setFormData((prev) => ({
+                          ...prev,
+                          division: div.id as any,
+                          productSlug: '',
+                          productName: '',
+                        }));
+                      }}
+                      className={`py-2 px-2 text-xs font-bold rounded-lg border text-center transition-all ${
+                        formData.division === div.id
+                          ? 'bg-[#0A192F] text-[#D4AF37] border-[#0A192F]'
+                          : 'bg-[#FAF8F5] text-stone-700 border-stone-200 hover:bg-stone-100'
+                      }`}
+                    >
+                      {div.label}
+                    </button>
+                  ))}
                 </div>
-                <span className="text-[11px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full">
-                  100% Sulphur-Free
-                </span>
               </div>
 
               {/* Product & Grade Dropdown */}

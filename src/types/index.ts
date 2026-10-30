@@ -1,6 +1,6 @@
-export type Division = 'spices' | 'oilseeds' | 'jaggery' | 'spices-oilseeds';
+export type Division = 'spices' | 'pulses' | 'dry-fruits' | 'oilseeds' | 'jaggery' | 'spices-oilseeds' | 'export';
 
-export type CommodityCategory = 'spices' | 'oilseeds' | 'jaggery';
+export type CommodityCategory = 'spices' | 'pulses' | 'dry-fruits' | 'oilseeds' | 'jaggery';
 
 export interface CommoditySpecification {
   label: string;
@@ -10,7 +10,7 @@ export interface CommoditySpecification {
 export interface TechnicalDrawerSpecs {
   moisture: string;
   purity: string;
-  activeContent: string; // Curcumin / Sucrose / Oil content / Piperine
+  activeContent: string; // Curcumin / Protein / Oil content / Grade
   packaging: string;
   loadingPort: string; // FOB Mundra / Kandla Port
 }
@@ -19,6 +19,7 @@ export interface Product {
   id: string;
   slug: string;
   name: string;
+  hindiName?: string;
   tagline?: string;
   hsCode?: string;
   division: Division;
@@ -26,10 +27,13 @@ export interface Product {
   shortDescription: string;
   overview?: string;
   commercialApplications?: string[];
+  retailPackaging?: string[];
+  bulkPackaging?: string[];
   standardPackaging?: string[];
   specifications?: CommoditySpecification[];
   technicalDrawer?: TechnicalDrawerSpecs;
   image: string;
+  pouchImage?: string;
   featured?: boolean;
   subCategories?: string[];
   forms?: string[];

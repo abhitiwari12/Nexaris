@@ -1,7 +1,8 @@
 /**
  * NEXARIS Site & Brand Configuration
- * Exclusively Dedicated to Natural Sugarcane Sweeteners & Export-Grade Jaggery (HS Code Chapter 17)
- * Institutional Palette: Deep Navy (#0A192F / #0F172A), Ivory/Off-White (#FAF8F5), Warm Gold (#D4AF37 / #C5A059)
+ * Consumer Retail Food Brand & Global Agricultural Export House
+ * Spices · Dal & Pulses · Dry Fruits & Nuts
+ * Institutional Palette: Deep Navy (#0A192F / #0F172A), Warm Ivory (#FAF8F5), Warm Gold (#D4AF37 / #C5A059)
  */
 
 export interface Founder {
@@ -17,47 +18,65 @@ export const SITE_CONFIG = {
   brandName: 'NEXARIS',
   domain: 'https://nexaris.co.in',
   tagline: 'One Partner. Many Possibilities.',
-  primaryBrandIdentity: 'NEXARIS — Natural Sugarcane Sweeteners Export House',
-  heroEyebrow: 'NATURAL SUGARCANE SWEETENERS · HS CODE CHAPTER 17',
-  heroHeadline: 'One Partner. Many Possibilities.',
+  primaryBrandIdentity: 'NEXARIS FOODS & AGRI EXPORT',
+  heroEyebrow: 'PREMIUM INDIAN FOOD BRAND & GLOBAL EXPORT HOUSE',
+  heroHeadline: 'NEXARIS FOODS & AGRI EXPORT',
   heroSubheadline:
-    'B2B Sourcing & Export Coordination for Certified Natural Sugarcane Sweeteners & Export-Grade Jaggery.',
+    'Dedicated to delivering farm-fresh, Sortex-cleaned whole spices, essential dal & pulses, and hand-selected dry fruits to retail shelves and global seaports.',
 
-  // Business Division: Jaggery & Natural Cane Sugars
+  // Business Divisions
   divisions: {
-    jaggery: {
-      name: 'Natural Jaggery Sweeteners',
-      slug: 'jaggery',
-      path: '/jaggery',
-      count: '4 Export Grades',
-      hsCodeChapter: 'Chapter 17',
-      headline: 'Export-Grade Unrefined Jaggery & Sugarcane Sweeteners',
-      description:
-        '100% Sulphur-free organic jaggery powder, uniform portion cubes, traditional bheli blocks, and high-Brix pourable cane syrup under HS Code Chapter 17.',
+    spices: {
+      name: 'Spices & Whole Seeds',
+      slug: 'spices',
+      path: '/products?division=spices',
+      headline: 'Aromatic Whole & Ground Spices',
+      description: 'Cumin, Fennel, Coriander, Turmeric, Red Chilli, and Mustard directly procured from premier Gujarat and Rajasthan APMC yards.',
+    },
+    pulses: {
+      name: 'Dal & Pulses',
+      slug: 'pulses',
+      path: '/products?division=pulses',
+      headline: 'Sortex Cleaned Pulses & Lentils',
+      description: 'Premium Toor Dal, Chana Dal, Moong Dal, Kabuli Chana, Urad, and Masoor Dal with high protein and clean-label purity.',
+    },
+    dryFruits: {
+      name: 'Dry Fruits & Nuts',
+      slug: 'dry-fruits',
+      path: '/products?division=dry-fruits',
+      headline: 'Finest Hand-Selected Dry Fruits',
+      description: 'California Almonds, Whole Cashews (W240/W320), Roasted Pistachios, Golden Raisins, and Kashmiri Walnuts.',
+    },
+    export: {
+      name: 'Global Export Division',
+      slug: 'export',
+      path: '/export',
+      headline: 'Containerized Cargo & Port Logistics',
+      description: 'FCL & bulk shipments dispatched via Mundra and Kandla Ports with global phytosanitary, APEDA, and SGS inspection.',
     },
   },
 
-  // Verifiable Jaggery Export Capabilities
+  // Verifiable Agro Export & Retail Capabilities
   capabilities: [
     {
-      title: 'Direct Sugarcane Origin Sourcing',
+      title: 'Farm Origin & APMC Sourcing',
       description:
-        'Procuring directly from verified sugarcane farming tracts and certified processing khandsaris in Western India for maximum purity and fresh-crush aroma.',
+        'Procuring directly from verified farmer clusters and Saurashtra / Unjha APMC yards for maximum freshness and origin traceability.',
     },
     {
-      title: '100% Sulphur-Free Processing',
+      title: 'Multi-Stage Sortex Cleaning',
       description:
-        'Zero chemical bleaching agents (no sodium hydrosulphite / SO₂). Clarified using natural botanical extracts (okra mucilage) to safeguard clean-label integrity.',
+        'Bühler optical colour sorters, gravity separators, and destoners ensure 99.5% purity free from stones, dust, and foreign seeds.',
     },
     {
-      title: 'Export Packaging Customization',
+      title: 'Consumer Retail Packaging',
       description:
-        'Custom packaging solutions from 500g/1kg retail-ready stand-up zip pouches and food-grade jars to 25kg multi-wall bags, 20kg HDPE pails, and 250kg steel drums.',
+        'Attractive stand-up barrier pouches (100g, 250g, 500g, 1kg) with nitrogen flushing and zip-locks for retail shelf longevity.',
     },
     {
       title: 'Mundra & Kandla Port Logistics',
       description:
-        'Ocean container freight coordination directly from Gujarat gateway container terminals (Mundra Port & Deendayal Port Kandla) under FOB, CIF, CFR, and Ex-Works terms.',
+        'Container stuffing and logistics directly from Gujarat gateway terminals (Mundra Port & Deendayal Port Kandla) under FOB, CIF, CFR, and EXW terms.',
     },
   ],
 
@@ -66,8 +85,10 @@ export const SITE_CONFIG = {
 
   // Verified Business Contact Details & Registered Office
   contact: {
-    businessName: 'NEXARIS',
+    businessName: 'NEXARIS FOODS & AGRI EXPORT',
+    companyShort: 'NEXARIS',
     phone: '+91 85119 12115',
+    altPhone: '+91 98246 18484',
     phoneTel: '+918511912115',
     whatsappNumber: '+918511912115',
     whatsappClean: '918511912115',
@@ -75,6 +96,9 @@ export const SITE_CONFIG = {
     email: 'contact@nexaris.co.in',
     registeredOffice: 'Gandhinagar, Gujarat, India',
     location: 'Gandhinagar, Gujarat, India',
+    city: 'Gandhinagar',
+    state: 'Gujarat',
+    country: 'India',
     website: 'https://nexaris.co.in',
     companyLinkedIn: 'https://www.linkedin.com/company/nexaris1/home/?viewAsMember=true',
     loadingPorts: ['Mundra Port (INMUN)', 'Deendayal Port Kandla (IXY)'],
@@ -84,29 +108,29 @@ export const SITE_CONFIG = {
   founders: [
     {
       name: 'Mr. Abhi Nilesh Tiwari',
-      role: 'Managing Partner — Strategy & Technology',
+      role: 'Managing Partner — Strategy & Global Supply Chain',
       email: 'abhi@nexaris.co.in',
       linkedIn: 'https://www.linkedin.com/in/abhi-tiwari-18715727b/',
       description:
-        'Leads institutional strategy, international digital infrastructure, buyer specification compliance, and Jaggery commodity traceability.',
+        'Leads institutional brand strategy, international food retail packaging, and commodity traceability.',
       initials: 'AT',
     },
     {
       name: 'Mr. Krishnapalsinh Rajendrasinh Parmar',
-      role: 'Partner — Business Development',
+      role: 'Partner — International Business Development',
       email: 'krishnapalsinh@nexaris.co.in',
       linkedIn: 'https://www.linkedin.com/in/parmar-krishnapalsinh-r-658431376/',
       description:
-        'Drives international buyer relationships across the GCC, Europe, North America, and Southeast Asia for natural unrefined sweeteners.',
+        'Drives international distributor and supermarket retail partnerships across the GCC, Europe, and Southeast Asia.',
       initials: 'KP',
     },
     {
       name: 'Mr. Rudra Aniruddhkumar Pandya',
-      role: 'Partner — Operations',
+      role: 'Partner — Sourcing & Processing Operations',
       email: 'rudrapandya@nexaris.co.in',
       linkedIn: 'https://www.linkedin.com/in/rudra-pandya-925875446/',
       description:
-        'Oversees cane tract procurement, khandsari processing quality assurance, moisture testing, packaging customization, and port container stuffing.',
+        'Oversees Gujarat APMC farm procurement, Sortex cleaning operations, retail packaging quality, and container stuffing.',
       initials: 'RP',
     },
   ] as Founder[],
@@ -114,32 +138,36 @@ export const SITE_CONFIG = {
   // Compliance Alignment
   compliance: {
     statutoryAlignment: [
+      { name: 'FSSAI', full: 'Food Safety and Standards Authority of India (Food Safety License)' },
       { name: 'APEDA', full: 'Agricultural and Processed Food Products Export Development Authority' },
-      { name: 'FSSAI', full: 'Food Safety and Standards Authority of India (Food Safety Alignment)' },
-      { name: 'Phytosanitary', full: 'Directorate of Plant Protection, Quarantine & Storage Certification' },
-      { name: 'Certificate of Origin', full: 'Chamber of Commerce & DGFT Authorized Origin Issuance' },
+      { name: 'Spices Board India', full: 'Spices Board (Ministry of Commerce and Industry, Govt. of India)' },
+      { name: 'Halal Certified', full: 'Halal Quality Certification for GCC and Global Islamic Markets' },
+      { name: 'US FDA', full: 'Food and Drug Administration Facility Registration Compliance' },
+      { name: 'IAF / ISO', full: 'International Accreditation Forum ISO 22000 / HACCP Standard' },
+      { name: 'GMP Quality', full: 'Good Manufacturing Practices for Clean Food Processing' },
+      { name: 'MSME', full: 'Ministry of Micro, Small and Medium Enterprises Registration' },
     ],
   },
 };
 
 /**
- * Generates an encoded WhatsApp chat URL using the primary verified business WhatsApp number.
+ * Generates an encoded WhatsApp chat URL
  */
 export function getWhatsAppUrl(productName?: string, hsCode?: string): string {
   const number = SITE_CONFIG.contact.whatsappClean;
   const defaultText = productName
-    ? `Hello NEXARIS Commercial Desk, I would like to request an RFQ / Technical Data Sheet for ${productName}${hsCode ? ` (HS: ${hsCode})` : ''}. Sourcing volume / discharge port: `
-    : 'Hello NEXARIS Commercial Desk, I would like to enquire about your export-grade natural jaggery sweeteners (HS Code Chapter 17).';
+    ? `Hello NEXARIS Desk, I would like to request an RFQ / Technical Specification for ${productName}${hsCode ? ` (HS: ${hsCode})` : ''}. Sourcing volume / destination city: `
+    : 'Hello NEXARIS Desk, I would like to enquire about your retail and bulk range of Spices, Dal & Pulses, and Dry Fruits.';
 
   return `https://wa.me/${number}?text=${encodeURIComponent(defaultText)}`;
 }
 
 /**
- * Generates an encoded WhatsApp chat URL for TDS specification sheet requests.
+ * Generates an encoded WhatsApp chat URL for TDS specification requests.
  */
 export function getTdsWhatsAppUrl(productName: string, hsCode?: string): string {
   const number = SITE_CONFIG.contact.whatsappClean;
-  const message = `Hello NEXARIS Commercial Desk, I am requesting the official Technical Data Sheet (TDS) and batch lab COA for: ${productName}${hsCode ? ` (HS Code: ${hsCode})` : ''}. Sourcing destination / port: `;
+  const message = `Hello NEXARIS Desk, I am requesting the official Technical Data Sheet (TDS) and batch lab COA for: ${productName}${hsCode ? ` (HS Code: ${hsCode})` : ''}. Sourcing destination / city: `;
   return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
 }
 
