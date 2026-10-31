@@ -51,9 +51,6 @@ export function Header() {
                 <span className="font-serif font-bold text-lg md:text-xl text-white tracking-widest uppercase">
                   NEXARIS
                 </span>
-                <span className="text-[10px] tracking-wider text-[#D4AF37] font-medium uppercase">
-                  Foods & Agri Export
-                </span>
               </div>
             </Link>
 

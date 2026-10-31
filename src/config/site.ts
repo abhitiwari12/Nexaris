@@ -17,12 +17,12 @@ export interface Founder {
 export const SITE_CONFIG = {
   brandName: 'NEXARIS',
   domain: 'https://nexaris.co.in',
-  tagline: 'One Partner. Many Possibilities.',
-  primaryBrandIdentity: 'NEXARIS FOODS & AGRI EXPORT',
-  heroEyebrow: 'PREMIUM INDIAN FOOD BRAND & GLOBAL EXPORT HOUSE',
-  heroHeadline: 'NEXARIS FOODS & AGRI EXPORT',
+  tagline: 'Quality and Excellence in Every Product',
+  primaryBrandIdentity: 'NEXARIS',
+  heroEyebrow: 'PREMIUM SPICES, PULSES & DRY FRUITS',
+  heroHeadline: 'NEXARIS',
   heroSubheadline:
-    'Dedicated to delivering farm-fresh, Sortex-cleaned whole spices, essential dal & pulses, and hand-selected dry fruits to retail shelves and global seaports.',
+    'NEXARIS has consistently aimed to provide quality products. From the beginning, our goal and vision have been clear, focusing on delivering excellence in every product we offer.',
 
   // Business Divisions
   divisions: {
@@ -85,7 +85,7 @@ export const SITE_CONFIG = {
 
   // Verified Business Contact Details & Registered Office
   contact: {
-    businessName: 'NEXARIS FOODS & AGRI EXPORT',
+    businessName: 'NEXARIS',
     companyShort: 'NEXARIS',
     phone: '+91 85119 12115',
     altPhone: '+91 98246 18484',

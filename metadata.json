@@ -1,6 +1,6 @@
 {
   "name": "NEXARIS",
-  "description": "NEXARIS is a Consumer Retail Brand and Global Agricultural Export House based in Gandhinagar, Gujarat. Specializing in Sortex-cleaned Spices, Dal & Pulses, and Premium Dry Fruits in modern stand-up retail pouches and bulk export container loads.",
+  "description": "NEXARIS is a premium consumer brand based in Gandhinagar, Gujarat. Specializing in Sortex-cleaned Spices, Dal & Pulses, and Premium Dry Fruits in modern stand-up retail pouches.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

@@ -33,7 +33,7 @@ function RouteRenderer() {
   // Dynamic document title updater
   useEffect(() => {
     if (cleanPath === '/') {
-      document.title = 'NEXARIS Foods & Agri Export | Spices, Dal & Pulses, Dry Fruits';
+      document.title = 'NEXARIS | Spices, Dal & Pulses, Dry Fruits';
     } else if (cleanPath === '/products' || cleanPath === '/spices' || cleanPath === '/pulses' || cleanPath === '/dry-fruits' || cleanPath === '/jaggery' || cleanPath === '/spices-oilseeds') {
       document.title = 'Retail & Export Catalogue | Spices, Pulses & Dry Fruits | NEXARIS';
     } else if (cleanPath === '/export' || cleanPath === '/buyers') {
@@ -43,7 +43,7 @@ function RouteRenderer() {
     } else if (cleanPath === '/knowledge' || cleanPath.startsWith('/knowledge/')) {
       document.title = 'Quality & Specifications Knowledge Desk | NEXARIS';
     } else if (cleanPath === '/about') {
-      document.title = 'About NEXARIS | Foods & Agri Export Pvt. Ltd.';
+      document.title = 'About NEXARIS';
     } else if (cleanPath === '/contact') {
       document.title = 'Contact & Trade RFQ | NEXARIS Gandhinagar';
     } else if (cleanPath === '/crm' || cleanPath === '/admin') {

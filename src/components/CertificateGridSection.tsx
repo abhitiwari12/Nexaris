@@ -62,17 +62,16 @@ export function CertificateGridSection() {
   ];
 
   return (
-    <section className="py-20 bg-[#FAF8F5] border-b border-slate-200">
+    <section className="py-20 bg-white border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header matching Screenshot 3 & 6 */}
+        {/* Section Header matching Screenshot image_aebec4ac.png */}
         <div className="text-center mb-16">
-          <span className="text-xs uppercase tracking-widest text-slate-500 font-bold block mb-2 font-mono">
-            GLOBAL ACCREDITATIONS & STATUTORY APPROVALS
+          <span className="text-sm font-sans font-light tracking-widest text-[#D4AF37] block uppercase">
+            OUR
           </span>
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#0A192F] tracking-tight">
-            OUR <span className="text-[#D4AF37]">CERTIFICATES</span>
+          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#0A192F] tracking-tight uppercase">
+            CERTIFICATE
           </h2>
-          <div className="w-16 h-0.5 bg-[#D4AF37] mx-auto mt-4" />
         </div>
 
         {/* 8 Certification Badges Grid matching Screenshot 3 */}

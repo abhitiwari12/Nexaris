@@ -22,7 +22,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-xs text-slate-400 font-sans leading-relaxed mb-4">
-              Consumer Retail Brand and Global Agricultural Export House. Premium Spices, Sortex-cleaned Dal & Pulses, and handpicked Dry Fruits.
+              Premium Spices, Sortex-cleaned Dal & Pulses, and handpicked Dry Fruits. Packaged for grocery retail and institutional supply.
             </p>
             <div className="text-xs text-slate-400 flex items-center gap-1.5">
               <MapPin className="w-3.5 h-3.5 text-[#D4AF37]" />
@@ -125,7 +125,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-3">
           <div>
-            © Copyright {currentYear}, All rights reserved. NEXARIS Foods & Agri Export Pvt. Ltd.
+            © Copyright {currentYear}, All rights reserved. NEXARIS.
           </div>
           <div className="flex items-center gap-6">
             <Link href="/terms-of-service" className="hover:text-[#D4AF37] transition-colors">
