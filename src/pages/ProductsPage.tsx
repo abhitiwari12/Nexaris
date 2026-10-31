@@ -1,14 +1,24 @@
 import React, { useState } from 'react';
 import { ALL_PRODUCTS, OTHER_PRODUCTS_MATRIX } from '../data/products';
+import { ALL_ARIKA_PRODUCTS, ArikaProduct } from '../data/arikaProducts';
+import { ArikaPouchCard } from '../components/ArikaPouchCard';
+import { ArikaLightboxModal } from '../components/ArikaLightboxModal';
 import { Product, Division } from '../types';
-import { Package, ArrowRight, CheckCircle2, ShieldCheck, Download, Filter } from 'lucide-react';
+import { Package, ArrowRight, CheckCircle2, ShieldCheck, Download, Filter, Eye, Sparkles } from 'lucide-react';
 import { useEnquiry } from '../context/EnquiryContext';
 import { SITE_CONFIG } from '../config/site';
 import { ConnectedSection } from '../components/ConnectedSection';
 
 export function ProductsPage() {
   const [activeDivision, setActiveDivision] = useState<string>('all');
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<ArikaProduct | undefined>(undefined);
   const { openEnquiryModal } = useEnquiry();
+
+  const handleOpenZoom = (product: ArikaProduct) => {
+    setSelectedProduct(product);
+    setLightboxOpen(true);
+  };
 
   const filteredProducts = ALL_PRODUCTS.filter((item) => {
     if (activeDivision === 'all') return true;
@@ -86,7 +96,81 @@ export function ProductsPage() {
         </div>
       </section>
 
-      {/* 3. Section Title matching Screenshot 7 */}
+      {/* 3. ARIKA by NEXARIS — Flagship Consumer Spices Section */}
+      {/* 3. ARIKA by NEXARIS — Complete Retail Collection */}
+      {(() => {
+        const arikaList = ALL_ARIKA_PRODUCTS.filter((item) => {
+          if (activeDivision === 'all') return true;
+          return item.category === activeDivision;
+        });
+
+        if (arikaList.length === 0) return null;
+
+        return (
+          <section className="pt-12 pb-16 bg-[#FAF8F5] border-b border-slate-200">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="bg-[#0A192F] rounded-lg p-6 sm:p-8 text-white border border-[#1E293B] shadow-lg mb-10">
+                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                  <div>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D4AF37]/20 text-[#D4AF37] text-xs font-bold uppercase tracking-wider mb-3">
+                      <Sparkles className="w-3.5 h-3.5" />
+                      <span>Flagship Retail Brand · 23 Shelf-Ready Stand-Up Pouches</span>
+                    </div>
+                    <h2 className="text-2xl sm:text-4xl font-serif font-bold text-white tracking-wide">
+                      ARIKA <span className="text-[#D4AF37] text-xl sm:text-2xl font-sans font-light">by NEXARIS</span>
+                    </h2>
+                    <p className="text-xs sm:text-sm text-slate-300 max-w-2xl mt-2 leading-relaxed">
+                      Clean consumer pantry packaging: ground spices, Sortex-cleaned unpolished pulses, and vacuum-sealed dry fruits.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap items-center gap-3">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setSelectedProduct(undefined);
+                        setLightboxOpen(true);
+                      }}
+                      className="px-4 py-2.5 bg-[#D4AF37] hover:bg-[#C5A059] text-[#0A192F] text-xs font-bold uppercase tracking-wider rounded transition-all shadow-md flex items-center gap-2"
+                    >
+                      <Eye className="w-4 h-4" />
+                      <span>View Full Shelf Artwork</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        openEnquiryModal(
+                          undefined,
+                          activeDivision === 'all' ? 'spices' : (activeDivision as any),
+                          'buyer',
+                          'ARIKA by NEXARIS Retail Distribution Enquiry'
+                        )
+                      }
+                      className="px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider rounded border border-white/20 transition-all flex items-center gap-2"
+                    >
+                      <span>Retail Buyer RFQ</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#D4AF37]" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Product Cards Grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
+                {arikaList.map((arikaProduct) => (
+                  <ArikaPouchCard
+                    key={arikaProduct.id}
+                    product={arikaProduct}
+                    onOpenZoom={handleOpenZoom}
+                  />
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
+
+      {/* 4. Section Title matching Screenshot 7 */}
       <section className="pt-16 pb-8 bg-[#FAF8F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-xs uppercase tracking-widest text-[#D4AF37] font-bold block mb-2 font-mono">
@@ -234,6 +318,13 @@ export function ProductsPage() {
 
       {/* 6. Connected Section */}
       <ConnectedSection />
+
+      {/* ARIKA Artwork Lightbox */}
+      <ArikaLightboxModal
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        selectedProduct={selectedProduct}
+      />
     </div>
   );
 }

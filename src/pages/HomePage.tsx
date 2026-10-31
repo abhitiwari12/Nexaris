@@ -1,14 +1,9 @@
 import React from 'react';
 import { HeroBanner } from '../components/HeroBanner';
 import { KeyProcessSection } from '../components/KeyProcessSection';
-import { WelcomeSplitSection } from '../components/WelcomeSplitSection';
-import { GlobalPresenceSection } from '../components/GlobalPresenceSection';
-import { LogisticsSplitSection } from '../components/LogisticsSplitSection';
-import { NumbersLedgerSection } from '../components/NumbersLedgerSection';
 import { RetailBrandsShowcase } from '../components/RetailBrandsShowcase';
-import { FacilityUpdatesSection } from '../components/FacilityUpdatesSection';
+import { NumbersLedgerSection } from '../components/NumbersLedgerSection';
 import { CertificateGridSection } from '../components/CertificateGridSection';
-import { QuoteBannerSection } from '../components/QuoteBannerSection';
 import { ConnectedSection } from '../components/ConnectedSection';
 
 export function HomePage() {
@@ -17,34 +12,19 @@ export function HomePage() {
       {/* 1. Hero Banner */}
       <HeroBanner />
 
-      {/* 2. Key Process: 5 Circular Outline Icons */}
+      {/* 2. Key Process (5 Clean Icons) */}
       <KeyProcessSection />
 
-      {/* 3. Welcome to NEXARIS Group (Split Story & Spice Bowls) */}
-      <WelcomeSplitSection />
-
-      {/* 4. About Us (Split World Reach & Indian Heritage) */}
-      <GlobalPresenceSection />
-
-      {/* 5. From Heritage to Container Seaports (Split Handshake & Logistics) */}
-      <LogisticsSplitSection />
-
-      {/* 6. Numbers at NEXARIS (4 Metric Columns) */}
-      <NumbersLedgerSection />
-
-      {/* 7. Our Brands / Retail Range (Pouch Showcase Grid) */}
+      {/* 3. ARIKA by NEXARIS — 23 Product Retail Collection */}
       <RetailBrandsShowcase />
 
-      {/* 8. Media & Facility Updates (3-Column Processing Mill Photos) */}
-      <FacilityUpdatesSection />
+      {/* 4. Numbers at NEXARIS (4 Metric Pillars) */}
+      <NumbersLedgerSection />
 
-      {/* 9. Our Certificates (8 Statutory Badges) */}
+      {/* 5. Statutory Quality Certificates (8 Badges) */}
       <CertificateGridSection />
 
-      {/* 10. Quote Banner ("Good quality creates a loyal customer...") */}
-      <QuoteBannerSection />
-
-      {/* 11. Let's Get Connected (Contact Info & Quick RFQ Form) */}
+      {/* 6. Contact & Quick RFQ Form */}
       <ConnectedSection />
     </div>
   );

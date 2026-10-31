@@ -9,19 +9,19 @@ export function Header() {
   const { path } = useRouter();
   const { openEnquiryModal } = useEnquiry();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   // Close mobile drawer on route change or ESC key press
   useEffect(() => {
     setMobileMenuOpen(false);
-    setProductsDropdownOpen(false);
+    setActiveDropdown(null);
   }, [path]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         setMobileMenuOpen(false);
-        setProductsDropdownOpen(false);
+        setActiveDropdown(null);
       }
     };
     window.addEventListener('keydown', handleKeyDown);
@@ -31,8 +31,8 @@ export function Header() {
   const navLinks = [
     { href: '/', label: 'HOME' },
     { href: '/about', label: 'ABOUT US' },
-    { href: '/products', label: 'PRODUCTS', hasDropdown: true },
-    { href: '/export', label: 'EXPORT & LOGISTICS' },
+    { href: '/products', label: 'PRODUCTS', dropdownKey: 'products' },
+    { href: '/export', label: 'EXPORT', dropdownKey: 'export' },
     { href: '/contact', label: 'CONTACT US' },
   ];
 
@@ -62,13 +62,13 @@ export function Header() {
               {navLinks.map((link) => {
                 const isActive = path === link.href || (link.href !== '/' && path.startsWith(link.href));
 
-                if (link.hasDropdown) {
+                if (link.dropdownKey) {
                   return (
                     <div
                       key={link.href}
                       className="relative"
-                      onMouseEnter={() => setProductsDropdownOpen(true)}
-                      onMouseLeave={() => setProductsDropdownOpen(false)}
+                      onMouseEnter={() => setActiveDropdown(link.dropdownKey)}
+                      onMouseLeave={() => setActiveDropdown(null)}
                     >
                       <Link
                         href={link.href}
@@ -80,8 +80,8 @@ export function Header() {
                         <ChevronDown className="w-3.5 h-3.5 opacity-70" />
                       </Link>
 
-                      {/* Dropdown Menu */}
-                      {productsDropdownOpen && (
+                      {/* Dropdown Menu for Products */}
+                      {link.dropdownKey === 'products' && activeDropdown === 'products' && (
                         <div className="absolute top-full left-0 w-64 bg-[#0F172A] border border-[#1E293B] rounded-sm shadow-2xl py-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
                           <Link
                             href="/products?division=spices"
@@ -110,6 +110,40 @@ export function Header() {
                             className="block px-4 py-2 text-xs font-semibold text-[#D4AF37] hover:bg-[#1E293B] transition-colors"
                           >
                             View Complete Catalogue →
+                          </Link>
+                        </div>
+                      )}
+
+                      {/* Dropdown Menu for Export */}
+                      {link.dropdownKey === 'export' && activeDropdown === 'export' && (
+                        <div className="absolute top-full left-0 w-72 bg-[#0F172A] border border-[#1E293B] rounded-sm shadow-2xl py-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
+                          <Link
+                            href="/export"
+                            className="block px-4 py-2.5 text-xs font-medium text-slate-200 hover:bg-[#1E293B] hover:text-[#D4AF37] transition-colors"
+                          >
+                            <div className="font-semibold text-white">Container Ocean Freight</div>
+                            <div className="text-[11px] text-slate-400">20ft (18–24 MT) & 40ft (26–28 MT) FCL</div>
+                          </Link>
+                          <Link
+                            href="/export"
+                            className="block px-4 py-2.5 text-xs font-medium text-slate-200 hover:bg-[#1E293B] hover:text-[#D4AF37] transition-colors"
+                          >
+                            <div className="font-semibold text-white">Gujarat Seaport Gateways</div>
+                            <div className="text-[11px] text-slate-400">FOB Mundra (INMUN) & Kandla (IXY)</div>
+                          </Link>
+                          <Link
+                            href="/export"
+                            className="block px-4 py-2.5 text-xs font-medium text-slate-200 hover:bg-[#1E293B] hover:text-[#D4AF37] transition-colors"
+                          >
+                            <div className="font-semibold text-white">Bulk Bags & Private Labeling</div>
+                            <div className="text-[11px] text-slate-400">25kg / 50kg Bags & Custom Markings</div>
+                          </Link>
+                          <div className="my-1 border-t border-[#1E293B]"></div>
+                          <Link
+                            href="/export"
+                            className="block px-4 py-2 text-xs font-semibold text-[#D4AF37] hover:bg-[#1E293B] transition-colors"
+                          >
+                            View Export Desk & Request RFQ →
                           </Link>
                         </div>
                       )}
@@ -171,7 +205,7 @@ export function Header() {
                 >
                   {link.label}
                 </Link>
-                {link.hasDropdown && (
+                {link.dropdownKey === 'products' && (
                   <div className="pl-4 py-1 space-y-2 border-l border-[#1E293B] my-1">
                     <Link
                       href="/products?division=spices"
@@ -190,6 +224,28 @@ export function Header() {
                       className="block text-xs text-slate-300 hover:text-[#D4AF37]"
                     >
                       • Dry Fruits & Nuts
+                    </Link>
+                  </div>
+                )}
+                {link.dropdownKey === 'export' && (
+                  <div className="pl-4 py-1 space-y-2 border-l border-[#1E293B] my-1">
+                    <Link
+                      href="/export"
+                      className="block text-xs text-slate-300 hover:text-[#D4AF37]"
+                    >
+                      • 20ft & 40ft FCL Container Ocean Freight
+                    </Link>
+                    <Link
+                      href="/export"
+                      className="block text-xs text-slate-300 hover:text-[#D4AF37]"
+                    >
+                      • Gujarat Seaports (Mundra & Kandla FOB)
+                    </Link>
+                    <Link
+                      href="/export"
+                      className="block text-xs text-slate-300 hover:text-[#D4AF37]"
+                    >
+                      • Bulk Bags & Palletized Cargo RFQ
                     </Link>
                   </div>
                 )}
