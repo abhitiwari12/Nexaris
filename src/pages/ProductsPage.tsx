@@ -165,7 +165,7 @@ export function ProductsPage() {
                   <div className="pt-2 flex flex-wrap items-center gap-4">
                     <button
                       type="button"
-                      onClick={() => openEnquiryModal({ division: product.division, productSlug: product.slug, productName: product.name })}
+                      onClick={() => openEnquiryModal(product, product.division)}
                       className="px-5 py-2.5 bg-[#0A192F] hover:bg-[#1E293B] text-white text-xs font-bold uppercase tracking-wider rounded-sm transition-colors flex items-center gap-2 shadow-xs"
                     >
                       <span>Request Quotation</span>

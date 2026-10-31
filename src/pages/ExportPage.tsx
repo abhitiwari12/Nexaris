@@ -133,7 +133,7 @@ export function ExportPage() {
               <div className="mt-8">
                 <button
                   type="button"
-                  onClick={() => openEnquiryModal({ division: 'export' })}
+                  onClick={() => openEnquiryModal(undefined, 'export')}
                   className="px-6 py-3 bg-[#0A192F] hover:bg-[#1E293B] text-white text-xs font-bold uppercase tracking-wider rounded-sm transition-colors shadow-sm flex items-center gap-2"
                 >
                   <span>Request Export Container RFQ</span>
