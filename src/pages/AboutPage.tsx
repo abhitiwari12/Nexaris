@@ -72,7 +72,7 @@ export function AboutPage() {
                   NEXARIS
                 </h3>
                 <div className="text-xs font-mono uppercase tracking-widest text-[#D4AF37] font-semibold">
-                  FOODS & AGRI EXPORT PVT. LTD.
+                  PURE SPICES & PANTRY STAPLES
                 </div>
                 <p className="text-xs text-slate-400 max-w-xs mx-auto pt-2 border-t border-slate-700">
                   Headquartered in Gandhinagar, Gujarat, India with comprehensive agro processing capabilities.
