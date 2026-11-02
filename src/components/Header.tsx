@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, ChevronDown, Sparkles } from 'lucide-react';
+import { Menu, X, ArrowUpRight, ChevronDown, Sparkles, Phone } from 'lucide-react';
 import { Link, useRouter } from '../context/RouterContext';
 import { useEnquiry } from '../context/EnquiryContext';
 import { SITE_CONFIG } from '../config/site';
@@ -30,10 +30,10 @@ export function Header() {
 
   const navLinks = [
     { href: '/', label: 'HOME' },
-    { href: '/about', label: 'ABOUT US' },
-    { href: '/products', label: 'PRODUCTS', dropdownKey: 'products' },
-    { href: '/export', label: 'EXPORT', dropdownKey: 'export' },
-    { href: '/contact', label: 'CONTACT US' },
+    { href: '/products', label: 'OUR RANGE', dropdownKey: 'products' },
+    { href: '/export', label: 'EXPORT DESK', dropdownKey: 'export' },
+    { href: '/about', label: 'OUR STORY' },
+    { href: '/contact', label: 'CONTACT' },
   ];
 
   return (
@@ -132,8 +132,8 @@ export function Header() {
                             href="/export"
                             className="block px-4 py-2.5 text-xs font-medium text-slate-200 hover:bg-[#1E293B] hover:text-[#D4AF37] transition-colors"
                           >
-                            <div className="font-semibold text-white">Bulk Bags & Private Labeling</div>
-                            <div className="text-[11px] text-slate-400">25kg / 50kg Bags & Custom Markings</div>
+                            <div className="font-semibold text-white">Bulk Packaging & Port Dispatch</div>
+                            <div className="text-[11px] text-slate-400">25kg / 50kg Bags & Retail Master Cartons</div>
                           </Link>
                           <div className="my-1 border-t border-[#1E293B]"></div>
                           <Link
@@ -165,15 +165,21 @@ export function Header() {
               })}
             </nav>
 
-            {/* Quick RFQ CTA Button */}
-            <div className="hidden sm:flex items-center gap-3">
+            {/* Phone link and Get in touch pill button matching reference */}
+            <div className="hidden sm:flex items-center gap-4">
+              <a
+                href="tel:+918511912115"
+                className="hidden xl:flex items-center gap-1.5 text-xs font-semibold text-slate-200 hover:text-[#D4AF37] transition-colors"
+              >
+                <Phone className="w-3.5 h-3.5 text-[#D4AF37]" />
+                <span>+91 85119 12115</span>
+              </a>
               <button
                 type="button"
                 onClick={() => openEnquiryModal(undefined, 'spices')}
-                className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-[#0A192F] bg-[#D4AF37] hover:bg-[#C5A059] rounded-sm transition-all shadow-md focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:ring-offset-2 focus:ring-offset-[#0A192F]"
+                className="inline-flex items-center gap-2 px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-white bg-[#8B1E1E] hover:bg-[#991B1B] rounded-full transition-all shadow-md hover:scale-105 active:scale-95"
               >
-                <span>Enquire Now</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
+                <span>Get in touch</span>
               </button>
             </div>
 

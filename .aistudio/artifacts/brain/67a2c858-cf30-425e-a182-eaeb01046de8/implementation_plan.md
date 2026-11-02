@@ -1,77 +1,125 @@
-# NEXARIS — Brand Simplification, Homepage Banner & Category-First Showcase
+# NEXARIS — Interactive Editorial Spice Brand Website (Matching Reference Video & Screenshots)
 
-Streamline the brand identity to **NEXARIS** (removing "Foods and Agri Export"), redesign the hero banner to match the reference screenshot (`image_11266e18.png`), and replace the 23 individual product cards on the homepage with **3 Premium Visual Category Cards** that link directly into the complete catalogue.
+Transform the NEXARIS website to replicate the premium Indian spice brand design demonstrated in the reference video (`Recording_2026-11-02_224913_aff1d164.mp4`) and screenshots (`Screenshot_2026-11-02_224812_b7283dfc.png`, `Screenshot_2026-11-02_224758_a0fe40e9.png`).
 
 ---
 
 ## User Review & Critical Decisions
 
 > [!IMPORTANT]
-> The user confirmed the following design decisions:
-> - **Brand Identity**: The company name is strictly **NEXARIS** everywhere (logo, header, footer, meta titles); "Food and Agri Export" is removed completely.
-> - **Homepage Banner**: Replicates the reference screenshot (`image_11266e18.png`):
->   - Headline: **NEXARIS**
->   - Statement: *"NEXARIS has consistently aimed to provide quality products. From the beginning, our goal and vision have been clear, focusing on delivering excellence in every product we offer."*
->   - Features the side "Enquiry Now" vertical trigger tab and clean action buttons.
-> - **Homepage Product Strategy**: Instead of listing all 23 products on the homepage, showcase **3 Premium Category Cards** (Spices & Whole Seeds, Dal & Pulses, Dry Fruits & Nuts) with pack previews, key highlights, and direct buttons into the respective `/products` catalogue views.
+> The user confirmed the following design and architectural choices:
+> - **Hero Headline & Copy**: Features **NEXARIS** as the primary title paired with the verified vision statement:
+>   *"NEXARIS has consistently aimed to provide quality products. From the beginning, our goal and vision have been clear, focusing on delivering excellence in every product we offer."*
+> - **Interactive Hero Spice Switcher**: 4 interactive spices: **Haldi (Turmeric)**, **Kashmiri Chilli**, **Dhaniya (Coriander)**, and **Jeera (Cumin)**.
+> - **Dynamic Palette Transition**: The hero section smoothly shifts background colors (Saffron Amber $\to$ Deep Crimson $\to$ Botanical Green $\to$ Spice Ochre) accompanied by giant hollow outline typography behind a floating 3D pouch.
+> - **Complete Reference Flow**: Incorporates "The Signature range" (pastel numbered cards), "The NEXARIS range for your kitchen" (filter shelf), and the high-impact "UNDER YOUR OWN BRAND — PRIVATE LABEL" banner.
 
 ---
 
 ## 1. Overview & Core Concept
 
-- **What It Delivers**: A cleaner, high-standard digital presence for **NEXARIS**. The homepage transitions from an exhaustive product listing to an editorial category gateway, reducing visual clutter while directing users into the 23-product ARIKA catalogue on `/products`.
-- **Target Audience**: Modern grocery category managers, retail consumers, overseas importers, and wholesale distributors looking for unadulterated spices, unpolished pulses, and handpicked dry fruits.
-- **Key Value**: Crisp brand positioning without cluttered sub-labels; immediate category discovery with frictionless navigation into detailed product lines.
+- **What It Delivers**: A digital flagship storefront inspired by premier contemporary Indian spice processors (KSP / artisanal direct-to-consumer packaging houses). It elevates ARIKA by NEXARIS into a tactile, sensory brand experience that balances household culinary warmth with modern commercial scale.
+- **Target Audience**: Retail grocery shoppers, regional distributors, supermarket category managers, and private-label B2B buyers seeking verified, unadulterated ground spices, whole seeds, and staple pulses.
+- **Key Value**: Replaces generic corporate templates with an editorial, highly engaging interactive hero and curated signature showcases that drive both immediate consumer sample requests and commercial B2B private-label inquiries.
 
 ---
 
 ## 2. User Experience & Visual Design
 
-### 1. Simplified Brand Identity
-- **Logo & Header**: Display the bold typographic mark **NEXARIS** in clean gold/white without the "Foods & Agri Export" subscript.
-- **Footer & Meta**: Unified corporate name "NEXARIS" with Gandhinagar, Gujarat location.
+### 1. Dynamic Interactive Hero Banner (Matching Screenshots 1 & 2)
+- **4 Active States with Smooth Background Transition (`duration-700`)**:
+  1. **Haldi (Turmeric)**: Warm golden saffron background (`bg-gradient-to-br from-[#9A6B1F] via-[#A16207] to-[#78350F]`), giant outline text **"HALDI"**, 200g Turmeric pouch.
+  2. **Kashmiri (Red Chilli)**: Deep ruby crimson background (`bg-gradient-to-br from-[#8B1E1E] via-[#991B1B] to-[#450A0A]`), giant outline text **"KASHMIRI"**, 200g Red Chilli pouch.
+  3. **Dhaniya (Coriander)**: Herbal forest green background (`bg-gradient-to-br from-[#27532A] via-[#166534] to-[#14532D]`), giant outline text **"DHANIYA"**, 200g Coriander pouch.
+  4. **Jeera (Cumin)**: Warm roasted spice umber background (`bg-gradient-to-br from-[#6B4423] via-[#78350F] to-[#3B1F0B]`), giant outline text **"JEERA"**, 200g Cumin pouch.
+- **Giant Hollow Outline Typography**:
+  - Super-scaled typography positioned directly behind the floating 3D pouch using CSS `[-webkit-text-stroke: 1.5px rgba(255,255,255,0.35)] text-transparent font-serif tracking-widest text-7xl sm:text-9xl lg:text-[14rem] select-none`.
+- **Center Floating 3D Pouch**:
+  - Tilted, floating presentation with realistic shadow underneath and gentle floating micro-animation (`translateY(-4px)`).
+- **Left Column Brand Content**:
+  - Kicker: `GANDHINAGAR · GUJARAT`
+  - Title: **NEXARIS** (bold editorial serif)
+  - Vision Statement: *"NEXARIS has consistently aimed to provide quality products. From the beginning, our goal and vision have been clear, focusing on delivering excellence in every product we offer."*
+  - CTA Button: White rounded pill button `Explore our range →` with right arrow.
+- **Bottom-Right Product Indicator & Thumbnail Switcher**:
+  - Active spice title & net weight: e.g., `Haldi — PREMIUM TURMERIC POWDER · 200 G`
+  - 4 circular thumbnail selectors for Kashmiri, Haldi, Dhaniya, and Jeera with an active gold/white focus ring.
+- **Continuous Marquee Ribbon**:
+  - Seamlessly running ticker below the hero banner:
+    `• GROUND SPICES • UNPOLISHED DALS • PREMIUM DRY FRUITS • WHOLE AROMATIC SEEDS • BULK EXPORT • PRIVATE LABEL • 100% SORTEX CLEANED •`
 
-### 2. Homepage Banner (Matching `image_11266e18.png`)
-- **Background**: High-contrast, authentic composition of earthen and ceramic bowls filled with turmeric, cumin, black pepper, and whole red chillies (`/images/brand/spices_pulses_bowls.jpg`).
-- **Typography & Copy**:
-  - Lead Title: **NEXARIS** (bold serif/grotesque display)
-  - Vision Paragraph: *"NEXARIS has consistently aimed to provide quality products. From the beginning, our goal and vision have been clear, focusing on delivering excellence in every product we offer."*
-- **Interactive Elements**:
-  - Left-edge vertical floating **"Enquiry Now"** tab (matching the green/navy reference tab) for instant 1-click modal access.
-  - Primary CTAs: "Explore Product Categories" and "Download Brochure".
+---
 
-### 3. Homepage Category Gateway (3 Premium Cards)
-Instead of 23 product cards, render 3 wide, visual cards:
-1. **Spices & Whole Seeds**:
-   - Artwork preview of ARIKA Turmeric, Red Chilli, Coriander, Cumin, and Whole Masala packs.
-   - Highlights: Sortex-cleaned seeds, high essential oils, zero added colours.
-   - CTA: *"Explore Spices (11 Products) →"*
-2. **Dal & Pulses**:
-   - Artwork preview of 1kg unpolished Toor, Moong, Masoor, Chana Dal, and Rajma window pouches.
-   - Highlights: Unpolished, natural protein, machine-graded purity.
-   - CTA: *"Explore Dal & Pulses (7 Products) →"*
-3. **Dry Fruits & Nuts**:
-   - Artwork preview of 200g California Almonds, Cashews, Golden Raisins, Walnuts, and Pistachios.
-   - Highlights: Vacuum-sealed freshness, rich vitamins & Omega-3.
-   - CTA: *"Explore Dry Fruits (5 Products) →"*
+### 2. "The Signature range" Section (Matching Video 00:00 - 00:04)
+- **Header**:
+  - Title: **The Signature range** (large serif)
+  - Subtitle: *"The products NEXARIS is known for, from each corner of the range. Tap one to see its whole category, or order straight from our catalog."*
+- **6 Editorial Pastel Cards (3x2 Grid)**:
+  1. **N° 01 — Kashmiri (Red Chilli)**: Soft blush pink background (`#FDF2F2`), red accent, 200g pouch.
+  2. **N° 02 — Haldi (Turmeric)**: Warm cream gold background (`#FEF9C3`), golden accent, 200g pouch.
+  3. **N° 03 — Cumin (Jeera)**: Warm spice beige background (`#FEF3C7`), ochre accent, 200g pouch.
+  4. **N° 04 — Toor Dal (Unpolished)**: Soft buttery amber background (`#FDE68A`/40), amber accent, 1 kg pouch.
+  5. **N° 05 — Dhaniya (Coriander)**: Pale herbal mint background (`#ECFDF5`), emerald accent, 200g pouch.
+  6. **N° 06 — California Almonds**: Soft natural almond taupe background (`#F5EBE0`), warm taupe accent, 200g pouch.
+- **Card Details**:
+  - Number badge: `N° 01` (mono, quiet top-left)
+  - Centered floating pack visual with shadow
+  - Category kicker: `POWDER SPICES` / `UNPOLISHED PULSES` / `PREMIUM DRY FRUITS`
+  - Product Title (serif bold)
+  - Pack weight & variety note
+- **Bottom Action Strip**:
+  - Green button: `Order now` (triggers instant RFQ enquiry modal)
+  - Link: `See the full range →` (links to `/products`)
+  - Wholesale hint: `Buying for a shop or in larger quantity? Get in touch.`
 
-### 4. Statutory Quality Certificates (Matching `image_aebec4ac.png`)
-- Clean white background section titled **"OUR CERTIFICATE"** with the 8 accredited badges:
+---
+
+### 3. "The NEXARIS range for your kitchen" Category Shelf (Matching Video 00:05 - 00:08)
+- **Section Header**:
+  - Kicker: `OVER 20+ SPICES & PANTRY STAPLES`
+  - Title: **The NEXARIS range for your kitchen**
+- **Filter Tabs**:
+  - `All` | `Powder Spices` | `Whole Seeds` | `Dal & Pulses` | `Dry Fruits`
+- **Shelf Row**:
+  - Clean shelf presentation showing pouch packs with net weight, name, and single-click sample/quote button.
+
+---
+
+### 4. "UNDER YOUR OWN BRAND — PRIVATE LABEL" Banner (Matching Video 00:08 - 00:10)
+- **Styling**: High-impact rich burgundy/navy split banner matching the video.
+- **Content**:
+  - Left: Subtitle `UNDER YOUR OWN BRAND`, giant bold title **PRIVATE LABEL**.
+  - Right: *"Any product on this page, made and packed for yourself. Custom branding, bilingual printing, and container dispatch via Mundra & Kandla seaports."*
+  - CTA Button: `See how it works →` (triggers the B2B Private Label inquiry modal).
+
+---
+
+### 5. "OUR CERTIFICATE" Statutory Grid (Matching `Screenshot_2026-11-02_224812_b7283dfc.png` & `image_aebec4ac.png`)
+- Clean white background layout with the 8 verified statutory trust badges:
   - GMP Quality, APEDA, Spices Board India, Halal, US FDA, IAF, FSSAI, MSME.
+
+---
+
+### 6. Clean Editorial Footer (Matching Video 00:08 - 00:10)
+- Deep navy background (`#0A192F` / `#0D1520`):
+  - Column 1: Brand logo `NEXARIS`, brief quality statement, city `Gandhinagar, Gujarat`.
+  - Column 2: Explore links (Our range, Bulk supply, Private label, Our story).
+  - Column 3: Business & Trade desk (Phone: `+91 85119 12115`, Email: `contact@nexaris.co.in`).
+  - Column 4: Visit & Factory dispatch (Gandhinagar, Gujarat, India; Ports: Mundra & Kandla).
 
 ---
 
 ## 3. Key Product Decisions & Trade-Offs
 
-- **Decision 1: Category Gateway vs Full Listing on Homepage**
-  - *Chosen Approach*: Show 3 distinct, beautifully photographed category cards on the homepage with sample item lists and direct links to `/products?division=...`.
-  - *Why*: Solves homepage clutter, speeds up mobile scrolling, and matches global standard corporate food websites.
-- **Decision 2: Retention of 23 ARIKA Products on `/products`**
-  - *Chosen Approach*: The full 23-product ARIKA catalogue with category filter tabs remains fully intact on `/products` and the dedicated divisions.
-  - *Why*: Ensures zero product data loss; customers clicking any category on the homepage land on the complete shelf listing.
-- **Decision 3: Side "Enquiry Now" Floating Button**
-  - *Chosen Approach*: Replicate the vertical side tab from the reference screenshot on the viewport left edge, styled in institutional navy and gold.
-  - *Why*: Provides high commercial conversion without intrusive popups.
+- **Decision 1: Dynamic Hero Spice Switcher**
+  - *Approach*: Implement active state (`'haldi' | 'kashmiri' | 'dhaniya' | 'jeera'`) in `HeroBanner.tsx` with smooth CSS transition of background gradients, giant outline text, product pouch graphic, and thumbnail focus rings.
+  - *Why*: Directly reproduces the signature interactive visual that makes the reference website feel premium and memorable.
+- **Decision 2: Signature Range 3x2 Pastel Cards**
+  - *Approach*: Build `SignatureRangeSection.tsx` with the exact 6 soft pastel background cards, floating pouches, number tags (`N° 01` to `N° 06`), and bottom order/sample strip.
+  - *Why*: Faithfully follows the video recording while presenting our actual ARIKA spice & pulse packs.
+- **Decision 3: Private Label B2B Feature Banner**
+  - *Approach*: Include the dedicated "PRIVATE LABEL" banner from the video, linking into our existing B2B enquiry flow for bulk/custom branding.
+  - *Why*: Essential for commercial buyers (supermarket chains, overseas importers) looking for contract packing and OEM manufacturing.
 
 ---
 
@@ -84,48 +132,54 @@ Instead of 23 product cards, render 3 wide, visual cards:
 │                                                                        │
 │   ┌────────────────────────────────────────────────────────────────┐   │
 │   │   [TopUtilityBar] Contact: +91 85119 12115 · Gandhinagar       │   │
-│   │   [Header] Brand: NEXARIS (No "Foods & Agri Export")           │   │
+│   │   [Header] Brand: NEXARIS · Clean Nav: Home, About, Range,     │   │
+│   │   Private Label, Export, Contact · Call CTA                    │   │
 │   └────────────────────────────────────────────────────────────────┘   │
 │                                                                        │
 │   ┌────────────────────────────────────────────────────────────────┐   │
-│   │   HeroBanner (Matching image_11266e18.png)                     │   │
-│   │   • Background: Earthen & ceramic bowls with spices            │   │
-│   │   • Title: NEXARIS                                             │   │
-│   │   • Vision: Quality & excellence in every product              │   │
-│   │   • Fixed Side Tab: "Enquiry Now"                              │   │
+│   │   [DynamicHeroBanner] (Matching Screenshot 1 & 2)              │   │
+│   │   • States: Haldi | Kashmiri | Dhaniya | Jeera                 │   │
+│   │   • Dynamic Color Shift + Giant Outline Typography (HALDI, etc)│   │
+│   │   • Floating 3D Pouch + Quality Vision Statement               │   │
+│   │   • 4 Circular Thumbnail Switchers + Explore Pill Button       │   │
+│   │   • Continuous Marquee Ticker Ribbon                           │   │
 │   └────────────────────────────────────────────────────────────────┘   │
 │                                                                        │
 │   ┌────────────────────────────────────────────────────────────────┐   │
-│   │   KeyProcessSection (5 Clean Circular Icons)                   │   │
+│   │   [SignatureRangeSection] (Matching Video 00:00 - 00:04)       │   │
+│   │   • 6 Soft Pastel Cards (N° 01 to N° 06)                       │   │
+│   │   • Hover Lifts, Category Kickers, Pack Weight Details         │   │
+│   │   • Bottom Action Bar: Order Now + See Full Range + B2B Note   │   │
 │   └────────────────────────────────────────────────────────────────┘   │
 │                                                                        │
 │   ┌────────────────────────────────────────────────────────────────┐   │
-│   │   Homepage Categories Showcase (3 Premium Cards)               │   │
-│   │   ├── Card 1: Spices & Seeds (11 Products) ──► /products?spices│   │
-│   │   ├── Card 2: Dal & Pulses (7 Products)    ──► /products?pulses│   │
-│   │   └── Card 3: Dry Fruits & Nuts (5 Prods)  ──► /products?dry...│   │
+│   │   [KitchenRangeSection] (Matching Video 00:05 - 00:08)         │   │
+│   │   • Category Tabs: All | Powder Spices | Dals | Dry Fruits     │   │
+│   │   • Shelf Row of ARIKA 200g & 1kg Packs                        │   │
 │   └────────────────────────────────────────────────────────────────┘   │
 │                                                                        │
 │   ┌────────────────────────────────────────────────────────────────┐   │
-│   │   NumbersLedgerSection (50+ MT · 15+ States · 100% · 02 Mills) │   │
+│   │   [PrivateLabelBanner] (Matching Video 00:08 - 00:10)          │   │
+│   │   • Split Rich Banner: "UNDER YOUR OWN BRAND / PRIVATE LABEL"  │   │
+│   │   • Custom OEM Packing & Port Shipping Details                 │   │
 │   └────────────────────────────────────────────────────────────────┘   │
 │                                                                        │
 │   ┌────────────────────────────────────────────────────────────────┐   │
-│   │   CertificateGridSection ("OUR CERTIFICATE" - 8 Badges)        │   │
+│   │   [CertificateGridSection] (Matching Screenshot 1)             │   │
+│   │   • Clean White Background with 8 Verified Badges              │   │
 │   └────────────────────────────────────────────────────────────────┘   │
 │                                                                        │
 │   ┌────────────────────────────────────────────────────────────────┐   │
-│   │   ConnectedSection (Clean Inquiry Form & Gandhinagar Address)   │   │
-│   │   Footer (Brand: NEXARIS)                                      │   │
+│   │   [EditorialFooter] (Matching Video Footer Layout)             │   │
 │   └────────────────────────────────────────────────────────────────┘   │
 │                                                                        │
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
-### Component Edits
-1. `src/config/site.ts`: Set name to `"NEXARIS"` and tagline to `"Pure Spices, Dal & Pulses, Dry Fruits"`.
-2. `src/components/Header.tsx`: Remove "Foods & Agri Export" sub-text from the logo; display crisp "NEXARIS".
-3. `src/components/HeroBanner.tsx`: Update background, headline to "NEXARIS", add vision copy, and include the floating vertical "Enquiry Now" tab matching `image_11266e18.png`.
-4. `src/components/RetailBrandsShowcase.tsx`: Refactor into the 3 visual category cards with direct navigation to `/products`.
-5. `src/components/Footer.tsx`: Update brand title and description to remove "Foods & Agri Export".
-6. `index.html` & `metadata.json`: Keep brand name as "NEXARIS".
+### Component Files to Create or Update
+1. `src/components/DynamicHeroBanner.tsx`: New interactive hero component with state switcher for the 4 spices, outline typography, thumbnail controls, and marquee ribbon.
+2. `src/components/SignatureRangeSection.tsx`: New component implementing the 3x2 pastel card signature collection.
+3. `src/components/KitchenRangeSection.tsx`: Interactive category shelf for kitchen pantry packs.
+4. `src/components/PrivateLabelBanner.tsx`: High-impact B2B contract packaging banner.
+5. `src/pages/HomePage.tsx`: Assemble the sections in exact order.
+6. `src/components/Header.tsx` & `src/components/Footer.tsx`: Align navigation and styling with the KSP reference.
